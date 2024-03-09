@@ -8,7 +8,7 @@ def normalize_array(array):
 
     max_value = array.max()
     min_value = array.min()
-    normalized_array = -1 + 2 * (array - min_value) / (max_value - min_value)
+    normalized_array = (array - min_value) / (max_value - min_value)
     return normalized_array
 
 def audio_to_array(path, sampling_rate, time):
