@@ -1,3 +1,5 @@
+from audio_to_array import normalize_array
+
 def fixed_array_to_float(samples, int_bits=7, float_bits=8):
     samples_float = []
     for element in samples:
@@ -9,4 +11,4 @@ def fixed_array_to_float(samples, int_bits=7, float_bits=8):
             decimal += 2**(-(i+1))*int(element[int_bits + 1 + i])
         samples_float.append(decimal*sign)
 
-    return samples_float
+    return list(normalize_array(samples_float))
