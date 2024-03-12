@@ -86,6 +86,8 @@ almacenarResultado:
     igual r13,r14,_end
 
     suma r9,r15,r15 // reiniciar contador de iteraciones
+    sumita r0,r15,0 // regresar a la posicion inicial de b
+    sumita r1,r1,1 // posicion siguiente vector x, revisar si es necesario
     brinco cicloFiltro
 
 _end:
