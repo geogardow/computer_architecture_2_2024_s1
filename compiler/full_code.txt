@@ -1,0 +1,10 @@
+_start:
+    sumita r0,r15,0
+    sumita r1,r15,16
+    sumita r2,r15,6
+    sumita r3,r15,0
+    sumavec RV10,RV10,RV15
+    brinco cicloFiltro
+cicloFiltro:
+    cargarv RV1,0(r1)
+    cargar r4,0(r0)
