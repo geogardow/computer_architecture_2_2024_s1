@@ -1,19 +1,90 @@
 _start:
-    sumita r1,r15,0 // direccion donde empieza b
-    sumita r2,r15,16 // direccion donde empieza x
-    sumita r3,r15, // direccion donde se empieza a guardar el resultado
+    sumita r0,r15,0 // direccion donde empieza b
+    sumita r1,r15,16 // direccion donde empieza x
+    sumita r2,r15, // direccion donde se empieza a guardar el resultado
+    sumita r3, r15, 0 // contador para el proceso de las sumas 
+    sumavec RV10,RV10,RV15 // VECTOR DE ceros
     brinco cicloFiltro
 
 cicloFiltro:
-
-    sumita r4, r15, 0 // contador para el proceso del producto punto
-    suma r1,r15,r1  // se cargan 16 elementos de b
     cargarv RV1,0(r1)
+    cargar r4,0(r0)
 
-    suma r2, r15,r2 // se cargan 16 elementos de x
-    cargarv RV2,0(r2)
+    brincoEnlazado setMultiplicacion
+
+    brincoEnlazado multiplicacion
+
+    sumavec RV10,RV10,RV2 // agrega el resultado del proceso actual
+
+    sumita r3,r3,1
+    sumita r7,r7,16 // cambiar si son menos columnas
+    igual r3,r6, almacenarResultado 
+
+    sumita r0,r0,1
+    sumita r1,r1,1
+
+    brinco cicloFiltro
 
 
+
+// PARTE Entera con AND de 0111111100000000 #32515
+// PARTE Decimal con AND de 0000 0000 1111 1111 #255
+setMultiplicacion:
+    univecita RV2,RV1,255
+    univecita RV1,RV1,32515
+
+    unioncita r5,r4,255
+    univecita r4,r4,32515
+
+    ret
+
+
+// Qa.b x Qc.d
+multiplicacion:
+    // RV1 a
+    // RV2 b
+    // RV3 c
+    // RV4 d
+    // high = a x c
+    multivecEsc RV3,RV1,r4
+    
+    //mid
+    // a × d + b × c
+    multivecEsc RV6,RV1,r5
+    multivecEsc RV7,RV2,r4
+    sumavec RV6,RV6,RV7
+
+    // low
+    // b x d
+    multivec RV4,RV2,r5
+
+    //result = high << 8 + mid + low >> 8
+    clivec RV2,RV3,8
+    sumavec RV2,RV3,RV6
+    cadvec RV4,RV4,8
+    sumavec RV2,RV2,RV4
+
+    ret
+
+
+
+almacenarResultado:
+    guardarv RV10, 0(r2)
+    sumita r2,r2,16//cambiar si son menos elementos
+
+    sumita r14,r15,//valor maximo de guardado
+    igual r2,r14,_end
+
+    suma r3,r15,r15 // reiniciar contador de suma de columnas
+    sumita r0,r15,0 // regresar a la posicion inicial de b
+    sumita r1,r1,1 // siguiente posicion del vector x
+
+    brinco cicloFiltro
+
+_end:
+	sumita r0,r15,1
+
+// codigo de referenica
     // n-k linealmente 16*16 sumas  (16*N)
     // 16 sumas 
     por cada 16 muestras 32 loads  // metodo vertical
@@ -39,7 +110,6 @@ cicloFiltro:
     //b(2)x(n-2)
     //b(15)x(n-15)
     // se suma b(0)x y resultado siguiente
-    brincoEnlazado multiplicacion
 
     multivec RV1, RV1, b
 
@@ -72,6 +142,3 @@ storeValue:
     leq r1,r5,cicloFiltro
 
     brinco _end
-
-_end:
-	sumita r0,r15,1
