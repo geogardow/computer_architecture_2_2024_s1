@@ -24,8 +24,8 @@ def get_instruction_elements_list(filename):
         temp = ""
 
         # slicing the current line to get the last element
+        
         aux = line[-2]
-
         # current line contains a label
         if aux == ":":
             instruction_elements_list_result.append([line[:-2]])
