@@ -1,5 +1,9 @@
 """Module to make a translation from our ISA to binary and mif file."""
 
+from stalls import riskControlUnit
+from labelsDictionary import getLabelDictionary
+from binaryTranslate import binaryInstructions
+from mifConverter import convert_to_mif
 
 def get_instruction_elements_list(filename):
     """Get the instruction elements list from the code file."""
@@ -68,9 +72,9 @@ def remove_blank_lines_from_file(file_path):
     with open(file_path, 'w', encoding="utf-8") as file:
         file.writelines(non_blank_lines)
 
+
 if __name__ == '__main__':
     FOLDER_PATH = "./compiler/"
-
     SCRIPT_FILE_PATH = FOLDER_PATH + 'full_code.txt'
 
     remove_blank_lines_from_file(SCRIPT_FILE_PATH)
@@ -78,4 +82,15 @@ if __name__ == '__main__':
 
     instruction_elements_list = get_instruction_elements_list(SCRIPT_FILE_PATH)
 
+    instruction_elements_list = riskControlUnit(instruction_elements_list)
+
+    labelDictionary, instruction_elements_list = getLabelDictionary(instruction_elements_list)
+
     print(instruction_elements_list)
+    print(labelDictionary)
+    binaryInstructions(FOLDER_PATH + 'binaryCode.txt', instruction_elements_list, labelDictionary)
+
+    input_file = FOLDER_PATH + 'binaryCode.txt'
+    output_file = FOLDER_PATH + 'output.mif'
+
+    convert_to_mif(input_file, output_file)
