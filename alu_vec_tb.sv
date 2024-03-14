@@ -1,6 +1,6 @@
 `timescale 1ns/1ns // Set the simulation timescale
 
-module testbench_alu_vec;
+module alu_vec_tb;
 
     parameter vector_size = 256;
     parameter element = 16;
@@ -24,8 +24,7 @@ module testbench_alu_vec;
         opcode = 3'b000;
 
         #10;
-        assert(result == 256'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100,
-            "Test 1 failed!");
+		assert(result == 256'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100) else $fatal("Test failed");
     end
 
 endmodule
