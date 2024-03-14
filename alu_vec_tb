@@ -1,0 +1,31 @@
+`timescale 1ns/1ns // Set the simulation timescale
+
+module testbench_alu_vec;
+
+    parameter vector_size = 256;
+    parameter element = 16;
+
+    logic [vector_size-1:0] vectorA;
+    logic [vector_size-1:0] vectorB;
+    logic [2:0] opcode;
+
+    logic [vector_size-1:0] result;
+
+    alu_vec #(vector_size, element) uut (
+        .vectorA(vectorA),
+        .vectorB(vectorB),
+        .opcode(opcode),
+        .result(result)
+    );
+
+    initial begin
+        vectorA = 256'b1111000011110000111100001111000011110000111100001111000011110000111100001111000011110000111100;
+        vectorB = 256'b0000111100001111000011110000111100001111000011110000111100001111000011110000111100001111000000;
+        opcode = 3'b000;
+
+        #10;
+        assert(result == 256'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100,
+            "Test 1 failed!");
+    end
+
+endmodule
