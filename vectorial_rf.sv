@@ -1,20 +1,20 @@
-module scalar_rf #(int WIDTH=16) (
+module vectorial_rf #(int WIDTH=16) (
 	input [4:0] RS1, 
 	input [4:0] RS2, 
 	input [4:0] RS3,
 	input [4:0] RD,
-	input [WIDTH-1:0] WD,
-	input WES,
+	input [WIDTH-1:0][WIDTH-1:0] WD,
+	input WEV,
 	input clk,
 	input rst,
 
-	output [WIDTH-1:0] RD1,
-	output [WIDTH-1:0] RD2,
-	output [WIDTH-1:0] RD3);
+	output [WIDTH-1:0][WIDTH-1:0] RD1,
+	output [WIDTH-1:0][WIDTH-1:0] RD2,
+	output [WIDTH-1:0][WIDTH-1:0] RD3);
 
-	logic [WIDTH-1:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31;
+	logic [WIDTH-1:0][WIDTH-1:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31;
 	
-	logic [WIDTH-1:0] RD1_temp, RD2_temp, RD3_temp;
+	logic [WIDTH-1:0][WIDTH-1:0] RD1_temp, RD2_temp, RD3_temp;
 	
 	always @(*) begin
     case (RS1)
@@ -128,40 +128,40 @@ module scalar_rf #(int WIDTH=16) (
 	
 	always_ff @(posedge clk or posedge rst) begin
 		if(rst) begin
-			R0  = WIDTH'd0;
-			R1  = WIDTH'd0;
-			R2  = WIDTH'd0;
-			R3  = WIDTH'd0;
-			R4  = WIDTH'd0;
-			R5  = WIDTH'd0;
-			R6  = WIDTH'd0;
-			R7  = WIDTH'd0;
-			R8  = WIDTH'd0;
-			R9  = WIDTH'd0;
-			R10 = WIDTH'd0;
-			R11 = WIDTH'd0;
-			R12 = WIDTH'd0;
-			R13 = WIDTH'd0;
-			R14 = WIDTH'd0;
-			R15 = WIDTH'd0;
-			R16 = WIDTH'd0;
-			R17 = WIDTH'd0;
-			R18 = WIDTH'd0;
-			R19 = WIDTH'd0;
-			R20 = WIDTH'd0;
-			R21 = WIDTH'd0;
-			R22 = WIDTH'd0;
-			R23 = WIDTH'd0;
-			R24 = WIDTH'd0;
-			R25 = WIDTH'd0;
-			R26 = WIDTH'd0;
-			R27 = WIDTH'd0;
-			R28 = WIDTH'd0;
-			R29 = WIDTH'd0;
-			R30 = WIDTH'd0;
-			R31 = WIDTH'd0;
+			R0  = 16'd0;
+			R1  = 16'd0;
+			R2  = 16'd0;
+			R3  = 16'd0;
+			R4  = 16'd0;
+			R5  = 16'd0;
+			R6  = 16'd0;
+			R7  = 16'd0;
+			R8  = 16'd0;
+			R9  = 16'd0;
+			R10 = 16'd0;
+			R11 = 16'd0;
+			R12 = 16'd0;
+			R13 = 16'd0;
+			R14 = 16'd0;
+			R15 = 16'd0;
+			R16 = 16'd0;
+			R17 = 16'd0;
+			R18 = 16'd0;
+			R19 = 16'd0;
+			R20 = 16'd0;
+			R21 = 16'd0;
+			R22 = 16'd0;
+			R23 = 16'd0;
+			R24 = 16'd0;
+			R25 = 16'd0;
+			R26 = 16'd0;
+			R27 = 16'd0;
+			R28 = 16'd0;
+			R29 = 16'd0;
+			R30 = 16'd0;
+			R31 = 16'd0;
 			end
-		else if (WES) begin
+		else if (WEV) begin
 			case (RD)
 				5'd0: R0  = WD;
 				5'd1: R1  = WD;
