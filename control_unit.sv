@@ -2,8 +2,9 @@
 								input logic [4:0] func,
 								input logic rst,
 								output logic Brinco, Equal, GreaterEqual, LessEqual, MemToReg, MemRead, MemWrite, 
-								output logic [2:0] ALUOpS,
-								output logic ALUSrc, RegWrite,
+								output logic FlagRDSrc, AluData, EnableRead, EnableWrite, WriteDataSrc, 
+								output logic [2:0] ALUOpS,ALUOpV,
+								output logic ALUSrc, RegWriteV, RegWriteS,
 								output logic [1:0] ImmSrc, 
 								output logic RegSrc2,RegSrc1);
 			
@@ -19,12 +20,14 @@
 				AluData = 0;
 				MemRead = 0;
 				MemWrite = 0;
-                WriteVec = 0;
+				EnableRead = 0;
+                EnableWrite = 0;
 				WriteDataSrc = 0;
 
 				RegWriteV = 0;
 				RegWriteS = 0; 
 				MemToReg = 0;
+				FlagRDSrc = 0;
 
 				ALUSrc = 0;
 				ALUOpS = 0;
@@ -46,12 +49,14 @@
 				AluData = 0;
 				MemRead = 0;
 				MemWrite = 0;
-                WriteVec = 0;
+                EnableRead = 0;
+                EnableWrite = 0;
 				WriteDataSrc = 0;
 
 				RegWriteS = 1; 
 				RegWriteV = 0;
 				MemToReg = 0;
+				FlagRDSrc = 0;
 
 				ALUSrc = 0;
 				ALUOpV = 1'bx;
@@ -81,9 +86,93 @@
 						ALUOpS = 3'b011;
 					end
 				// union
-				else if (func[4:0] == 5'b01011)
+				else if (func[4:0] == 5'b00100)
 					begin
 						ALUOpS = 3'b111;
+					end
+				// Stall estandar
+				else if (func[4:0] == 5'b00101)
+					begin
+						Brinco = 0;
+						Equal = 0;
+						GreaterEqual = 0;
+						LessEqual = 0;
+
+						AluData = 0;
+						MemRead = 0;
+						MemWrite = 0;
+						EnableRead = 0;
+						EnableWrite = 0;
+						WriteDataSrc = 0;
+
+						RegWriteV = 0;
+						RegWriteS = 0; 
+						MemToReg = 0;
+						FlagRDSrc = 0;
+
+						ALUSrc = 0;
+						ALUOpS = 0;
+						ALUOpV = 0;
+
+						ImmSrc = 0;
+						RegSrc2 = 0;
+						RegSrc1 = 0;
+					end
+				// Stall read
+				else if (func[4:0] == 5'b00110)
+					begin
+						Brinco = 0;
+						Equal = 0;
+						GreaterEqual = 0;
+						LessEqual = 0;
+
+						AluData = 0;
+						MemRead = 1;
+						MemWrite = 0;
+						EnableRead = 1;
+						EnableWrite = 0;
+						WriteDataSrc = 0;
+
+						RegWriteV = 1;
+						RegWriteS = 0; 
+						MemToReg = 1;
+						FlagRDSrc = 1;
+
+						ALUSrc = 0;
+						ALUOpS = 0;
+						ALUOpV = 0;
+
+						ImmSrc = 0;
+						RegSrc2 = 0;
+						RegSrc1 = 0;
+					end
+				// Stall write
+				else if (func[4:0] == 5'b00111)
+					begin
+						Brinco = 0;
+						Equal = 0;
+						GreaterEqual = 0;
+						LessEqual = 0;
+
+						AluData = 0;
+						MemRead = 0;
+						MemWrite = 1;
+						EnableRead = 0;
+						EnableWrite = 1;
+						WriteDataSrc = 0;
+
+						RegWriteV = 0;
+						RegWriteS = 0; 
+						MemToReg = 0;
+						FlagRDSrc = 0;
+
+						ALUSrc = 0;
+						ALUOpS = 0;
+						ALUOpV = 0;
+
+						ImmSrc = 0;
+						RegSrc2 = 0;
+						RegSrc1 = 0;
 					end
 			end
 		
@@ -98,12 +187,14 @@
 				AluData = 0;
 				MemRead = 0;
 				MemWrite = 0;
-                WriteVec = 0;
+                EnableRead = 0;
+                EnableWrite = 0;
 				WriteDataSrc = 0;
 
 				RegWriteS = 1; 
 				RegWriteV = 0;
 				MemToReg = 0;
+				FlagRDSrc = 0;
 
 				ALUSrc = 1;
 				ALUOpV = 1'bx;
@@ -160,12 +251,14 @@
 				AluData = 0;
 				MemRead = 0;
 				MemWrite = 0;
-                WriteVec = 0;
+                EnableRead = 0;
+                EnableWrite = 0;
 				WriteDataSrc = 0;
 
 				RegWriteV = 0;
 				RegWriteS = 0; 
 				MemToReg = 0;
+				FlagRDSrc = 0;
 
 				ALUSrc = 0;
 				ALUOpS = 3'b001;
@@ -231,12 +324,16 @@
 					begin
 						MemRead = 1;
 						MemWrite = 0;
-                        WriteVec = 0;
+                        EnableWrite = 0;
+                		EnableRead = 0;
+
                         WriteDataSrc = 0;
 
 						RegWriteS = 1;
 						RegWriteV = 0;
 						MemToReg = 1'b1;
+						FlagRDSrc = 0;
+
 
                         ALUOpS = 3'b000;
                         ALUOpV = 3'bxxx;
@@ -247,12 +344,15 @@
 					begin
 						MemRead = 0;
 						MemWrite = 1;
-                        WriteVec = 0;
+                		EnableRead = 0;
+                        EnableWrite = 0;
                         WriteDataSrc = 0;
 
 						RegWriteS = 0;
 						RegWriteV = 0;
 						MemToReg = 1'bx;
+						FlagRDSrc = 0;
+
 
                         ALUOpS = 3'b000;
                         ALUOpV = 3'bxxx;
@@ -262,12 +362,15 @@
 					begin
 						MemRead = 1;
 						MemWrite = 0;
-                        WriteVec = 0;
+                        EnableWrite = 0;
+                		EnableRead = 1;
+
                         WriteDataSrc = 0;
 
 						RegWriteS = 0;
 						RegWriteV = 1;
 						MemToReg = 1'b1;
+						FlagRDSrc = 1;
 
                         ALUOpS = 3'bxxx;
                         ALUOpV = 3'b000;
@@ -277,12 +380,14 @@
 					begin
 						MemRead = 0;
 						MemWrite = 1;
-                        WriteVec = 1;
+                		EnableRead = 0;
+                        EnableWrite = 1;
                         WriteDataSrc = 1;
 
 						RegWriteS = 0;
 						RegWriteV = 0;
 						MemToReg = 1'bx;
+						FlagRDSrc = 0;
 
                         ALUOpS = 3'bxxx;
                         ALUOpV = 3'b000;
@@ -300,12 +405,15 @@
 				AluData = 1;
 				MemRead = 0;
 				MemWrite = 0;
-                WriteVec = 0;
+                EnableWrite = 0;
+				EnableRead = 0;
 				WriteDataSrc = 0;
 
 				RegWriteS = 0; 
 				RegWriteV = 1;
 				MemToReg = 0;
+				FlagRDSrc = 0;
+
 
 				ALUSrc = 1'bx;
 				ALUOpS = 3'bxxx;
@@ -337,12 +445,14 @@
 				AluData = 1;
 				MemRead = 0;
 				MemWrite = 0;
-                WriteVec = 0;
+				EnableRead = 0;
+                EnableWrite = 0;
 				WriteDataSrc = 0;
 
 				RegWriteS = 0; 
 				RegWriteV = 1;
 				MemToReg = 0;
+				FlagRDSrc = 0;
 
 				ALUSrc = 1'b0;
 				ALUOpS = 3'bxxx;
@@ -374,12 +484,14 @@
 				AluData = 1;
 				MemRead = 0;
 				MemWrite = 0;
-                WriteVec = 0;
+				EnableRead = 0;
+                EnableWrite = 0;
 				WriteDataSrc = 0;
 
 				RegWriteS = 0; 
 				RegWriteV = 1;
 				MemToReg = 0;
+				FlagRDSrc = 0;
 
 				ALUSrc = 1'b1;
 				ALUOpS = 3'bxxx;
