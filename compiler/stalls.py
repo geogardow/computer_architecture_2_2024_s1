@@ -13,6 +13,10 @@ typeDictionary = {
     "cli": "01",
     "unioncita": "01",
 
+    "stall": "01",
+    "stallread": "01",
+    "stallwrite": "01",
+
     "igual": "10",
     "brinco": "10",
 
@@ -41,6 +45,10 @@ opcodeDictionary = {
     "cli": "11011",
     "unioncita": "11100",
 
+    "stall": "00101",
+    "stallread": "00110",
+    "stallwrite": "00111",
+
     "igual": "10",
     "brinco": "00",
 
@@ -56,7 +64,7 @@ opcodeDictionary = {
 # Insert stall after a label 
 def stallInsertionAfterLabel(instructionElementsList):
 
-    stall = ['suma', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
     
     result = instructionElementsList.copy()
 
@@ -71,11 +79,43 @@ def stallInsertionAfterLabel(instructionElementsList):
 
     return result
 
+# case Vector: cargar vector
+def stallInsertionReadVector(instructionElementsList, typeDictionary):
+
+    stallRead = ['stallread', 'r15', 'r15', 'r15', "********************"]
+    stallWrite = ['stallwrite', 'r15', 'r15', 'r15', "********************"]
+
+    result = instructionElementsList.copy()
+
+
+    i = 0
+    # loop to iterate each instruction
+    for j in result:       
+
+        if(len(j) > 1):
+
+            currentInstruction = j[0]
+
+            currentInstructionType = typeDictionary[currentInstruction]
+
+            # vector memory instruction
+            if(currentInstructionType == "00" and currentInstruction == "cargarv"):
+                for j in range(1,17):
+                    result.insert(i + j, stallRead)   
+
+            # vector memory instruction
+            if(currentInstructionType == "00" and currentInstruction == "guardarv"):
+                for j in range(1,17):
+                    result.insert(i + j, stallWrite)        
+
+        i += 1
+
+    return result
 
 # case 0: control risks
 def stallInsertionCase0(instructionElementsList, typeDictionary):
 
-    stall = ['suma', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
 
     result = instructionElementsList.copy()
 
@@ -110,7 +150,7 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
     # this insertion avoids index out of range error
     result.append("*")
 
-    stall = ['suma', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
 
     i = 0
 
@@ -121,6 +161,7 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
 
             if(result[i + 1] == "*"):
                 break
+            
 
             currentInstruction = j[0]
 
@@ -146,7 +187,7 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
 
                 # memory instruction
                 if(currentInstructionType == "00" and currentInstruction == "cargar"):
-
+                    
                     # control instruction
                     if(nextInstructionType == "10"):
 
@@ -293,7 +334,7 @@ def stallInsertionCase2(instructionElementsList, typeDictionary, opcodeDictionar
     # this insertion avoids index out of range error
     result.append("*")
 
-    stall = ['suma', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
 
     i = 0
 
@@ -468,7 +509,7 @@ def stallInsertionCase3(instructionElementsList, typeDictionary, opcodeDictionar
     # this insertion avoids index out of range error
     result.append("*")
 
-    stall = ['suma', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
 
 
     i = 0
@@ -631,5 +672,6 @@ def riskControlUnit(instructionElementsList):
     case2 = stallInsertionCase2(case1, typeDictionary, opcodeDictionary)
     case3 = stallInsertionCase3(case2, typeDictionary, opcodeDictionary)    
     caseAfterLabel = stallInsertionAfterLabel(case3)
+    caseReadWriteVector = stallInsertionReadVector(caseAfterLabel, typeDictionary)
 
-    return caseAfterLabel
+    return caseReadWriteVector

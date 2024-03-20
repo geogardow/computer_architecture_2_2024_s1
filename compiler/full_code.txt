@@ -3,6 +3,7 @@ _start:
     brinco pruebasVectores
 pruebasVectores:
     sumvec RV1,RV2,RV3
+    cargarv RV1,0(RV2)
     multec RV4,RV5,RV6
     cadvec RV7,RV8,8
     cldvec RV9,RV10,8
