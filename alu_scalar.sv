@@ -1,10 +1,10 @@
-module alu( input [15:0] A, B,
+module alu #(int WIDTH=16)( input [WIDTH-1:0] A, B,
 				input [2:0] sel,
-				output [15:0] C,
+				output [WIDTH-1:0] C,
 				output flagZ,
 				output flagN);
 	
-	reg [15:0] alu_out_temp;
+	reg [WIDTH-1:0] alu_out_temp;
 	
 	always @(*)
 	

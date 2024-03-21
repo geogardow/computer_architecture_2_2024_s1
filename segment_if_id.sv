@@ -8,7 +8,7 @@ module segment_if_id (
 										instr_24_20, instr_25_21,
 					output logic [27:0] instr_27_0);
 			
-	always_ff @(posedge clk, posedge rst) begin
+	always_ff @(negedge clk, posedge rst) begin
     if (rst) begin
         pc <= 32'h0;
         instr_type <= 2'b00;

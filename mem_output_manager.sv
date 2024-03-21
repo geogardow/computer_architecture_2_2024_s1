@@ -31,7 +31,7 @@ module mem_output_manager(
 			end
 		end
 		else begin
-				temp_output_data[4'd16] <= input_data;
+				temp_output_data[4'd15] <= input_data;
 		end
 	end
 	

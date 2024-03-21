@@ -2,7 +2,7 @@
 								input logic [4:0] opcode,
 								input logic rst,
 								output logic Brinco, Equal, GreaterEqual, LessEqual, MemToReg, MemRead, MemWrite, 
-								output logic FlagRDSrc, AluData, EnableRead, EnableWrite, WriteDataSrc, 
+								output logic FlagRDSrc, AluData, EnableRead, EnableWrite, WriteDataSrc, operand_flag, 
 								output logic [2:0] ALUOpS,ALUOpV,
 								output logic ALUSrc, RegWriteV, RegWriteS,
 								output logic [1:0] ImmSrc, RegSrc1, RegDest,
@@ -32,6 +32,7 @@
 				ALUSrc = 0;
 				ALUOpS = 0;
 				ALUOpV = 0;
+				operand_flag = 0;
 
 				ImmSrc = 0;
 				RegSrc2 = 0;
@@ -61,10 +62,11 @@
 
 				ALUSrc = 0;
 				ALUOpV = 1'bx;
+				operand_flag = 0;
                 
 				ImmSrc = 2'bxx;
 				RegSrc1 = 2'b01;
-				RegSrc2 = 1
+				RegSrc2 = 1;
 				RegDest = 2'b01;
 				
 				// suma
@@ -115,6 +117,8 @@
 						ALUSrc = 0;
 						ALUOpS = 0;
 						ALUOpV = 0;
+						operand_flag = 0;
+
 
 						ImmSrc = 0;
 						RegSrc2 = 0;
@@ -143,6 +147,7 @@
 						ALUSrc = 0;
 						ALUOpS = 0;
 						ALUOpV = 0;
+						operand_flag = 0;
 
 						ImmSrc = 0;
 						RegSrc2 = 0;
@@ -171,6 +176,7 @@
 						ALUSrc = 0;
 						ALUOpS = 0;
 						ALUOpV = 0;
+						operand_flag = 0;
 
 						ImmSrc = 0;
 						RegSrc2 = 0;
@@ -200,6 +206,7 @@
 
 				ALUSrc = 1;
 				ALUOpV = 1'bx;
+				operand_flag = 0;
                 
 				ImmSrc = 2'b11;
 				RegSrc1 = 2'b10;
@@ -266,6 +273,7 @@
 				ALUSrc = 0;
 				ALUOpS = 3'b001;
 				ALUOpV = 3'bxxx;
+				operand_flag = 0;
 
 				ImmSrc = 2'b10;
 				RegSrc2 = 0;
@@ -319,6 +327,7 @@
 				AluData = 1'bx;
 
 				ALUSrc = 1;
+				operand_flag = 0;
                 
 				ImmSrc = 2'b11;
 				RegSrc1 = 2'b00;
@@ -420,9 +429,9 @@
 				MemToReg = 0;
 				FlagRDSrc = 0;
 
-
 				ALUSrc = 1'bx;
 				ALUOpS = 3'bxxx;
+				operand_flag = 0;
                 
 				ImmSrc = 2'bxx;
 				RegSrc1 = 2'b01;
@@ -463,6 +472,7 @@
 
 				ALUSrc = 1'b0;
 				ALUOpS = 3'bxxx;
+				operand_flag = 1;
                 
 				ImmSrc = 2'bxx;
 				RegSrc1 = 2'b01;
@@ -503,6 +513,7 @@
 
 				ALUSrc = 1'b1;
 				ALUOpS = 3'bxxx;
+				operand_flag = 1;
                 
 				ImmSrc = 2'b11;
 				RegSrc1 = 2'b10;
