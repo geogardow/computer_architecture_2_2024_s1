@@ -1,5 +1,5 @@
 module datapath (
-                input clkFPGA, rst, stepping_flag);
+                input clkFPGA, rst);
 
 
     /////////////////////////////////////////////////////////////////
@@ -9,7 +9,7 @@ module datapath (
 
     // ID
 	logic [31:0] pc_id;
-	logic [27:0] instr_inm_id;
+	logic [27:0] instr_27_0_id;
   logic [18:0] extend_id, RD1S_id, RD2S_id, RD3S_id;
   logic [15:0][15:0] RD1V_id, RD2V_id, RD3V_id;
 	logic [4:0] instr_opcode_id, instr_21_17_id, instr_19_15_id, instr_20_16_id, instr_27_23_id, instr_22_18_id, instr_14_10_id, 
@@ -52,8 +52,8 @@ module datapath (
     /////////////////////////////////////////////////////////////////
 
     // CLKS
-	//new_clk #(.frec(200)) frec_mem (clk_mem, clkFPGA);
-	//new_clk #(.frec(2825)) frec_clk (clk, clkFPGA);
+	new_clk #(.frec(200)) frec_mem (clk_mem, clkFPGA);
+	new_clk #(.frec(2825)) frec_clk (clk, clkFPGA);
 
     // IF
     mux_2to1 #(.N(32)) mux_inst (
@@ -74,10 +74,10 @@ module datapath (
     .B(32'd1),
     .C(pc_plus1_if));
 
-	//rom2 rom_inst(
-    //.address(pc_out_if[9:0]), 
-    //.clock(clk), 
-    //.q(instruction_if));
+	rom rom_inst(
+    .address(pc_out_if[7:0]), 
+    .clock(clk), 
+    .q(instruction_if));
 
 	// IF/ID Segmentation
     segment_if_id if_id_inst (
@@ -166,7 +166,7 @@ module datapath (
     .RS2(RS2_id),
     .RS3(RS3_id),
     .RD(RD_result_wb),
-    .WD(WD_wb),
+    .WD({WD_wb[15], WD_wb[14][2:0]}),
     .WES(RegWriteS_wb),
     .clk(clk),
     .rst(rst),
@@ -191,6 +191,8 @@ module datapath (
 
   // ID/EX Segmentation
 segment_id_ex id_ex_inst (
+    .clk(clk),
+    .rst(rst),
     .pc_id(pc_id),
     .extend_id(extend_id),
     .RD1S_id(RD1S_id),
@@ -252,14 +254,14 @@ segment_id_ex id_ex_inst (
   mux_2to1 #(.N(19)) mux_2to1_ex (RD2S_ex, extend_ex, ALUSrc_ex, ALUOperand2S_ex);
   mux_2to1 #(.N(19)) mux_2to1_ex_vec (RD2S_ex, extend_ex, ALUSrc_ex, ALUOperand2V_ex);
 
-	adder #(.element(32)) adder_ex (pc_ex, extend_ex, pc_plus_imm_ex);
+	adder #(.element(19)) adder_ex (pc_ex, extend_ex, pc_plus_imm_ex);
 
-	alu #(.WIDTH(19)) alu_ex (RD1S_ex, ALUOperand2S_ex, ALUOpS_ex, ALUResultS_ex, flagZ_ex, flagN_ex);
+	alu_scalar #(.WIDTH(19)) alu_ex (RD1S_ex, ALUOperand2S_ex, ALUOpS_ex, ALUResultS_ex, flagZ_ex, flagN_ex);
   
   alu_vec #(.element(16)) alu_instance (
 	.vectorA(RD1V_ex),
 	.vectorB(RD2V_ex),
-	.scalar(ALUOperand2V_ex),
+	.scalar(ALUOperand2V_ex[15:0]),
 	.sel(ALUOpV_ex),
 	.operand_flag(operand_flag_ex),
 	.result(ALUResultV_ex)
@@ -305,7 +307,7 @@ segment_id_ex id_ex_inst (
 
     // MEM
     mem_addr_manager mem_addr_manager_inst (
-      .clk(clk),
+      .clk(clk_mem),
       .rst(rst),
       .read_enable(EnableRead_mem),
       .write_enable(EnableWrite_mem),
@@ -318,10 +320,8 @@ segment_id_ex id_ex_inst (
       .b(address_mem)
     );
 
-    // TODO: data memory
-
     mem_input_manager mem_input_manager_inst (
-        .clk(clk),
+        .clk(clk_mem),
         .rst(rst),
         .enable_write(EnableWrite_mem),
         .input_data(RD3V_mem),
@@ -329,11 +329,17 @@ segment_id_ex id_ex_inst (
     );
 
     mux_2to1 #(.N(16)) mux_WD_mem (
-        .A(RD3S_mem),
+        .A(RD3S_mem[16:0]),
         .B(vector_element_to_write_mem),
         .sel(WriteDataSrc_mem),
         .C(WD_mem)
     );
+
+    ram mem(.address(address_mem), 
+    .clock(clk_mem), 
+    .data(WD_mem), 
+    .wren(MemWrite_mem), 
+    .q(memory_output_mem));
 
     extend_vector_size extend_vector_size_inst (
     .input_data(address_alu_mem),
@@ -348,7 +354,7 @@ segment_id_ex id_ex_inst (
     );
     
     mem_output_manager instance_name (
-    .clk(clk),
+    .clk(clk_mem),
     .rst(rst),
     .enable_read(EnableRead_mem),
     .RD_in(RS3_mem),
@@ -365,8 +371,8 @@ segment_id_ex id_ex_inst (
     .RegWriteS_mem(RegWriteS_mem),
     .RegWriteV_mem(RegWriteV_mem),
     .FlagRDSrc_mem(FlagRDSrc_mem),
-    .RD3_mem(RD3_mem),
-    .RD3_saved_mem(RD3_saved_mem),
+    .RD3_mem(RS3_mem),
+    .RD3_saved_mem(RS3_saved_mem),
     .data_vec_mem(data_vec_mem),
     .alu_data_result_mem(alu_data_result_mem),
     .MemToReg_wb(MemToReg_wb),
@@ -385,22 +391,16 @@ segment_id_ex id_ex_inst (
     .A(alu_data_result_wb),
     .B(data_vec_wb),
     .sel(MemToReg_wb),
-    .C(alu_data_result_mem)
+    .C(WD_wb)
     );
 
 
-  mux_2to1 #(.N(256)) mux_RD_wb (
+  mux_2to1 #(.N(5)) mux_RD_wb (
   .A(RD3_saved_wb),
   .B(RD3_wb),
   .sel(FlagRDSrc_wb),
   .C(RD_result_wb)
   );
-
-
-
-
-
-
 
 
 endmodule

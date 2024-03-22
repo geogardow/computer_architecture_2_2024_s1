@@ -1,4 +1,4 @@
-module alu #(int WIDTH=16)( input [WIDTH-1:0] A, B,
+module alu_scalar #(int WIDTH=16)( input [WIDTH-1:0] A, B,
 				input [2:0] sel,
 				output [WIDTH-1:0] C,
 				output flagZ,
@@ -42,7 +42,7 @@ module alu #(int WIDTH=16)( input [WIDTH-1:0] A, B,
 	assign C = alu_out_temp;
 	
 	// banderas
-	assign flagZ = (alu_out_temp == 31'd0);	// bandera de cero (Z)
+	assign flagZ = (alu_out_temp == 16'd0);	// bandera de cero (Z)
 	assign flagN = (A < B);	// bandera de negativo (N)
 	
 endmodule 

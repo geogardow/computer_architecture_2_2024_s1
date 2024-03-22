@@ -5,7 +5,7 @@ module extend_vector_size(
 
     always_comb begin
         // 256-bit immediate
-        output_data = { {237{1'b0}}, input_data };
+        output_data = { input_data, {237{1'b0}} };
     end
 
 endmodule
