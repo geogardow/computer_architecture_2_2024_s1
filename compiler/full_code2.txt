@@ -1,0 +1,12 @@
+_start:
+    suma r15,r15,r15
+    brinco pruebasVectores
+pruebasVectores:
+    sumvec RV1,RV2,RV3
+    cargarv RV1,0(RV2)
+    multec RV4,RV5,RV6
+    cadvec RV7,RV8,8
+    cldvec RV9,RV10,8
+    clivec RV11,RV12,8
+    univecita RV13,RV14,255
+    unioncita r1,r2,255

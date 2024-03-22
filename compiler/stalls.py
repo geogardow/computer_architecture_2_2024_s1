@@ -22,7 +22,8 @@ typeDictionary = {
 
     "sumvec": "11",
     "multec": "11",
-    "univec": "11",
+    "sumitavecsc": "11",
+    "multivecsc" : "11",
 
     "cadvec": "11",
     "cldvec": "11",
@@ -53,11 +54,14 @@ opcodeDictionary = {
     "brinco": "00",
 
     "sumvec": "00000",
-    "multec": "00010",
-    "cadvec": "11001",
-    "cldvec": "11010",
-    "clivec": "11011",
-    "univecita": "11100"  
+    "multec": "00001",
+    "sumitavecsc": "01010",
+    "multivecsc" :"01011",
+
+    "cadvec": "1000",
+    "cldvec": "1001",
+    "clivec": "1010",
+    "univecita": "1100"  
 }
 
 

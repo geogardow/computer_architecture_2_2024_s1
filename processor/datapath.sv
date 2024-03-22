@@ -105,7 +105,7 @@ module datapath (
     control_unit control_unit_inst (
     .instruction_type(instr_type_id),
     .opcode(instr_opcode_id),
-    .rst(rst_id),
+    .rst(rst),
     .Brinco(Brinco_id),
     .Equal(Equal_id),
     .GreaterEqual(GEQ_id),
@@ -396,8 +396,8 @@ segment_id_ex id_ex_inst (
 
 
   mux_2to1 #(.N(5)) mux_RD_wb (
-  .A(RD3_saved_wb),
-  .B(RD3_wb),
+  .A(RD3_wb),
+  .B(RD3_saved_wb),
   .sel(FlagRDSrc_wb),
   .C(RD_result_wb)
   );

@@ -129,7 +129,7 @@ module scalar_rf #(int WIDTH=16) (
 	always_ff @(posedge clk or posedge rst) begin
 		if(rst) begin
 			R0  = {(WIDTH){1'b0}};
-			R1  = {(WIDTH){1'b0}};
+			R1  = 19'd2;
 			R2  = {(WIDTH){1'b0}};
 			R3  = {(WIDTH){1'b0}};
 			R4  = {(WIDTH){1'b0}};

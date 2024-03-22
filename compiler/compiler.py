@@ -74,7 +74,7 @@ def remove_blank_lines_from_file(file_path):
 
 
 if __name__ == '__main__':
-    FOLDER_PATH = ""
+    FOLDER_PATH = "./compiler/"
     SCRIPT_FILE_PATH = FOLDER_PATH + 'full_code.txt'
 
     remove_blank_lines_from_file(SCRIPT_FILE_PATH)
