@@ -68,7 +68,7 @@ opcodeDictionary = {
 # Insert stall after a label 
 def stallInsertionAfterLabel(instructionElementsList):
 
-    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'R15', 'R15', 'R15', "********************"]
     
     result = instructionElementsList.copy()
 
@@ -86,8 +86,8 @@ def stallInsertionAfterLabel(instructionElementsList):
 # case Vector: cargar vector
 def stallInsertionReadVector(instructionElementsList, typeDictionary):
 
-    stallRead = ['stallread', 'r15', 'r15', 'r15', "********************"]
-    stallWrite = ['stallwrite', 'r15', 'r15', 'r15', "********************"]
+    stallRead = ['stallread', 'R15', 'R15', 'R15', "********************"]
+    stallWrite = ['stallwrite', 'R15', 'R15', 'R15', "********************"]
 
     result = instructionElementsList.copy()
 
@@ -119,7 +119,7 @@ def stallInsertionReadVector(instructionElementsList, typeDictionary):
 # case 0: control risks
 def stallInsertionCase0(instructionElementsList, typeDictionary):
 
-    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'R15', 'R15', 'R15', "********************"]
 
     result = instructionElementsList.copy()
 
@@ -154,7 +154,7 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
     # this insertion avoids index out of range error
     result.append("*")
 
-    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'R15', 'R15', 'R15', "********************"]
 
     i = 0
 
@@ -173,7 +173,7 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
             
             currentDestiny = j[1]
 
-            if(currentDestiny != "r15"):
+            if(currentDestiny != "R15"):
  
                 # instruction
                 if(len(result[i + 1]) > 1):
@@ -338,7 +338,7 @@ def stallInsertionCase2(instructionElementsList, typeDictionary, opcodeDictionar
     # this insertion avoids index out of range error
     result.append("*")
 
-    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'R15', 'R15', 'R15', "********************"]
 
     i = 0
 
@@ -357,7 +357,7 @@ def stallInsertionCase2(instructionElementsList, typeDictionary, opcodeDictionar
 
             currentDestiny = j[1]
 
-            if(currentDestiny != "r15"):
+            if(currentDestiny != "R15"):
 
                 # instruction
                 if(len(result[i + 2]) > 1):
@@ -513,7 +513,7 @@ def stallInsertionCase3(instructionElementsList, typeDictionary, opcodeDictionar
     # this insertion avoids index out of range error
     result.append("*")
 
-    stall = ['stall', 'r15', 'r15', 'r15', "********************"]
+    stall = ['stall', 'R15', 'R15', 'R15', "********************"]
 
 
     i = 0
@@ -531,7 +531,7 @@ def stallInsertionCase3(instructionElementsList, typeDictionary, opcodeDictionar
 
             currentDestiny = j[1]
 
-            if(currentDestiny != "r15"):
+            if(currentDestiny != "R15"):
 
                 # instruction
                 if(len(result[i + 3]) > 1):

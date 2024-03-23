@@ -523,22 +523,22 @@
 				// cad
 				if (opcode[4:1] == 4'b1000)
 					begin
-						ALUOpS = 3'b011;
+						ALUOpV = 3'b011;
 					end
 				// cld
 				if (opcode[4:1] == 4'b1001)
 					begin
-						ALUOpS = 3'b100;
+						ALUOpV = 3'b100;
 					end
 				// cli
 				if (opcode[4:1] == 4'b1010)
 					begin
-						ALUOpS = 3'b101;
+						ALUOpV = 3'b101;
 					end
 				// union
 				if (opcode[4:1] == 4'b1100)
 					begin
-						ALUOpS = 3'b110;
+						ALUOpV = 3'b110;
 					end    
 			end
 	end
