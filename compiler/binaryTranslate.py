@@ -163,7 +163,7 @@ def binaryInstructions(filename, instructionElementsList, labelDictionary):
     pointerLine = 0
 
     #file to write data
-    FOLDER_PATH = ""
+    FOLDER_PATH = "./compiler/"
     data_path = FOLDER_PATH + "data.txt"
 
     for elements in instructionElementsList:
