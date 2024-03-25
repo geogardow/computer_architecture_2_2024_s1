@@ -40,11 +40,11 @@ opcodeDictionary = {
 
     "suma": "00000",
     "mult": "00010",
-    "sumita": "10101",
-    "cad": "11001",
-    "cld": "11010",
-    "cli": "11011",
-    "unioncita": "11100",
+    "sumita": "1000",
+    "cad": "1100",
+    "cld": "1101",
+    "cli": "1110",
+    "unioncita": "1111",
 
     "stall": "00101",
     "stallread": "00110",
