@@ -22,6 +22,8 @@ typeDictionary = {
 
     "igual": "10",
     "brinco": "10",
+    "leq": "10",
+    "geq": "10",
 
     "sumvec": "11",
     "multec": "11",
@@ -57,6 +59,8 @@ opcodeDictionary = {
     "stallwrite": "00111",
 
     "igual": "10",
+    "geq": "11",
+    "leq": "01",
     "brinco": "00",
 
     "sumvec": "00000",
