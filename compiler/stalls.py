@@ -6,8 +6,11 @@ typeDictionary = {
     "guardarv": "00",
 
     "suma": "01",
-    "mult": "01",   
+    "mult": "01", 
+    "union": "01", 
+
     "sumita": "01",
+    "multi": "01",
     "cad": "01",
     "cld": "01",
     "cli": "01",
@@ -40,7 +43,10 @@ opcodeDictionary = {
 
     "suma": "00000",
     "mult": "00010",
+    "union": "00100",
+
     "sumita": "1000",
+    "multi": "1010",
     "cad": "1100",
     "cld": "1101",
     "cli": "1110",
