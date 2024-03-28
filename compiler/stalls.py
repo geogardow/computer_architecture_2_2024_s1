@@ -269,6 +269,15 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
                     result.insert(i + 2, stall)
                     result.insert(i + 3, stall)     
 
+                # data instruction vectorial
+                elif (currentInstructionType == "11"):
+                    nextSource = nextinstructionElementsList[1]
+                    nextSource2 = nextinstructionElementsList[2]
+                    nextDestiny = nextinstructionElementsList[3]
+                    if (currentDestiny == nextSource or currentDestiny == nextDestiny or currentDestiny == nextSource2):
+                        result.insert(i + 1, stall)
+                        result.insert(i + 2, stall)
+                        result.insert(i + 3, stall) 
                 # data instruction
                 else:
                     
@@ -356,6 +365,7 @@ def stallInsertionCase2(instructionElementsList, typeDictionary, opcodeDictionar
     for j in result:
 
         if(len(j) > 1):
+            print(result)
 
             if(result[i + 2] == "*"):
                 break
@@ -448,6 +458,14 @@ def stallInsertionCase2(instructionElementsList, typeDictionary, opcodeDictionar
                     result.insert(i + 1, stall)
                     result.insert(i + 2, stall)  
 
+                # data instruction vectorial
+                elif (currentInstructionType == "11"):
+                    nextSource = nextinstructionElementsList[1]
+                    nextSource2 = nextinstructionElementsList[2]
+                    nextDestiny = nextinstructionElementsList[3]
+                    if (currentDestiny == nextSource or currentDestiny == nextDestiny or currentDestiny == nextSource2):
+                        result.insert(i + 1, stall)
+                        result.insert(i + 2, stall)
                 # data instruction
                 elif(nextInstructionType == "01"):
                     
@@ -616,6 +634,13 @@ def stallInsertionCase3(instructionElementsList, typeDictionary, opcodeDictionar
                 elif (currentInstruction == "guardar" and nextInstruction == "cargar"):
                     result.insert(i + 1, stall)
 
+                # data instruction vectorial
+                elif (currentInstructionType == "11"):
+                    nextSource = nextinstructionElementsList[1]
+                    nextSource2 = nextinstructionElementsList[2]
+                    nextDestiny = nextinstructionElementsList[3]
+                    if (currentDestiny == nextSource or currentDestiny == nextDestiny or currentDestiny == nextSource2):
+                        result.insert(i + 1, stall)
                 # data instruction
                 else:
                     

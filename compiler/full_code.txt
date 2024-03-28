@@ -1,3 +1,6 @@
 sumvec RV1,RV2,RV3
-sumitavecsc RV4,RV5,R1
+guardarv RV1,0(R2)
+sumitavecsc RV4,RV5,R1 
 cadvec RV7,RV8,8
+sumvec RV6,RV7,RV5
+sumitavecsc RV6,RV5,R1

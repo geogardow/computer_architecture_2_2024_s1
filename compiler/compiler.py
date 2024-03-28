@@ -4,6 +4,8 @@ from stalls import riskControlUnit
 from labelsDictionary import getLabelDictionary
 from binaryTranslate import binaryInstructions
 from mifConverter import convert_to_mif
+import re
+import argparse
 
 def get_instruction_elements_list(filename):
     """Get the instruction elements list from the code file."""
@@ -72,12 +74,28 @@ def remove_blank_lines_from_file(file_path):
     with open(file_path, 'w', encoding="utf-8") as file:
         file.writelines(non_blank_lines)
 
+def remove_comments_from_file(file_path):
+    """Remove comments from a file."""
+    with open(file_path, 'r', encoding="utf-8") as file:
+        lines = file.readlines()
+
+    # Usamos una expresión regular para encontrar y eliminar comentarios
+    non_comments_lines = [re.sub(r'//.*', '', line) for line in lines]
+
+    with open(file_path, 'w', encoding="utf-8") as file:
+        file.writelines(non_comments_lines)
+
 
 if __name__ == '__main__':
     FOLDER_PATH = "./compiler/"
-    SCRIPT_FILE_PATH = FOLDER_PATH + 'full_code.txt'
+    parser = argparse.ArgumentParser(description='Compiler for our ISA.')
+    parser.add_argument('file', nargs='?', type=str, default='full_code.txt', help='File to compile.')
+
+    args = parser.parse_args()
+    SCRIPT_FILE_PATH = FOLDER_PATH + args.file
 
     remove_blank_lines_from_file(SCRIPT_FILE_PATH)
+    remove_comments_from_file(SCRIPT_FILE_PATH)
 
 
     instruction_elements_list = get_instruction_elements_list(SCRIPT_FILE_PATH)
