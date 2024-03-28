@@ -278,6 +278,12 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
                         result.insert(i + 1, stall)
                         result.insert(i + 2, stall)
                         result.insert(i + 3, stall) 
+                elif (currentInstructionType == "01" and nextInstructionType=="11" and (nextInstruction=="sumitavecsc" or nextInstruction=="multivecsc")):
+                    nextSource2 = nextinstructionElementsList[3]
+                    if (currentDestiny == nextSource2):
+                        result.insert(i + 1, stall)
+                        result.insert(i + 2, stall)
+                        result.insert(i + 3, stall)
                 # data instruction
                 else:
                     
@@ -466,6 +472,11 @@ def stallInsertionCase2(instructionElementsList, typeDictionary, opcodeDictionar
                     if (currentDestiny == nextSource or currentDestiny == nextDestiny or currentDestiny == nextSource2):
                         result.insert(i + 1, stall)
                         result.insert(i + 2, stall)
+                elif (currentInstructionType == "01" and nextInstructionType=="11" and (nextInstruction=="sumitavecsc" or nextInstruction=="multivecsc")):
+                    nextSource2 = nextinstructionElementsList[3]
+                    if (currentDestiny == nextSource2):
+                        result.insert(i + 1, stall)
+                        result.insert(i + 2, stall)
                 # data instruction
                 elif(nextInstructionType == "01"):
                     
@@ -642,6 +653,10 @@ def stallInsertionCase3(instructionElementsList, typeDictionary, opcodeDictionar
                     if (currentDestiny == nextSource or currentDestiny == nextDestiny or currentDestiny == nextSource2):
                         result.insert(i + 1, stall)
                 # data instruction
+                elif (currentInstructionType == "01" and nextInstructionType=="11" and (nextInstruction=="sumitavecsc" or nextInstruction=="multivecsc")):
+                    nextSource2 = nextinstructionElementsList[3]
+                    if (currentDestiny == nextSource2):
+                        result.insert(i + 1, stall)
                 else:
                     
                     # control instruction

@@ -3,4 +3,5 @@ guardarv RV1,0(R2)
 sumitavecsc RV4,RV5,R1 
 cadvec RV7,RV8,8
 sumvec RV6,RV7,RV5
+suma R1,R2,R3
 sumitavecsc RV6,RV5,R1
