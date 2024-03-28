@@ -10,37 +10,12 @@ cicloFiltro:
     cargarv RV1,0(r1)
     cargar r4,0(r0)
 
-    brincoEnlazado setMultiplicacion
-
-    brincoEnlazado multiplicacion
-
-    sumavec RV10,RV10,RV2 // agrega el resultado del proceso actual
-
-    sumita r3,r3,1
-    sumita r7,r7,16 // cambiar si son menos columnas
-    igual r3,r6, almacenarResultado 
-
-    sumita r0,r0,1
-    sumita r1,r1,1
-
-    brinco cicloFiltro
-
-
-
-// PARTE Entera con AND de 0111111100000000 #32515
-// PARTE Decimal con AND de 0000 0000 1111 1111 #255
-setMultiplicacion:
     univecita RV2,RV1,255
     univecita RV1,RV1,32515
 
     unioncita r5,r4,255
     univecita r4,r4,32515
 
-    ret
-
-
-// Qa.b x Qc.d
-multiplicacion:
     // RV1 a
     // RV2 b
     // RV3 c
@@ -64,9 +39,16 @@ multiplicacion:
     cadvec RV4,RV4,8
     sumavec RV2,RV2,RV4
 
-    ret
+    sumavec RV10,RV10,RV2 // agrega el resultado del proceso actual
 
+    sumita r3,r3,1
+    sumita r7,r7,16 // cambiar si son menos columnas
+    igual r3,r6, almacenarResultado 
 
+    sumita r0,r0,1
+    sumita r1,r1,1
+
+    brinco cicloFiltro
 
 almacenarResultado:
     guardarv RV10, 0(r2)
@@ -83,62 +65,3 @@ almacenarResultado:
 
 _end:
 	sumita r0,r15,1
-
-// codigo de referenica
-    // n-k linealmente 16*16 sumas  (16*N)
-    // 16 sumas 
-    por cada 16 muestras 32 loads  // metodo vertical
-    por cada 16 muestras 16 sumas // metodo vertical
-    por cada 16 muestras 1 stores // metodo vertical
-
-    por cada 1 muestra 2 load  // metodo vertical
-    por cada 1 muestras 1 suma // metodo vertical
-    por cada 1 muestras 1/16 store // metodo vertical
-
-    por cada 1 muestras 1 load (el otro se mantine)  // metodo horizontal
-    por cada 1 muestras 16 sumas // metodo horizontal
-    por cada 1 muestras 1 stores // metodo horizontal
-    // y(0) = b(0)x(0)+b(1)x(-1)+b(2)x(-2)+b(3)x(-3)...
-    // y(1) = b(0)x(1)+b(1)x( 0)+b(2)x(-1)+b(3)x(-2)...
-    // y(2) = b(0)x(2)+b(1)x( 1)+b(2)x( 0)+b(3)x(-1)...
-    // y(3) = b(0)x(3)+b(1)x( 2)+b(2)x( 1)+b(3)x( 0)...
-    // y(4) = b(0)x(4)+b(1)x( 3)+b(2)x( 2)+b(3)x( 1)...
-    // y(5) = b(0)x(5)+b(1)x( 4)+b(2)x( 3)+b(3)x( 2)...
-    // y(15) = b(0)x(15)+b(1)x(14)...+b(15)x(0)
-    //b(0)x, b(0) es una constante
-    //b(1)x(n-1)
-    //b(2)x(n-2)
-    //b(15)x(n-15)
-    // se suma b(0)x y resultado siguiente
-
-    multivec RV1, RV1, b
-
-
-    multivec RV3,RV1,RV2 // obtiene b(n)*x(n), como multiplicacion (no producto punto) 
-    sumitavec RV4,RV3,0 // copia del resultado
-    sumitavec RV5,RV3,0 // copia del resultado
-    brinco productoPunto
-
-productoPunto:
-    cadvec RV4, RV4, 1 
-    sumavec RV5, RV3, RV4
-
-    sumita r4, r4, 1 // contador
-    sumita r5, r15, 15
-    leq r4, r15, productoPunto
-
-    brinco storeValue
-
-storeValue:
-    suma r3,r15,r3 // se guardan 16 elementos de y
-    guardarv RV5,0(r3)
-
-    // se incrementa la cantidad de elementos del arreglo
-    sumita r1,r15,16
-    sumita r1,r15,16
-    sumita r3,r15,16
-
-    sumita r5,r15, // llegar a la ultima posicion de x
-    leq r1,r5,cicloFiltro
-
-    brinco _end
