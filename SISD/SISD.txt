@@ -10,43 +10,12 @@ cicloFiltro:
     cargar r2,0(r0)
     cargar r4,0(r1)
 
-    brincoEnlazado setMultiplicacion
-
-    brincoEnlazado multiplicacion
-
-    suma r10,r15,r6 // copia el resultado de la multiplicacion a r10
-
-    brinco sumandoElementos
-
-sumandoElementos:
-    cargar r2,1(r0)
-    cargar r4,1(r1)
-
-    brincoEnlazado setMultiplicacion
-
-    brincoEnlazado multiplicacion
-
-    suma r10,r10,r6 
-
-    suma r9,r9,2
-    suma r11,r15,16
-    igual r9,r11,almacenarResultado
-
-    brinco cicloFiltro
-
-// PARTE Entera con AND de 0111111100000000 #32515
-// PARTE Decimal con AND de 0000 0000 1111 1111 #255
-setMultiplicacion:
     unioncita r3,r2,255
     unioncita r2,r2,32515
 
     unioncita r5,r4,255
     unioncita r4,r4,32515
 
-    ret
-
-// Qa.b x Qc.d
-multiplicacion:
     // r2 a
     // r3 b
     // r4 c
@@ -75,7 +44,54 @@ multiplicacion:
     suma r7,r15,r15
     suma r8,r15,r15
 
-    ret
+    suma r10,r15,r6 // copia el resultado de la multiplicacion a r10
+
+    brinco sumandoElementos
+
+sumandoElementos:
+    cargar r2,1(r0)
+    cargar r4,1(r1)
+
+    unioncita r3,r2,255
+    unioncita r2,r2,32515
+
+    unioncita r5,r4,255
+    unioncita r4,r4,32515
+// r2 a
+    // r3 b
+    // r4 c
+    // r5 d
+
+    // high = a x c
+    mult r6,r2,r4
+
+    //mid
+    // a × d + b × c
+    mult r7,r2,r5
+    mult r8,r3,r4
+    suma r7,r7,r8
+
+    // low
+    // b x d
+    mult r8,r3,r5
+
+    //result = high << 8 + mid + low >> 8
+    cli r6,r6,8
+    cad r8,r8,8
+    suma r6,r6,r7
+    suma r6,r6,r8
+
+    // limpiar registros
+    suma r7,r15,r15
+    suma r8,r15,r15
+
+    suma r10,r10,r6 
+
+    suma r9,r9,2
+    suma r11,r15,16
+    igual r9,r11,almacenarResultado
+
+    brinco cicloFiltro
 
 
 almacenarResultado:
