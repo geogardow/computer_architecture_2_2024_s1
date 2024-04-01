@@ -119,10 +119,6 @@
 						ALUOpV = 0;
 						operand_flag = 0;
 
-
-						ImmSrc = 0;
-						RegSrc2 = 0;
-						RegSrc1 = 0;
 					end
 				// Stall read
 				else if (opcode[4:0] == 5'b00110)
@@ -149,9 +145,6 @@
 						ALUOpV = 0;
 						operand_flag = 0;
 
-						ImmSrc = 0;
-						RegSrc2 = 0;
-						RegSrc1 = 0;
 					end
 				// Stall write
 				else if (opcode[4:0] == 5'b00111)
@@ -166,7 +159,7 @@
 						MemWrite = 1;
 						EnableRead = 0;
 						EnableWrite = 1;
-						WriteDataSrc = 0;
+						WriteDataSrc = 1;
 
 						RegWriteV = 0;
 						RegWriteS = 0; 
@@ -178,9 +171,6 @@
 						ALUOpV = 0;
 						operand_flag = 0;
 
-						ImmSrc = 0;
-						RegSrc2 = 0;
-						RegSrc1 = 0;
 					end
 			end
 		
@@ -387,14 +377,14 @@
 						MemToReg = 1'b1;
 						FlagRDSrc = 1;
 
-                        ALUOpS = 3'bxxx;
+                        ALUOpS = 3'b000;
                         ALUOpV = 3'b000;
 					end
                 // guardar vector instruction
 				if (opcode[4:3] == 2'b11)
 					begin
 						MemRead = 0;
-						MemWrite = 1;
+						MemWrite = 0;
                 		EnableRead = 0;
                         EnableWrite = 1;
                         WriteDataSrc = 1;
@@ -404,7 +394,7 @@
 						MemToReg = 1'bx;
 						FlagRDSrc = 0;
 
-                        ALUOpS = 3'bxxx;
+                        ALUOpS = 3'b000;
                         ALUOpV = 3'b000;
 					end
 					

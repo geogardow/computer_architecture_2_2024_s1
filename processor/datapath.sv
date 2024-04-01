@@ -41,7 +41,7 @@ module datapath (
         EnableWrite_mem, FlagRDSrc_mem;
 
   // WB
-  logic [15:0][15:0] WD_wb;
+  logic [255:0] WD_wb;
   logic [4:0] RD_result_wb;
   logic RegWriteS_wb, RegWriteV_wb;
 	logic MemToReg_wb, FlagRDSrc_wb;
@@ -166,7 +166,7 @@ module datapath (
     .RS2(RS2_id),
     .RS3(RS3_id),
     .RD(RD_result_wb),
-    .WD({WD_wb[15], WD_wb[14][2:0]}),
+    .WD(WD_wb), 
     .WES(RegWriteS_wb),
     .clk(clk),
     .rst(rst),
@@ -307,7 +307,7 @@ segment_id_ex id_ex_inst (
 
     // MEM
     mem_addr_manager mem_addr_manager_inst (
-      .clk(clk_mem),
+      .clk(clk),
       .rst(rst),
       .read_enable(EnableRead_mem),
       .write_enable(EnableWrite_mem),
@@ -321,7 +321,7 @@ segment_id_ex id_ex_inst (
     );
 
     mem_input_manager mem_input_manager_inst (
-        .clk(clk_mem),
+        .clk(clk),
         .rst(rst),
         .enable_write(EnableWrite_mem),
         .input_data(RD3V_mem),
@@ -354,7 +354,7 @@ segment_id_ex id_ex_inst (
     );
     
     mem_output_manager instance_name (
-    .clk(clk_mem),
+    .clk(clk),
     .rst(rst),
     .enable_read(EnableRead_mem),
     .RD_in(RS3_mem),

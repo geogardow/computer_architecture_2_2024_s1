@@ -3,7 +3,7 @@ module scalar_rf #(int WIDTH=16) (
 	input [4:0] RS2, 
 	input [4:0] RS3,
 	input [4:0] RD,
-	input [WIDTH-1:0] WD,
+	input [255:0] WD,
 	input WES,
 	input clk,
 	input rst,
@@ -21,13 +21,13 @@ module scalar_rf #(int WIDTH=16) (
         5'd0: RD1_temp = R0;    // Register 0
         5'd1: RD1_temp = R1;    // Register 1
         5'd2: RD1_temp = R2;    // Register 2
-        5'd3: RD1_temp = R3;    // Register 3
-        5'd4: RD1_temp = R4;    // Register 4
+        5'd3: RD1_temp = R3;    // Register 3 
+        5'd4: RD1_temp = R4;    // Register 4 
         5'd5: RD1_temp = R5;    // Register 5
         5'd6: RD1_temp = R6;    // Register 6
         5'd7: RD1_temp = R7;    // Register 7
         5'd8: RD1_temp = R8;    // Register 8
-        5'd9: RD1_temp = R9;    // Register 9
+        5'd9: RD1_temp = R9;    // Register 9 
         5'd10: RD1_temp = R10;  // Register 10
         5'd11: RD1_temp = R11;  // Register 11
         5'd12: RD1_temp = R12;  // Register 12
@@ -129,14 +129,14 @@ module scalar_rf #(int WIDTH=16) (
 	always_ff @(posedge clk or posedge rst) begin
 		if(rst) begin
 			R0  = {(WIDTH){1'b0}};
-			R1  = 19'd2;
-			R2  = {(WIDTH){1'b0}};
-			R3  = {(WIDTH){1'b0}};
+			R1  = 19'd1;
+			R2  = 19'd2;
+			R3  = 19'd3;
 			R4  = {(WIDTH){1'b0}};
 			R5  = {(WIDTH){1'b0}};
 			R6  = {(WIDTH){1'b0}};
 			R7  = {(WIDTH){1'b0}};
-			R8  = {(WIDTH){1'b0}};
+			R8  = {(WIDTH){1'b0}}; 
 			R9  = {(WIDTH){1'b0}};
 			R10 = {(WIDTH){1'b0}};
 			R11 = {(WIDTH){1'b0}};
@@ -163,38 +163,38 @@ module scalar_rf #(int WIDTH=16) (
 			end
 		else if (WES) begin
 			case (RD)
-				5'd0: R0  = WD;
-				5'd1: R1  = WD;
-				5'd2: R2  = WD;
-				5'd3: R3  = WD;
-				5'd4: R4  = WD;
-				5'd5: R5  = WD;
-				5'd6: R6  = WD;
-				5'd7: R7  = WD;
-				5'd8: R8  = WD;
-				5'd9: R9  = WD;
-				5'd10: R10 = WD;
-				5'd11: R11 = WD;
-				5'd12: R12 = WD;
-				5'd13: R13 = WD;
-				5'd14: R14 = WD;
-				5'd15: R15 = WD;
-				5'd16: R16 = WD;
-				5'd17: R17 = WD;
-				5'd18: R18 = WD;
-				5'd19: R19 = WD;
-				5'd20: R20 = WD;
-				5'd21: R21 = WD;
-				5'd22: R22 = WD;
-				5'd23: R23 = WD;
-				5'd24: R24 = WD;
-				5'd25: R25 = WD;
-				5'd26: R26 = WD;
-				5'd27: R27 = WD;
-				5'd28: R28 = WD;
-				5'd29: R29 = WD;
-				5'd30: R30 = WD;
-				5'd31: R31 = WD;
+				5'd0: R0  = WD[255:237];
+				5'd1: R1  = WD[255:237];
+				5'd2: R2  = WD[255:237];
+				5'd3: R3  = WD[255:237];
+				5'd4: R4  = WD[255:237];
+				5'd5: R5  = WD[255:237];
+				5'd6: R6  = WD[255:237];
+				5'd7: R7  = WD[255:237];
+				5'd8: R8  = WD[255:237];
+				5'd9: R9  = WD[255:237];
+				5'd10: R10 = WD[255:237];
+				5'd11: R11 = WD[255:237];
+				5'd12: R12 = WD[255:237];
+				5'd13: R13 = WD[255:237];
+				5'd14: R14 = WD[255:237];
+				5'd15: R15 = WD[255:237];
+				5'd16: R16 = WD[255:237];
+				5'd17: R17 = WD[255:237];
+				5'd18: R18 = WD[255:237];
+				5'd19: R19 = WD[255:237];
+				5'd20: R20 = WD[255:237];
+				5'd21: R21 = WD[255:237];
+				5'd22: R22 = WD[255:237];
+				5'd23: R23 = WD[255:237];
+				5'd24: R24 = WD[255:237];
+				5'd25: R25 = WD[255:237];
+				5'd26: R26 = WD[255:237];
+				5'd27: R27 = WD[255:237];
+				5'd28: R28 = WD[255:237];
+				5'd29: R29 = WD[255:237];
+				5'd30: R30 = WD[255:237];
+				5'd31: R31 = WD[255:237];
 			endcase
 		end
 	end
