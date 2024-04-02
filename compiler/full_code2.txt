@@ -1,12 +1,64 @@
 _start:
+    sumita R0,R15,0 
+    sumita R1,R15,16 
+    sumita R9,R15,15 
+    sumita R12,R15,5
+    sumita R13,R15,5
+    brinco cicloFiltro
+cicloFiltro:
+    cargar R2,0(R0)
+    cargar R4,0(R1)
+    unioncita R3,R2,255
+    unioncita R2,R2,32515
+    unioncita R5,R4,255
+    unioncita R4,R4,32515
+    mult R6,R2,R4
+    mult R7,R2,R5
+    mult R8,R3,R4
+    suma R7,R7,R8
+    mult R8,R3,R5
+    cli R6,R6,8
+    cad R8,R8,8
+    suma R6,R6,R7
+    suma R6,R6,R8
+    suma R7,R15,R15
+    suma R8,R15,R15
+    suma R10,R15,R6 
+    brinco sumandoElementos
+sumandoElementos:
+    cargar R2,1(R0)
+    cargar R4,1(R1)
+    unioncita R3,R2,255
+    unioncita R2,R2,32515
+    unioncita R5,R4,255
+    unioncita R4,R4,32515
+    mult R6,R2,R4
+    mult R7,R2,R5
+    mult R8,R3,R4
+    suma R7,R7,R8
+    mult R8,R3,R5
+    cli R6,R6,8
+    cad R8,R8,8
+    suma R6,R6,R7
+    suma R6,R6,R8
+    suma R7,R15,R15
+    suma R8,R15,R15
+    suma R10,R10,R6 
+    sumita R9,R9,2
+    sumita R11,R15,16
+    igual R9,R11,almacenarResultado
+    brinco cicloFiltro
+almacenarResultado:
+    guardar R10,0(R12)
+    sumita R12,R12,1
+    sumita R14,R15,6
+    igual R13,R14,_end
+    suma R9,R15,R15 
+    sumita R0,R15,0 
+    sumita R1,R1,1 
+    brinco cicloFiltro
+_end:
     suma R15,R15,R15
-    geq R1,R2,pruebasVectores
-pruebasVectores:
-    sumvec RV1,RV2,RV3
-    cargarv RV1,0(R2)
-    multec RV4,RV5,RV6
-    cadvec RV7,RV8,8
-    cldvec RV9,RV10,8
-    clivec RV11,RV12,8
-    univecita RV13,RV14,255
-    unioncita R1,R2,255
+    suma R15,R15,R15
+    suma R15,R15,R15
+    suma R15,R15,R15

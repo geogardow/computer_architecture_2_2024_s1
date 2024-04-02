@@ -198,6 +198,7 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
                 nextInstruction = nextinstructionElementsList[0]
 
                 nextInstructionType = typeDictionary[nextInstruction]           
+                nextInstructionOpcode = opcodeDictionary[nextInstruction]
 
                 # memory instruction
                 if(currentInstructionType == "00" and currentInstruction == "cargar"):
@@ -270,7 +271,7 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
                     result.insert(i + 3, stall)     
 
                 # data instruction vectorial
-                elif (currentInstructionType == "11"):
+                elif (currentInstructionType == "11" and not nextInstructionOpcode=="00"):
                     nextSource = nextinstructionElementsList[1]
                     nextSource2 = nextinstructionElementsList[2]
                     nextDestiny = nextinstructionElementsList[3]
@@ -278,7 +279,7 @@ def stallInsertionCase1(instructionElementsList, typeDictionary, opcodeDictionar
                         result.insert(i + 1, stall)
                         result.insert(i + 2, stall)
                         result.insert(i + 3, stall) 
-                elif (currentInstructionType == "01" and nextInstructionType=="11" and (nextInstruction=="sumitavecsc" or nextInstruction=="multivecsc")):
+                elif (currentInstructionType == "01" and nextInstructionType=="11" and (nextInstruction=="sumitavecsc" or nextInstruction=="multivecsc") and not nextInstructionOpcode=="00"):
                     nextSource2 = nextinstructionElementsList[3]
                     if (currentDestiny == nextSource2):
                         result.insert(i + 1, stall)
@@ -397,7 +398,8 @@ def stallInsertionCase2(instructionElementsList, typeDictionary, opcodeDictionar
 
                 nextInstruction = nextinstructionElementsList[0]
 
-                nextInstructionType = typeDictionary[nextInstruction]           
+                nextInstructionType = typeDictionary[nextInstruction] 
+                nextInstructionOpcode = opcodeDictionary[nextInstruction]          
                     
                 # memory instruction
                 if(currentInstructionType == "00" and currentInstruction == "cargar"):            
@@ -465,14 +467,14 @@ def stallInsertionCase2(instructionElementsList, typeDictionary, opcodeDictionar
                     result.insert(i + 2, stall)  
 
                 # data instruction vectorial
-                elif (currentInstructionType == "11"):
+                elif (currentInstructionType == "11"  and not nextInstructionOpcode=="00"):
                     nextSource = nextinstructionElementsList[1]
                     nextSource2 = nextinstructionElementsList[2]
                     nextDestiny = nextinstructionElementsList[3]
                     if (currentDestiny == nextSource or currentDestiny == nextDestiny or currentDestiny == nextSource2):
                         result.insert(i + 1, stall)
                         result.insert(i + 2, stall)
-                elif (currentInstructionType == "01" and nextInstructionType=="11" and (nextInstruction=="sumitavecsc" or nextInstruction=="multivecsc")):
+                elif (currentInstructionType == "01" and nextInstructionType=="11" and (nextInstruction=="sumitavecsc" or nextInstruction=="multivecsc")  and not nextInstructionOpcode=="00"):
                     nextSource2 = nextinstructionElementsList[3]
                     if (currentDestiny == nextSource2):
                         result.insert(i + 1, stall)
@@ -585,6 +587,7 @@ def stallInsertionCase3(instructionElementsList, typeDictionary, opcodeDictionar
                 nextInstruction = nextinstructionElementsList[0]
 
                 nextInstructionType = typeDictionary[nextInstruction]           
+                nextInstructionOpcode = opcodeDictionary[nextInstruction]
                     
                 # memory instruction
                 if(currentInstructionType == "00" and currentInstruction == "cargar"):            
@@ -646,14 +649,14 @@ def stallInsertionCase3(instructionElementsList, typeDictionary, opcodeDictionar
                     result.insert(i + 1, stall)
 
                 # data instruction vectorial
-                elif (currentInstructionType == "11"):
+                elif (currentInstructionType == "11" and not nextInstructionOpcode=="00"):
                     nextSource = nextinstructionElementsList[1]
                     nextSource2 = nextinstructionElementsList[2]
                     nextDestiny = nextinstructionElementsList[3]
                     if (currentDestiny == nextSource or currentDestiny == nextDestiny or currentDestiny == nextSource2):
                         result.insert(i + 1, stall)
                 # data instruction
-                elif (currentInstructionType == "01" and nextInstructionType=="11" and (nextInstruction=="sumitavecsc" or nextInstruction=="multivecsc")):
+                elif (currentInstructionType == "01" and nextInstructionType=="11" and (nextInstruction=="sumitavecsc" or nextInstruction=="multivecsc") and not nextInstructionOpcode=="00"):
                     nextSource2 = nextinstructionElementsList[3]
                     if (currentDestiny == nextSource2):
                         result.insert(i + 1, stall)

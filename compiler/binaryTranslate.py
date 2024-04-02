@@ -69,6 +69,29 @@ registerDictionary = {
     "RV31": "11111"
 }
 
+# binary => string
+def twoComplement(binary):
+
+    aux = ""
+
+    for i in binary:
+
+        if(i == "0"):
+
+            aux += "1"
+        
+        else:
+
+            aux += "0"
+
+    aux = int(aux, 2)
+
+    aux += 1
+
+    aux = bin(aux).replace("0b", "")
+
+    return aux
+
 # number => int
 # instructionType => string
 # opcode => string
@@ -241,7 +264,6 @@ def binaryInstructions(filename, instructionElementsList, labelDictionary):
 
                 register1 = registerDictionary[elements[1]]
                 register2 = registerDictionary[elements[2]]
-                
                 immediate = int(elements[3])
                 immediate = signExtension(immediate, instructionType, opcode, pointerLine)
 
@@ -255,7 +277,6 @@ def binaryInstructions(filename, instructionElementsList, labelDictionary):
 
             # no immediate
             else:
-
                 register1 = registerDictionary[elements[1]]
                 register2 = registerDictionary[elements[2]]
                 register3 = registerDictionary[elements[3]]
