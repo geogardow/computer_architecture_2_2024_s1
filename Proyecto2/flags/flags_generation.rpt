@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "C:\Users\dmeji\OneDrive - Estudiantes ITCR\TEC\Semestres\IS2024\Arqui_II\Proyecto2\flags.qsys" --block-symbol-file --output-directory="C:\Users\dmeji\OneDrive - Estudiantes ITCR\TEC\Semestres\IS2024\Arqui_II\Proyecto2\flags" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading Proyecto2/flags.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 22.1]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "C:\Users\dmeji\OneDrive - Estudiantes ITCR\TEC\Semestres\IS2024\Arqui_II\Proyecto2\flags.qsys" --synthesis=VERILOG --output-directory="C:\Users\dmeji\OneDrive - Estudiantes ITCR\TEC\Semestres\IS2024\Arqui_II\Proyecto2\flags\synthesis" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading Proyecto2/flags.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 22.1]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: flags: Generating flags "flags" for QUARTUS_SYNTH
+Info: in_system_sources_probes_0: "flags" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: flags: Done "flags" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

@@ -1,4 +1,7 @@
 _start:
-    guardarv RV1, 0(R1)
-    cargarv RV2, 0(R1)
-    suma R5, R1, R3
+    guardarv RV1, 0(R2)
+    cargarv RV2, 0(R2)
+    cad R6, R4, 1
+    cld R7, R4, 1
+    cli R8, R4, 2
+    unioncita R9, R4, 5
