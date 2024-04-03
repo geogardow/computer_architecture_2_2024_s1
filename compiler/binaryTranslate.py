@@ -185,9 +185,11 @@ def binaryInstructions(filename, instructionElementsList, labelDictionary):
     # variable to know the number of the current line
     pointerLine = 0
 
+    filename = filename.split("-")[1]
+
     #file to write data
     FOLDER_PATH = "./compiler/"
-    data_path = FOLDER_PATH + "data.txt"
+    data_path = FOLDER_PATH + f"/data/data+{filename}"
 
     for elements in instructionElementsList:
 

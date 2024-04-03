@@ -15,11 +15,11 @@ module alu_element_vec #(parameter element = 16)(
 				// multiplicación 
 				3'b010: temp_result = elementA * elementB;
 				// corrimiento a aritmetico a la derecha
-				3'b011: temp_result = elementA >>> elementB; 
+				3'b011: temp_result = elementA >> elementB; 
 				// corrimiento a logico a la derecha
-				3'b100: temp_result = elementA >> elementB;
+				3'b100: temp_result = elementA >>> elementB;
 				// corrimiento a logico a la izquierda
-				3'b101: temp_result = elementA << elementB;
+				3'b101: temp_result = elementA <<< elementB;
 				// union
 				3'b110: temp_result = elementA & elementB; 
 

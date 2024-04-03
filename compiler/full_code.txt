@@ -1,7 +1,0 @@
-_main:
-    sumita R0, R0, 1
-    igual R0, R1, _prueba
-_prueba:
-    sumita R0, R0, 2    
-    sumita R2, R0, 1
-    sumita R3, R0, 1
