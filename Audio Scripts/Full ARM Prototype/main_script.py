@@ -19,11 +19,11 @@ FLOATBITS = 8
 SAMPLE_RATE = 44100
 AUDIO_LENGTH = 5
 
-audio_array = audio_to_array("./Audio Scripts/original.wav", SAMPLE_RATE, AUDIO_LENGTH)
+audio_array = audio_to_array("./Audio Scripts/Full ARM Prototype/original.wav", SAMPLE_RATE, AUDIO_LENGTH)
 b_vector = get_b_vector(order=16)
 fixed_audio_array = float_array_to_fixed(audio_array, INTBITS, FLOATBITS)
-#array_to_file(fixed_array, "./Audio Scripts/audio.txt")
+#array_to_file(fixed_array, "./Audio Scripts/Full ARM Prototype/audio.txt")
 fixed_b_vector = float_array_to_fixed(b_vector, INTBITS, FLOATBITS)
 filtered_fixed_audio_array = filter_audio(fixed_audio_array, fixed_b_vector)
 built_array = fixed_array_to_float(filtered_fixed_audio_array, INTBITS, FLOATBITS)
-array_to_audio(built_array, "./Audio Scripts/rebuilt.wav", SAMPLE_RATE)
+array_to_audio(built_array, "./Audio Scripts/Full ARM Prototype/rebuilt.wav", SAMPLE_RATE)

@@ -17,10 +17,13 @@ def filter_audio(x, b, Nx=16, Nb=16, sample_rate=44100, audio_length=5):
     R[0] = "0000000000000000"                   # MOV R0, #ADDRESS              #Acceso a memoria del vector x
     R[1] = "0000000000000000"                   # MOV R1, #ADDRESS              #Acceso a memoria del vector b
     R[3] = "0000000000000000"                   # MOV R3, #ADDRESS              #Acceso a memoria del vector y
+    R[6] = "0000000000000000"                   #Contador b
+    R[7] = "0000000000000000"                   #Suma de contador con memoria
 
     while True:                                 # MAIN:
-        RV[0] = x[int(R[0],2):int(R[0],2)+Nx]   # LDRVEC RV0, [R1]              # Carga de memoria el vector x[]
-        R[2] = b[int(R[1],2)]                   # LDR R2, [R1]                  # Carga el valor b a multiplicar
+        RV[0] = x[int(R[0],2):int(R[0],2)+Nx]   # LDRVEC RV0, [R0]              # Carga de memoria el vector x[]
+        R[7] = add(R[1], R[6])                  # ADD R7, R1, R6                # Suma de contador con memoria
+        R[2] = b[int(R[7],2)]                   # LDR R2, [R7]                  # Carga el valor b a multiplicar
 
                                                         # BL MULTIPLICATION        
                                                         # Tomamos el vector como Qa.b y b como Qc.d
@@ -44,13 +47,13 @@ def filter_audio(x, b, Nx=16, Nb=16, sample_rate=44100, audio_length=5):
         RV[1] = addvec(RV[1], RV[0])            # ADDVEC RV1, RV1, RV0          # RV1 Almacena el acumulado de cada 16 muestras
 
         R[0] = add(R[0], "0000000000000001")    # ADD R0, R0, #1                # Añadir valor de salto, no se si 1 o 4, depende
-        R[1] = add(R[1], "0000000000000001")    # ADD R1, R1, #1                # Añadir valor de salto, no se si 1 o 4, depende
+        R[6] = add(R[6], "0000000000000001")    # ADD R6, R6, #1                # Añadir valor de salto, no se si 1 o 4, depende
 
-        if int(R[1],2) >= Nb:                          # CMP R1, #16                   # Verifica que no nos salgamos del tamaño del vector b, puede ser 16*salto
+        if int(R[6],2) >= Nb:                          # CMP R6, #16                   # Verifica que no nos salgamos del tamaño del vector b, puede ser 16*salto
                                                 # BGE RESET_B_OFFSET            # Llama al branch de reseteo
                                         
                                                     # RESET_B_OFFSET:
-            R[1] = "0000000000000000"               # MOV R1, #0                    # Resetea el valor a acceder en b al que sea donde esté b
+            R[6] = "0000000000000000"               # MOV R6, #0                    # Resetea el valor a acceder en b al que sea donde esté b
             y[int(R[3],2):int(R[3],2)+Nx] = RV[1]   # STR RV1, [R3]                 # Guarda las 16 muestras de y
             R[3] = R[0]                             # MOV R3, R0                    # Actualiza el valor de acceso de memoria de y
             RV[1] = null_vec(Nb)                    # MOVVEC RV1, #0

@@ -32,11 +32,16 @@ def filter_audio(x, sample_rate, audio_length, Nx=16, Nb=16):
     R[0] = 0 #Acceso a memoria del vector x
     R[1] = 0 #Acceso a memoria del vector b
     R[3] = 0 #Acceso a memoria del vector y
+    R[6] = 0 #Contador b
+    R[7] = 0 #Suma de contador con memoria
+
+    
     print(R[0])
 
     while True:                                 # MAIN:
-        RV[0] = x[int(R[0]):int(R[0])+Nx]       # LDRVRC RV0, [R1]              # Carga de memoria el vector x[]
-        R[2] = b[int(R[1])]                     # LDR R2, [R1]                  # Carga el valor b a multiplicar
+        RV[0] = x[int(R[0]):int(R[0])+Nx]       # LDRVRC RV0, [R0]              # Carga de memoria el vector x[]
+        R[7] = R[1] + R[6]                      # ADD R7, R1, R6                # Suma de contador con memoria
+        R[2] = b[int(R[7])]                     # LDR R2, [R6]                  # Carga el valor b a multiplicar
 
                                                 # Aquí se llama al branch link para multiplicación
         RV[0] = RV[0] * R[2]                    # MULTVECESC RV0, RV0, R2       # Mulplica x[]*b
@@ -46,13 +51,13 @@ def filter_audio(x, sample_rate, audio_length, Nx=16, Nb=16):
         RV[1] = RV[1] + RV[0]                   # ADDVEC RV1, RV1, RV0          # RV1 Almacena el acumulado de cada 16 muestras
 
         R[0] = R[0] + 1                         # ADD R0, R0, #1                # Añadir valor de salto, no se si 1 o 4, depende
-        R[1] = R[1] + 1                         # ADD R1, R1, #1                # Añadir valor de salto, no se si 1 o 4, depende
+        R[6] = R[6] + 1                         # ADD R6, R6, #1                # Añadir valor de salto, no se si 1 o 4, depende
 
-        if R[1] >= Nb:                          # CMP R1, #16                   # Verifica que no nos salgamos del tamaño del vector b, puede ser 16*salto
+        if R[6] >= Nb:                          # CMP R6, #16                   # Verifica que no nos salgamos del tamaño del vector b, puede ser 16*salto
                                                 # BGE RESET_B_OFFSET            # Llama al branch de reseteo
                                         
                                                 # RESET_B_OFFSET:
-            R[1] = 0                            # MOV R1, #0                    # Resetea el valor a acceder en b al que sea donde esté b
+            R[6] = 0                            # MOV R6, #0                    # Resetea el valor a acceder en b al que sea donde esté b
             y[int(R[3]):int(R[3])+Nx] = RV[1]   # STR RV1, [R3]                 # Guarda las 16 muestras de y
             R[3] = R[0]                         # MOV R3, R0                    # Actualiza el valor de acceso de memoria de y
             RV[1] = np.zeros(16)                # MOVVEC RV1, #0
