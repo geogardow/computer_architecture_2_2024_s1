@@ -296,7 +296,7 @@
 				WriteDataSrc = 0;
 
 				RegWriteV = 0;
-				RegWriteS = 0; 
+				RegWriteS = 0;
 				MemToReg = 0;
 				FlagRDSrc = 0;
 
@@ -305,7 +305,7 @@
 				ALUOpV = 3'bxxx;
 				operand_flag = 0;
 
-				ImmSrc = 2'b10;
+				
 				RegSrc2 = 0;
 				RegSrc1 = 2'b11;
 				RegDest = 2'bxx;
@@ -318,6 +318,7 @@
 						Equal = 0;
 						LessEqual = 0;
 						GreaterEqual = 0;
+						ImmSrc = 2'b00;
 					end
 				// leq instruction
 				if (opcode[4:3] == 2'b01)
@@ -326,6 +327,7 @@
 						Equal = 0;
 						LessEqual = 1;
 						GreaterEqual = 0;
+						ImmSrc = 2'b10;
 					end
 				// igual instruction	
 				if (opcode[4:3] == 2'b10)
@@ -334,6 +336,7 @@
 						Equal = 1;
 						LessEqual = 0;
 						GreaterEqual = 0;
+						ImmSrc = 2'b10;
 					end
 				// geq instruction
 				if (opcode[4:3] == 2'b11)
@@ -342,6 +345,7 @@
 						Equal = 0;
 						LessEqual = 0;
 						GreaterEqual = 1;
+						ImmSrc = 2'b10;
 					end
 					
 			end
