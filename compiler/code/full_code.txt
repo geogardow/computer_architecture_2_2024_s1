@@ -40,4 +40,3 @@ _end:
     sumita R1,R15,1
     sumita R2,R15,1
     sumita R28,R15,333
-    sumita R29,R15,222

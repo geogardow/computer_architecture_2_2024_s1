@@ -1,16 +1,19 @@
 module datapath (
-                input clkFPGA, rst);
+                input clkFPGA, rst,
+                output logic finish,
+                output [18:0] R28_stall_count, R29_aritmetric_count, R30_memory_count, R31_cicles_per_inst);
 
 
     /////////////////////////////////////////////////////////////////
 
     // IF
-  logic [31:0] pc_in_if, pc_out_if, pc_plus1_if, instruction_if;
+  logic [31:0] pc_in_if, pc_out_if, pc_plus1_if, pc_plus_imm_extended_ex, instruction_if;
 
     // ID
 	logic [31:0] pc_id;
 	logic [27:0] instr_27_0_id;
   logic [18:0] extend_id, RD1S_id, RD2S_id, RD3S_id;
+  logic [18:0] stall_count_id, aritmetric_count_id, memory_count_id, instruction_count_id;
   logic [15:0][15:0] RD1V_id, RD2V_id, RD3V_id;
 	logic [4:0] instr_opcode_id, instr_21_17_id, instr_19_15_id, instr_20_16_id, instr_27_23_id, instr_22_18_id, instr_14_10_id, 
               instr_26_22_id, instr_24_20_id, instr_25_21_id, RS1_id, RS2_id, RS3_id;
@@ -22,6 +25,7 @@ module datapath (
 
     // EX
   logic [31:0] pc_ex, pc_plus_imm_ex;
+  logic finish_temp;
   logic [18:0] extend_ex, RD1S_ex, RD2S_ex, RD3S_ex, ALUOperand2S_ex, ALUOperand2V_ex, ALUResultS_ex;
   logic [15:0][15:0] RD1V_ex, RD2V_ex, RD3V_ex, ALUResultV_ex;
   logic [4:0] RS3_ex;
@@ -42,6 +46,7 @@ module datapath (
 
   // WB
   logic [255:0] WD_wb;
+  logic [18:0] WD_scalar_wb;
   logic [4:0] RD_result_wb;
   logic RegWriteS_wb, RegWriteV_wb;
 	logic MemToReg_wb, FlagRDSrc_wb;
@@ -52,13 +57,18 @@ module datapath (
     /////////////////////////////////////////////////////////////////
 
     // CLKS
-	new_clk #(.frec(200)) frec_mem (clk_mem, clkFPGA);
-	new_clk #(.frec(2825)) frec_clk (clk, clkFPGA);
+	new_clk #(.frec(8)) frec_mem (clk_mem, clkFPGA);
+	new_clk #(.frec(113)) frec_clk (clk, clkFPGA);
 
     // IF
+	 extend_pc extend_pc_inst (
+	 .pc_in(pc_plus_imm_ex),
+	 .pc_out(pc_plus_imm_extended_ex)
+	 );
+	 
     mux_2to1 #(.N(32)) mux_inst (
     .A(pc_plus1_if),
-    .B(pc_plus_imm_ex),
+    .B(pc_plus_imm_extended_ex),
     .sel(PCSource_out_ex),
     .C(pc_in_if));
 
@@ -127,7 +137,11 @@ module datapath (
     .ImmSrc(InmSrc_id),
     .RegSrc1(RegSrc1_id),
     .RegDest(RegDest_id),
-    .RegSrc2(RegSrc2_id)
+    .RegSrc2(RegSrc2_id),
+    .stall_count(stall_count_id),
+    .aritmetric_count(aritmetric_count_id),
+    .memory_count(memory_count_id),
+    .instruction_count(instruction_count_id)
   );
 
   mux_4to1 #(.N(5)) mux_RS1_id (
@@ -166,13 +180,22 @@ module datapath (
     .RS2(RS2_id),
     .RS3(RS3_id),
     .RD(RD_result_wb),
-    .WD(WD_wb), 
+    .WD(WD_scalar_wb), 
+    .stall_count(stall_count_id),
+    .aritmetric_count(aritmetric_count_id),
+    .memory_count(memory_count_id),
+    .instruction_count(instruction_count_id),
     .WES(RegWriteS_wb),
     .clk(clk),
     .rst(rst),
     .RD1(RD1S_id),
     .RD2(RD2S_id),
-    .RD3(RD3S_id)
+    .RD3(RD3S_id),
+    .finish(finish_temp),
+    .R28_stall_count(R28_stall_count),
+    .R29_aritmetric_count(R29_aritmetric_count),
+    .R30_memory_count(R30_memory_count),
+    .R31_cicles_per_inst(R31_cicles_per_inst)
   );
 
   vectorial_rf #(.WIDTH(16)) vectorial_rf_id (
@@ -392,6 +415,13 @@ segment_id_ex id_ex_inst (
     .B(data_vec_wb),
     .sel(MemToReg_wb),
     .C(WD_wb)
+    );
+
+
+  decode  decode_scalar_WD_wb (
+    .A(WD_wb),
+    .sel(MemToReg_wb),
+    .C(WD_scalar_wb)
     );
 
 
