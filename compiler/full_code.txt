@@ -1,7 +1,7 @@
-_start:
-    guardarv RV1, 0(R2)
-    cargarv RV2, 0(R2)
-    cad R6, R4, 1
-    cld R7, R4, 1
-    cli R8, R4, 2
-    unioncita R9, R4, 5
+_main:
+    sumita R0, R0, 1
+    igual R0, R1, _prueba
+_prueba:
+    sumita R0, R0, 2    
+    sumita R2, R0, 1
+    sumita R3, R0, 1
