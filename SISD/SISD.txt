@@ -1,6 +1,82 @@
 _start:
-    sumita r0,r15,0 // posicion inicial vector b
-    sumita r1,r15,16 // posicion inicial vector x
+    suma R0,R15,R15 // posicion inicial vector x
+    suma R1,R15,R1 //posicion inicial b
+    suma R2,R15,R1 // direccion inicial de salida
+    suma R3,R15,R15 // contador de datos totales guardados
+    suma R4,R15,R15 // offset de R4
+    suma R17,R15,R15 // suma de elementos por fila
+    suma R18,R15,R15
+    brinco cicloFiltro
+
+cicloFiltro:
+    cargar R5,0(R0) // carga primer elemento de x
+    suma R4,R1,R4 // direccion de b con offset
+    cargar R6,0(R4) // carga primer valor de b
+
+    // EMPIEZA multiplicacion
+    // Qa.b x Qc.d
+    cad R7,R5,8
+    unioncita R8,R5,255
+
+    cad R9,R6,8
+    unioncita R11,R6,255
+
+    // R7 a
+    // R8 b
+    // R9 c
+    // R11 d
+
+    // high = a x c << 8
+    mult R12,R7,R8
+    clivec R12,R12,8 
+
+    //mid
+    // a × d + b × c
+    mult R13,R7,R11
+    mult R14,R8,R9
+    suma R13,R13,R14
+
+    // low  >> 8
+    // b x d
+    mult R14,R8,R11
+    cad R14,R14,8
+
+    //result = high << 8 + mid + low >> 8
+    suma R5,R13,R14
+    suma R5,R5,R12
+
+    suma R17,R17,R5 // copia del resultado a R17
+
+    sumita R4,R4,1
+    suma R18,R15,1
+    sumita R19,R15,16 // cambiar si son menos columnas
+    igual R18,R19,almacenarResultado
+
+    brinco cicloFiltro
+
+
+almacenarResultado:
+    guardar R17,0(R0)
+    sumita R0,R0,1
+    sumita R3,R3,1
+    suma R4,R15,R15 // reiniciar offset
+    suma R18,R15,R15 // reiniciar offset de elementos por fila
+
+    igual R3,R10,_end
+
+    brinco cicloFiltro
+
+_end:
+    sumita R0,R15,1
+    sumita R1,R15,1
+    sumita R2,R15,1
+    sumita R28,R15,333
+
+
+
+_start:
+    suma R0,R15,R15 // posicion inicial vector x
+    sumita R1,R15,R1 // posicion inicial vector b
     sumita r9,r15,r15 // contador de iteraciones 
     sumita r12,r15, //direccion de guardado de los datos
     sumita r13,r15, //contador de datos totales guardados
