@@ -25,7 +25,6 @@ module datapath (
 
     // EX
   logic [31:0] pc_ex, pc_plus_imm_ex;
-  logic finish_temp;
   logic [18:0] extend_ex, RD1S_ex, RD2S_ex, RD3S_ex, ALUOperand2S_ex, ALUOperand2V_ex, ALUResultS_ex;
   logic [15:0][15:0] RD1V_ex, RD2V_ex, RD3V_ex, ALUResultV_ex;
   logic [4:0] RS3_ex;
@@ -191,7 +190,7 @@ module datapath (
     .RD1(RD1S_id),
     .RD2(RD2S_id),
     .RD3(RD3S_id),
-    .finish(finish_temp),
+    .finish(finish),
     .R28_stall_count(R28_stall_count),
     .R29_aritmetric_count(R29_aritmetric_count),
     .R30_memory_count(R30_memory_count),

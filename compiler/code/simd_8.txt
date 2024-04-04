@@ -35,6 +35,7 @@ almacenarResultado:
     multec RV1,RV10,RV10 
     suma R10,R15,R10 
     igual R10,R0,_end
+    brinco cicloFiltro
 _end:
     sumita R0,R15,1
     sumita R1,R15,1
