@@ -25,7 +25,7 @@ cicloFiltro:
     sumvec RV1,RV1,RV0
     sumita R0,R0,1
     sumita R6,R6,1
-    sumita R8,R15,16 
+    sumita R8,R15,15 
     igual R6,R8,almacenarResultado 
     brinco cicloFiltro
 almacenarResultado:
