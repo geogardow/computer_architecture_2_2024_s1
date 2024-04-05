@@ -1,10 +1,9 @@
 _start:
-    suma R0,R15,R15 
-    suma R1,R15,R1  
-    suma R3,R15,R3 
+    suma R0,R15,R15   
+    suma R3,R15,R15 
     suma R6,R15,R15 
-    suma R7,R15,R15 
-    suma R11,R15,R15
+    suma R7,R15,R15
+    suma R11,R15,R15 
     brinco cicloFiltro
 cicloFiltro:
     cargarv RV0,0(R0) 
@@ -26,22 +25,24 @@ cicloFiltro:
     sumvec RV1,RV1,RV0
     sumita R0,R0,1
     sumita R6,R6,1
-    sumita R8,R15,7
-    sumita R11,R11,1 
-    igual R6,R8,reset
-    sumita R8,R15,30
+    sumita R11,R11,1
+    sumita R8,R15,30 
+    igual R6,R8,reset 
+    sumita R8,R15,15
     igual R11,R8,almacenarResultado
+    igual R10,R0,_end
     brinco cicloFiltro
 reset:
     suma R6,R15,R15
     sumita R8,R15,15
     igual R11,R8,almacenarResultado
+    igual R10,R0,_end
     brinco cicloFiltro
 almacenarResultado:
+    suma R11,R15,R15
     guardarv RV1,0(R3)
     suma R3,R15,R0
-    multec RV1,RV10,RV10 
-    suma R10,R15,R10 
+    multec RV1,RV1,RV10  
     igual R10,R0,_end
     brinco cicloFiltro
 _end:
