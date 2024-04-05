@@ -1,40 +1,43 @@
 _start:
     suma R0,R15,R15 
-    suma R1,R15,R1  
-    suma R3,R15,R3 
-    suma R6,R15,R15 
-    suma R7,R15,R15 
+    suma R1,R15,R1 
+    suma R2,R15,R1 
+    suma R3,R15,R15 
+    suma R4,R15,R15 
+    suma R17,R15,R15 
+    suma R18,R15,R15
     brinco cicloFiltro
 cicloFiltro:
-    cargarv RV0,0(R0) 
-    suma R7,R1,R6 
-    cargar R2,0(R7) 
-    cadvec RV2,RV0,8
-    univecita RV3,RV0,255
-    cad R4,R2,8
-    unioncita R5,R2,255
-    multivecsc RV4,RV2,R4
-    clivec RV4,RV4,8 
-    multivecsc RV5,RV2,R5
-    multivecsc RV6,RV3,R4
-    sumvec RV5,RV5,RV6
-    multivecsc RV6,RV3,R5
-    cadvec RV6,RV6,8
-    sumvec RV0,RV5,RV6
-    sumvec RV0,RV0,RV4
-    sumvec RV1,RV1,RV0
-    sumita R0,R0,1
-    sumita R6,R6,1
-    sumita R8,R15,16 
-    igual R6,R8,almacenarResultado 
+    cargar R5,0(R0) 
+    suma R4,R1,R4 
+    cargar R6,0(R4) 
+    cad R7,R5,8
+    unioncita R8,R5,255
+    cad R9,R6,8
+    unioncita R11,R6,255
+    mult R12,R7,R8
+    clivec R12,R12,8 
+    mult R13,R7,R11
+    mult R14,R8,R9
+    suma R13,R13,R14
+    mult R14,R8,R11
+    cad R14,R14,8
+    suma R5,R13,R14
+    suma R5,R5,R12
+    suma R17,R17,R5 
+    sumita R4,R4,1
+    sumita R18,R15,1
+    sumita R19,R15,16 
+    igual R18,R19,almacenarResultado
     brinco cicloFiltro
 almacenarResultado:
-    suma R6,R15,R15
-    guardarv RV1,0(R3)
-    suma R3,R15,R0
-    multec RV1,RV10,RV10 
-    suma R10,R15,R10 
-    igual R10,R0,_end
+    guardar R17,0(R0)
+    sumita R0,R0,1
+    sumita R3,R3,1
+    suma R4,R15,R15 
+    suma R18,R15,R15 
+    igual R3,R10,_end
+    brinco cicloFiltro
 _end:
     sumita R0,R15,1
     sumita R1,R15,1
