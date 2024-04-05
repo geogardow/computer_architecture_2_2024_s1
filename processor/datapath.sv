@@ -357,7 +357,7 @@ segment_id_ex id_ex_inst (
         .C(WD_mem)
     );
 
-    ram mem(.address(address_mem), 
+    ram7 mem(.address(address_mem), 
     .clock(clk_mem), 
     .data(WD_mem), 
     .wren(MemWrite_mem), 

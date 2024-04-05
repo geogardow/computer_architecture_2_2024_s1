@@ -12,17 +12,18 @@ module mem_input_manager(
     
     always_ff @(negedge clk or posedge rst) begin
         if (rst) begin
-            count <= 5'd17; // Initialize count on reset
+            count <= 5'd16; // Initialize count on reset
             temp_output_data <= 16'h0000; // Reset output on reset
         end
         else if (enable_write) begin
-            if (count == 5'd17) begin
+            if (count == 5'd16) begin
                 temp_input_data <= input_data; // Store input_data on first cycle
+                temp_output_data <= input_data[count-1];
                 count <= count - 5'b1; // Increment count
             end
             else if (count == 5'd0) begin
                 temp_output_data <= temp_input_data[count-1];
-                count <= 5'd17; // Initialize count on reset
+                count <= 5'd16; // Initialize count on reset
             end
             else begin
                 temp_output_data <= temp_input_data[count-1]; // Output next data on subsequent cycles

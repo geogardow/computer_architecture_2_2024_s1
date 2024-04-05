@@ -417,7 +417,7 @@
 						MemRead = 1;
 						MemWrite = 0;
                         EnableWrite = 0;
-                		EnableRead = 1;
+                		EnableRead = 0;
 
                         WriteDataSrc = 0;
 

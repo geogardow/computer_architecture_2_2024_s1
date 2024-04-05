@@ -1,12 +1,17 @@
-Analysis & Elaboration Status : Successful - Mon Apr  1 22:55:51 2024
+Analysis & Synthesis Status : Successful - Thu Apr  4 23:07:04 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : simd
-Top-level Entity Name : datapath
+Top-level Entity Name : top
 Family : Cyclone V
-Logic utilization (in ALMs) : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total block memory bits : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
-Total DLLs : N/A until Partition Merge
+Logic utilization (in ALMs) : N/A
+Total registers : 11881
+Total pins : 3
+Total virtual pins : 0
+Total block memory bits : 3,208,688
+Total DSP Blocks : 17
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

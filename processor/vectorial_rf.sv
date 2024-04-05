@@ -129,7 +129,7 @@ module vectorial_rf #(int WIDTH=16) (
 	always_ff @(posedge clk or posedge rst) begin
 		if(rst) begin
 			R0  = {(16){16'd0}};
-			R1  = 256'hABCD_BA98_7654_3210_0000_0000_1004_0000_0000_0000_0002_0000_0000_0000_0000_1111;
+			R1  = {(16){16'd0}};
 			R2  = {(16){16'd0}};
 			R3  = {(16){16'd0}};
 			R4  = {(16){16'd0}};

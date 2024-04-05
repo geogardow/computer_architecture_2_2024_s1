@@ -134,7 +134,7 @@ module scalar_rf #(int WIDTH=16) (
 
 		if(rst) begin
 			R0  = {(WIDTH){1'b0}};
-			R1  = 19'd220500;
+			R1  = 19'd200000;
 			R2  = {(WIDTH){1'b0}};
 			R3  = {(WIDTH){1'b0}};
 			R4  = {(WIDTH){1'b0}};
@@ -143,7 +143,7 @@ module scalar_rf #(int WIDTH=16) (
 			R7  = {(WIDTH){1'b0}};
 			R8  = {(WIDTH){1'b0}}; 
 			R9  = {(WIDTH){1'b0}};
-			R10 = 19'd224;
+			R10 = 19'd199983;
 			R11 = {(WIDTH){1'b0}};
 			R12 = {(WIDTH){1'b0}};
 			R13 = {(WIDTH){1'b0}};

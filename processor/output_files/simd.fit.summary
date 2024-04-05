@@ -1,0 +1,20 @@
+Fitter Status : Successful - Thu Apr  4 23:32:19 2024
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Revision Name : simd
+Top-level Entity Name : top
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 11,952 / 32,070 ( 37 % )
+Total registers : 12431
+Total pins : 3 / 457 ( < 1 % )
+Total virtual pins : 0
+Total block memory bits : 3,208,688 / 4,065,280 ( 79 % )
+Total RAM Blocks : 393 / 397 ( 99 % )
+Total DSP Blocks : 17 / 87 ( 20 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

@@ -6,15 +6,17 @@ module mem_addr_manager(
 							input logic [18:0] input_address, 
 							output logic [18:0] output_address);
 	
-	logic [18:0] temp_addr;
+	logic [18:0] temp_addr_vec;
+	logic [18:0] temp_addr_sca;
 	logic [4:0] count;
 	
 	
-	always_ff @(posedge clk or posedge rst) begin	
+	always_ff @(negedge clk or posedge rst) begin	
 
 		if (rst) begin
 			count <= 5'd0; // Initialize count on reset
-			temp_addr <= 19'h0000; // Reset to initial value
+			temp_addr_vec <= 19'h0000; // Reset to initial value
+			temp_addr_sca <= 19'h0000; // Reset to initial value
 		end 
 		
 		else if (write_enable) begin 
@@ -25,12 +27,12 @@ module mem_addr_manager(
 
 			else if (count == 5'd0) begin
 				count <= count + 5'b1; // Decrease count
-				temp_addr <= input_address -1 ;
+				temp_addr_vec <= input_address;
 			end
 			
 			else begin
 				count <= count + 5'b1; // Decrease count
-				temp_addr <= temp_addr + 1'b1; // Increment address				
+				temp_addr_vec <= temp_addr_vec + 1'b1; // Increment address				
 			end
 			
 		end
@@ -43,24 +45,22 @@ module mem_addr_manager(
 
 			else if (count == 5'd0) begin
 				count <= count + 5'b1; // Decrease count
-				temp_addr <= input_address;
+				temp_addr_vec <= temp_addr_vec + 1'b1; // Increment address		
 			end
 			
 			else begin
 				count <= count + 5'b1; // Decrease count
-				temp_addr <= temp_addr + 1'b1; // Increment address				
+				temp_addr_vec <= temp_addr_vec + 1'b1; // Increment address				
 			end
 			
 		end
 		
 		else begin
-
-			temp_addr <= input_address;
-
+			temp_addr_vec <= input_address;
 		end
-		
-	end
 	
-	assign output_address = temp_addr;
+	end
+
+	assign output_address = (read_enable || write_enable) ? temp_addr_vec : input_address;
 
 endmodule
