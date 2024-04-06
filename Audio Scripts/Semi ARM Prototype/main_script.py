@@ -6,9 +6,9 @@ from array_to_file import *
 from filter_audio import *
 from mif_builder import *
 
-SAMPLE_RATE = 44100
+SAMPLE_RATE = 40000
 AUDIO_LENGTH = 5
-NB = 16
+NB = 31
 NX = 16
 
 audio_array = audio_to_array("./Audio Scripts/Semi ARM Prototype/original.wav", SAMPLE_RATE, AUDIO_LENGTH)

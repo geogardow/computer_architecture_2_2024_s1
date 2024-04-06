@@ -12,3 +12,13 @@ def fixed_array_to_float(samples, int_bits=7, float_bits=8):
         samples_float.append(decimal*sign)
 
     return list(normalize_array(samples_float))
+
+
+def fixed_value_to_float(value, int_bits=7, float_bits=8):
+    sign = 1
+    if value[0] == "1":
+        sign = -1
+    decimal = int(value[1:int_bits+1], 2)
+    for i in range(float_bits):
+        decimal += 2**(-(i+1))*int(value[int_bits + 1 + i])
+    return decimal*sign

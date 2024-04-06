@@ -19,6 +19,7 @@ def filter_audio(x, b, Nx=16, Nb=16, sample_rate=44100, audio_length=5):
     R[3] = "0000000000000000"                   # MOV R3, #ADDRESS              #Acceso a memoria del vector y
     R[6] = "0000000000000000"                   #Contador b
     R[7] = "0000000000000000"                   #Suma de contador con memoria
+    R[11] = "0000000000000000"                  #Contador x
 
     while True:                                 # MAIN:
         RV[0] = x[int(R[0],2):int(R[0],2)+Nx]   # LDRVEC RV0, [R0]              # Carga de memoria el vector x[]
@@ -48,19 +49,24 @@ def filter_audio(x, b, Nx=16, Nb=16, sample_rate=44100, audio_length=5):
 
         R[0] = add(R[0], "0000000000000001")    # ADD R0, R0, #1                # Añadir valor de salto, no se si 1 o 4, depende
         R[6] = add(R[6], "0000000000000001")    # ADD R6, R6, #1                # Añadir valor de salto, no se si 1 o 4, depende
+        R[11] = add(R[11], "0000000000000001")  # ADD R11, R11, #1              # Añadir valor de salto, no se si 1 o 4, depende
 
         if int(R[6],2) >= Nb:                          # CMP R6, #16                   # Verifica que no nos salgamos del tamaño del vector b, puede ser 16*salto
                                                 # BGE RESET_B_OFFSET            # Llama al branch de reseteo
                                         
                                                     # RESET_B_OFFSET:
             R[6] = "0000000000000000"               # MOV R6, #0                    # Resetea el valor a acceder en b al que sea donde esté b
+            continue                                # B MAIN
+
+        if int(R[11],2) >= Nx:                      # CMP R11, #16                  # Verifica que no nos salgamos del tamaño del vector x, puede ser 16*salto
+        
+            R[11] = "0000000000000000"              # MOV R11, #0                   # Resetea el valor a acceder en x al que sea donde esté x
             y[int(R[3],2):int(R[3],2)+Nx] = RV[1]   # STR RV1, [R3]                 # Guarda las 16 muestras de y
             R[3] = R[0]                             # MOV R3, R0                    # Actualiza el valor de acceso de memoria de y
             RV[1] = null_vec(Nb)                    # MOVVEC RV1, #0
-                                                    # B MAIN
 
         else:                                                       # Este es el caso donde no pasó nada
-            if int(R[0],2) >= audio_length*sample_rate - Nb:        # CMP R0, #FINAL DEL AUDIO - Nb muestras
+            if int(R[0],2) >= audio_length*sample_rate - Nx - 1:    # CMP R0, #FINAL DEL AUDIO - Nb muestras
                 return y                                            # BGE END
             else:
                 pass                                                # B MAIN

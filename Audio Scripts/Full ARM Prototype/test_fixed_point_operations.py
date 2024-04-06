@@ -62,3 +62,6 @@ def test_andvecesc():
 test_multvecesc()
 test_addvecesc()
 test_andvecesc()
+
+array = np.array(['0101010101010101', '1010101010101010', '0101010111111101'])
+print(clivec(array, 8))
