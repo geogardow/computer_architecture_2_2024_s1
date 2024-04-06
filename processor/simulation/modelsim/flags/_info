@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/simulation/modelsim
+valtsource_probe_top
+Z1 !s110 1712374691
+!i10b 1
+!s100 e?dJBLIhzJ3VTRWCe8CCN3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I9PS^k52VS[8BEnbK_QOH20
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1712032860
+8C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules/altsource_probe_top.v
+FC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules/altsource_probe_top.v
+!i122 5
+L0 14 44
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1712374691.000000
+!s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules/altsource_probe_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|flags|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules/altsource_probe_top.v|
+!i113 1
+Z7 o-vlog01compat -work flags
+!s92 -vlog01compat -work flags {+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules}
+Z8 tCvgOpt 0
+vflags
+R1
+!i10b 1
+!s100 0A6JRNIiL0eQ:Ia5=38GH0
+R2
+IG?GH^<edczDF20mKmD1:Z0
+R3
+R0
+R4
+8C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/flags.v
+FC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/flags.v
+!i122 4
+L0 6 20
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/flags.v|
+!s90 -reportprogress|300|-vlog01compat|-work|flags|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/flags.v|
+!i113 1
+R7
+!s92 -vlog01compat -work flags {+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis}
+R8

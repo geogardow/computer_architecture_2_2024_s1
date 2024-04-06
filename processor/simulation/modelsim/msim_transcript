@@ -18,7 +18,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work altera_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:25 on Apr 04,2024
+# Start time: 21:37:52 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work altera_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_primitives.v 
 # -- Compiling module global
 # -- Compiling module carry
@@ -100,7 +100,7 @@
 # 	alt_iobuf_diff
 # 	alt_bidir_diff
 # 	alt_bidir_buf
-# End time: 21:23:26 on Apr 04,2024, Elapsed time: 0:00:01
+# End time: 21:37:53 on Apr 05,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/lpm_ver
@@ -111,7 +111,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work lpm_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/220model.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:26 on Apr 04,2024
+# Start time: 21:37:53 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work lpm_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/220model.v 
 # -- Compiling module LPM_MEMORY_INITIALIZATION
 # -- Compiling module LPM_HINT_EVALUATION
@@ -175,7 +175,7 @@
 # 	lpm_inpad
 # 	lpm_outpad
 # 	lpm_bipad
-# End time: 21:23:27 on Apr 04,2024, Elapsed time: 0:00:01
+# End time: 21:37:53 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/sgate_ver
@@ -186,7 +186,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work sgate_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/sgate.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:27 on Apr 04,2024
+# Start time: 21:37:54 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work sgate_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/sgate.v 
 # -- Compiling module oper_add
 # -- Compiling module oper_addsub
@@ -228,7 +228,7 @@
 # 	oper_decoder
 # 	oper_bus_mux
 # 	oper_latch
-# End time: 21:23:27 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:37:54 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_mf_ver
@@ -239,7 +239,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work altera_mf_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:27 on Apr 04,2024
+# Start time: 21:37:54 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work altera_mf_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
@@ -369,7 +369,7 @@
 # 	alt_fault_injection
 # 	sld_virtual_jtag_basic
 # 	altsource_probe
-# End time: 21:23:29 on Apr 04,2024, Elapsed time: 0:00:02
+# End time: 21:37:55 on Apr 05,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/altera_lnsim_ver
@@ -380,7 +380,7 @@
 # Modifying modelsim.ini
 # vlog -sv -work altera_lnsim_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_lnsim.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:29 on Apr 04,2024
+# Start time: 21:37:56 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work altera_lnsim_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_lnsim.sv 
 # -- Compiling package altera_lnsim_functions
 # -- Compiling package altera_generic_pll_functions
@@ -463,7 +463,7 @@
 # 	altera_iopll
 # 	fourteennm_altera_iopll
 # 	fourteennm_simple_iopll
-# End time: 21:23:30 on Apr 04,2024, Elapsed time: 0:00:01
+# End time: 21:37:56 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_ver
@@ -474,7 +474,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:30 on Apr 04,2024
+# Start time: 21:37:57 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_atoms_ncrypt.v 
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
@@ -488,19 +488,19 @@
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # 
 # Top level modules:
-# End time: 21:23:34 on Apr 04,2024, Elapsed time: 0:00:04
+# End time: 21:38:00 on Apr 05,2024, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 10
 # vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:34 on Apr 04,2024
+# Start time: 21:38:00 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hmi_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 21:23:36 on Apr 04,2024, Elapsed time: 0:00:02
+# End time: 21:38:02 on Apr 05,2024, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work cyclonev_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:36 on Apr 04,2024
+# Start time: 21:38:02 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_atoms.v 
 # -- Compiling UDP CYCLONEV_PRIM_DFFE
 # -- Compiling UDP CYCLONEV_PRIM_DFFEAS
@@ -640,7 +640,7 @@
 # 	cyclonev_mem_phy
 # 	cyclonev_oscillator
 # 	cyclonev_hps_interface_fpga2sdram
-# End time: 21:23:37 on Apr 04,2024, Elapsed time: 0:00:01
+# End time: 21:38:03 on Apr 05,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_hssi_ver
@@ -651,15 +651,15 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:37 on Apr 04,2024
+# Start time: 21:38:03 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_hssi_atoms_ncrypt.v 
 # 
 # Top level modules:
-# End time: 21:23:40 on Apr 04,2024, Elapsed time: 0:00:03
+# End time: 21:38:06 on Apr 05,2024, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work cyclonev_hssi_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:40 on Apr 04,2024
+# Start time: 21:38:06 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_hssi_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_hssi_atoms.v 
 # -- Compiling module cyclonev_hssi_8g_pcs_aggregate
 # -- Compiling module cyclonev_hssi_8g_rx_pcs
@@ -759,7 +759,7 @@
 # 	arriav_hssi_avmm_interface
 # 	arriav_hssi_pma_hi_pmaif
 # 	arriav_hssi_pma_hi_xcvrif
-# End time: 21:23:41 on Apr 04,2024, Elapsed time: 0:00:01
+# End time: 21:38:06 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlib verilog_libs/cyclonev_pcie_hip_ver
@@ -770,7 +770,7 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:41 on Apr 04,2024
+# Start time: 21:38:07 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/mentor/cyclonev_pcie_hip_atoms_ncrypt.v 
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
@@ -780,18 +780,18 @@
 # ** Warning: (vlog-2083) <protected>(<protected>): Carriage return (0x0D) is not followed by a newline (0x0A).
 # 
 # Top level modules:
-# End time: 21:23:44 on Apr 04,2024, Elapsed time: 0:00:03
+# End time: 21:38:10 on Apr 05,2024, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 6
 # vlog -vlog01compat -work cyclonev_pcie_hip_ver {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:44 on Apr 04,2024
+# Start time: 21:38:10 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work cyclonev_pcie_hip_ver c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/cyclonev_pcie_hip_atoms.v 
 # -- Compiling module cyclonev_hd_altpe2_hip_top
 # -- Compiling module arriav_hd_altpe2_hip_top
 # 
 # Top level modules:
 # 	cyclonev_hd_altpe2_hip_top
-# End time: 21:23:44 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:11 on Apr 05,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # if {[file exists rtl_work]} {
@@ -803,59 +803,85 @@
 # vmap work rtl_work 
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/ram.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:45 on Apr 04,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/ram.v 
-# -- Compiling module ram
-# 
-# Top level modules:
-# 	ram
-# End time: 21:23:45 on Apr 04,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/rom.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:45 on Apr 04,2024
+# Start time: 21:38:11 on Apr 05,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/rom.v 
 # -- Compiling module rom
 # 
 # Top level modules:
 # 	rom
-# End time: 21:23:45 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:11 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/ram7.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:38:11 on Apr 05,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/ram7.v 
+# -- Compiling module ram7
+# 
+# Top level modules:
+# 	ram7
+# End time: 21:38:11 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlib flags
+# ** Warning: (vlib-34) Library already exists at "flags".
+# vmap flags flags
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap flags flags 
+# Modifying modelsim.ini
+# vlog -vlog01compat -work flags +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/flags.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:38:11 on Apr 05,2024
+# vlog -reportprogress 300 -vlog01compat -work flags "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/flags.v 
+# -- Compiling module flags
+# 
+# Top level modules:
+# 	flags
+# End time: 21:38:11 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work flags +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules/altsource_probe_top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:38:11 on Apr 05,2024
+# vlog -reportprogress 300 -vlog01compat -work flags "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules/altsource_probe_top.v 
+# -- Compiling module altsource_probe_top
+# 
+# Top level modules:
+# 	altsource_probe_top
+# End time: 21:38:11 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/adder.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:45 on Apr 04,2024
+# Start time: 21:38:11 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/adder.sv 
 # -- Compiling module adder
 # 
 # Top level modules:
 # 	adder
-# End time: 21:23:45 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:11 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_element_vec.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:45 on Apr 04,2024
+# Start time: 21:38:11 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_element_vec.sv 
 # -- Compiling module alu_element_vec
 # 
 # Top level modules:
 # 	alu_element_vec
-# End time: 21:23:45 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:12 on Apr 05,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_scalar.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:45 on Apr 04,2024
+# Start time: 21:38:12 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_scalar.sv 
 # -- Compiling module alu_scalar
 # 
 # Top level modules:
 # 	alu_scalar
-# End time: 21:23:45 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:12 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_vec.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:45 on Apr 04,2024
+# Start time: 21:38:12 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_vec.sv 
 # -- Compiling module alu_vec
 # ** Warning: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_vec.sv(2): (vlog-13314) Defaulting port 'vectorA' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -863,162 +889,162 @@
 # 
 # Top level modules:
 # 	alu_vec
-# End time: 21:23:45 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:12 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/branch_unit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:45 on Apr 04,2024
+# Start time: 21:38:12 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/branch_unit.sv 
 # -- Compiling module jump_unit
 # 
 # Top level modules:
 # 	jump_unit
-# End time: 21:23:45 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:12 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/compare.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:45 on Apr 04,2024
+# Start time: 21:38:12 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/compare.sv 
 # -- Compiling module compare
 # 
 # Top level modules:
 # 	compare
-# End time: 21:23:45 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:12 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/control_unit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:46 on Apr 04,2024
+# Start time: 21:38:12 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/control_unit.sv 
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 21:23:46 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:12 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:46 on Apr 04,2024
+# Start time: 21:38:12 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv 
 # -- Compiling module datapath
 # 
 # Top level modules:
 # 	datapath
-# End time: 21:23:46 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:12 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/decode.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:46 on Apr 04,2024
+# Start time: 21:38:12 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/decode.sv 
 # -- Compiling module decode
 # 
 # Top level modules:
 # 	decode
-# End time: 21:23:46 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:12 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:46 on Apr 04,2024
+# Start time: 21:38:12 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend.sv 
 # -- Compiling module extend
 # 
 # Top level modules:
 # 	extend
-# End time: 21:23:46 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:12 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_vector_size.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:46 on Apr 04,2024
+# Start time: 21:38:13 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_vector_size.sv 
 # -- Compiling module extend_vector_size
 # 
 # Top level modules:
 # 	extend_vector_size
-# End time: 21:23:46 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:13 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_addr_manager.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:46 on Apr 04,2024
+# Start time: 21:38:13 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_addr_manager.sv 
 # -- Compiling module mem_addr_manager
 # 
 # Top level modules:
 # 	mem_addr_manager
-# End time: 21:23:46 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:13 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_input_manager.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:46 on Apr 04,2024
+# Start time: 21:38:13 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_input_manager.sv 
 # -- Compiling module mem_input_manager
 # ** Warning: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_input_manager.sv(5): (vlog-13314) Defaulting port 'input_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	mem_input_manager
-# End time: 21:23:46 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:13 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_output_manager.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:46 on Apr 04,2024
+# Start time: 21:38:13 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_output_manager.sv 
 # -- Compiling module mem_output_manager
 # 
 # Top level modules:
 # 	mem_output_manager
-# End time: 21:23:46 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:13 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_2to1.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:46 on Apr 04,2024
+# Start time: 21:38:13 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_2to1.sv 
 # -- Compiling module mux_2to1
 # 
 # Top level modules:
 # 	mux_2to1
-# End time: 21:23:46 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:13 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_4to1.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:47 on Apr 04,2024
+# Start time: 21:38:13 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_4to1.sv 
 # -- Compiling module mux_4to1
 # 
 # Top level modules:
 # 	mux_4to1
-# End time: 21:23:47 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:13 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/new_clk.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:47 on Apr 04,2024
+# Start time: 21:38:13 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/new_clk.sv 
 # -- Compiling module new_clk
 # 
 # Top level modules:
 # 	new_clk
-# End time: 21:23:47 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:13 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/pc.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:47 on Apr 04,2024
+# Start time: 21:38:13 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/pc.sv 
 # -- Compiling module pc
 # 
 # Top level modules:
 # 	pc
-# End time: 21:23:47 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:13 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/scalar_rf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:47 on Apr 04,2024
+# Start time: 21:38:13 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/scalar_rf.sv 
 # -- Compiling module scalar_rf
 # 
 # Top level modules:
 # 	scalar_rf
-# End time: 21:23:47 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:13 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_ex_mem.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:47 on Apr 04,2024
+# Start time: 21:38:14 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_ex_mem.sv 
 # -- Compiling module segment_ex_mem
 # ** Warning: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_ex_mem.sv(6): (vlog-13314) Defaulting port 'ALUResultV_ex' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -1026,11 +1052,11 @@
 # 
 # Top level modules:
 # 	segment_ex_mem
-# End time: 21:23:47 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:14 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_id_ex.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:47 on Apr 04,2024
+# Start time: 21:38:14 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_id_ex.sv 
 # -- Compiling module segment_id_ex
 # ** Warning: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_id_ex.sv(5): (vlog-13314) Defaulting port 'RD1V_id' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -1039,22 +1065,22 @@
 # 
 # Top level modules:
 # 	segment_id_ex
-# End time: 21:23:47 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:14 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 3
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_if_id.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:47 on Apr 04,2024
+# Start time: 21:38:14 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_if_id.sv 
 # -- Compiling module segment_if_id
 # ** Warning: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_if_id.sv(16): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # 
 # Top level modules:
 # 	segment_if_id
-# End time: 21:23:47 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:14 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_mem_wb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:47 on Apr 04,2024
+# Start time: 21:38:14 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_mem_wb.sv 
 # -- Compiling module segment_mem_wb
 # ** Warning: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_mem_wb.sv(4): (vlog-13314) Defaulting port 'data_vec_mem' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -1062,43 +1088,63 @@
 # 
 # Top level modules:
 # 	segment_mem_wb
-# End time: 21:23:47 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:14 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/vectorial_rf.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:47 on Apr 04,2024
+# Start time: 21:38:14 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/vectorial_rf.sv 
 # -- Compiling module vectorial_rf
 # 
 # Top level modules:
 # 	vectorial_rf
-# End time: 21:23:48 on Apr 04,2024, Elapsed time: 0:00:01
+# End time: 21:38:14 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/top.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:38:14 on Apr 05,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/top.sv 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 21:38:14 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_pc.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:48 on Apr 04,2024
+# Start time: 21:38:14 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_pc.sv 
 # -- Compiling module extend_pc
 # 
 # Top level modules:
 # 	extend_pc
-# End time: 21:23:48 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:14 on Apr 05,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/special_register_manager.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:38:14 on Apr 05,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/special_register_manager.sv 
+# -- Compiling module special_register_manager
+# 
+# Top level modules:
+# 	special_register_manager
+# End time: 21:38:14 on Apr 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:23:48 on Apr 04,2024
+# Start time: 21:38:14 on Apr 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2" C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath_tb.sv 
 # -- Compiling module datapath_tb
 # 
 # Top level modules:
 # 	datapath_tb
-# End time: 21:23:48 on Apr 04,2024, Elapsed time: 0:00:00
+# End time: 21:38:15 on Apr 05,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  datapath_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" datapath_tb 
-# Start time: 21:23:48 on Apr 04,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -L flags -voptargs="+acc"  datapath_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -L flags -voptargs=""+acc"" datapath_tb 
+# Start time: 21:38:15 on Apr 05,2024
 # Loading sv_std.std
 # Loading work.datapath_tb
 # Loading work.datapath
@@ -1111,6 +1157,7 @@
 # Loading altera_mf_ver.altsyncram
 # Loading work.segment_if_id
 # Loading work.control_unit
+# Loading work.special_register_manager
 # Loading work.mux_4to1
 # Loading work.extend
 # Loading work.scalar_rf
@@ -1124,7 +1171,7 @@
 # Loading work.mem_addr_manager
 # Loading work.compare
 # Loading work.mem_input_manager
-# Loading work.ram
+# Loading work.ram7
 # Loading work.extend_vector_size
 # Loading work.mem_output_manager
 # Loading work.segment_mem_wb
@@ -1135,19 +1182,101 @@
 # ** Warning: (vsim-3015) [PCDPC] - Port size (19) does not match connection size (32) for port 'pc_in'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_pc.sv(1).
 #    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/extend_pc_inst File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 63
 # ** Warning: (vsim-3015) [PCDPC] - Port size (19) does not match connection size (32) for port 'A'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/adder.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/adder_ex File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 279
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/adder_ex File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 287
 # ** Warning: (vsim-3015) [PCDPC] - Port size (19) does not match connection size (32) for port 'C'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/adder.sv(3).
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/adder_ex File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 279
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/adder_ex File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 287
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (17) for port 'A'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_2to1.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/mux_WD_mem File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 353
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (19) for port 'address'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/ram.v(41).
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/mem File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 360
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/mux_WD_mem File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 361
+# ** Warning: (vsim-3015) [PCDPC] - Port size (18) does not match connection size (19) for port 'address'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/ram7.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/mem File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 368
 # 
 # add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: dmeji  Hostname: LAPTOP-SKUFJ66D  ProcessID: 9744
+#           Attempting to use alternate WLF file "./wlftdyqbg4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdyqbg4
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Warning: (vsim-PLI-3412) Memory address read on line 513 of file "memory.ver" is out of bounds specified for readmem command.  (Current address [256], address range [0:255])    : c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/altera_mf.v(48978)
-#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/mem/altsyncram_component/m_default/altsyncram_inst
+do {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/simulation/modelsim/debud_sisd.do}
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /datapath_tb/dut/frec_clk/seconds
+# add wave -noupdate -radix unsigned /datapath_tb/dut/pc_if/pc_in
+# add wave -noupdate -radix unsigned /datapath_tb/dut/pc_if/pc_out
+# add wave -noupdate /datapath_tb/dut/control_unit_inst/instruction_type
+# add wave -noupdate /datapath_tb/dut/control_unit_inst/opcode
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R0
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R1
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R2
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R3
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R4
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R5
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R6
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R7
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R8
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R9
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R10
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R11
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R12
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R13
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R14
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R15
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R16
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R17
+# add wave -noupdate -radix unsigned /datapath_tb/dut/scalar_rf_id/R18
+# add wave -noupdate -radix unsigned /datapath_tb/dut/alu_ex/A
+# add wave -noupdate -radix unsigned /datapath_tb/dut/alu_ex/B
+# add wave -noupdate /datapath_tb/dut/alu_ex/sel
+# add wave -noupdate -radix unsigned /datapath_tb/dut/alu_ex/C
+# add wave -noupdate /datapath_tb/dut/mem_addr_manager_inst/read_enable
+# add wave -noupdate /datapath_tb/dut/mem_addr_manager_inst/write_enable
+# add wave -noupdate -radix unsigned /datapath_tb/dut/mem_addr_manager_inst/input_address
+# add wave -noupdate -radix unsigned /datapath_tb/dut/mem_addr_manager_inst/output_address
+# add wave -noupdate -radix unsigned /datapath_tb/dut/mem/address
+# add wave -noupdate -radix unsigned /datapath_tb/dut/mem/data
+# add wave -noupdate -radix binary /datapath_tb/dut/mem/wren
+# add wave -noupdate -radix unsigned /datapath_tb/dut/mem/q
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {7978 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 299
+# configure wave -valuecolwidth 363
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ns
+# update
+# WaveRestoreZoom {0 ps} {41080 ps}
+add wave -position 24  sim:/datapath_tb/dut/scalar_rf_id/R20
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/simulation/modelsim/debud_sisd.do}
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (19) does not match connection size (32) for port 'pc_in'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_pc.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/extend_pc_inst File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 63
+# ** Warning: (vsim-3015) [PCDPC] - Port size (19) does not match connection size (32) for port 'A'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/adder.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/adder_ex File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 287
+# ** Warning: (vsim-3015) [PCDPC] - Port size (19) does not match connection size (32) for port 'C'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/adder.sv(3).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/adder_ex File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 287
+# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (17) for port 'A'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_2to1.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/mux_WD_mem File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 361
+# ** Warning: (vsim-3015) [PCDPC] - Port size (18) does not match connection size (19) for port 'address'. The port definition is at: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/ram7.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_tb/dut/mem File: C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv Line: 368
+run -all
+# GetModuleFileName: No se puede encontrar el módulo especificado.
+# 
+# 
+# Break key hit
+# Simulation stop requested.
+# End time: 21:41:00 on Apr 05,2024, Elapsed time: 0:02:45
+# Errors: 0, Warnings: 5

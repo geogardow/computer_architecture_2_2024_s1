@@ -6,11 +6,9 @@
 								output logic [2:0] ALUOpS,ALUOpV,
 								output logic ALUSrc, RegWriteV, RegWriteS,
 								output logic [1:0] ImmSrc, RegSrc1, RegDest,
-								output logic RegSrc2,
-								output logic [18:0] stall_count, aritmetric_count, memory_count, instruction_count);
+								output logic RegSrc2);
 
 
-	logic [18:0] stall_count_temp, aritmetric_count_temp, memory_count_temp, instruction_count_temp;
 	
 	always_latch
 	begin
@@ -42,21 +40,12 @@
 				RegSrc2 = 0;
 				RegSrc1 = 0;
 				RegDest = 0;
-				stall_count_temp = 0;
-				aritmetric_count_temp = 0; 
-				memory_count_temp = 0; 
-				instruction_count_temp = 0;
-				stall_count = 0;
-				aritmetric_count = 0; 
-				memory_count = 0; 
-				instruction_count = 0;
 			end
 		
 		// Instrucciones de Datos sin inmediato:
 		if (instruction_type == 2'b01 && opcode[4] == 1'b0)
 			begin
-				instruction_count_temp = instruction_count_temp + 1;
-				instruction_count = instruction_count_temp;
+				
 				Brinco = 0;
 				Equal = 0;
 				GreaterEqual = 0;
@@ -87,37 +76,32 @@
 				if (opcode[4:0] == 5'b00000)
 					begin
 						ALUOpS = 3'b000;
-						aritmetric_count_temp = aritmetric_count_temp + 1;
-						aritmetric_count = aritmetric_count_temp;
+						
 					end
 				// resta
 				else if (opcode[4:0] == 5'b00001)
 					begin
 						ALUOpS = 3'b001;
-						aritmetric_count_temp = aritmetric_count_temp + 1;
-						aritmetric_count = aritmetric_count_temp;
+						
 
 					end
 				// mult
 				else if (opcode[4:0] == 5'b00010)
 					begin
 						ALUOpS = 3'b010;
-						aritmetric_count_temp = aritmetric_count_temp + 1;
-						aritmetric_count = aritmetric_count_temp;
+						
 					end
 				// div
 				else if (opcode[4:0] == 5'b00011)
 					begin
 						ALUOpS = 3'b011;
-						aritmetric_count_temp = aritmetric_count_temp + 1;
-						aritmetric_count = aritmetric_count_temp;
+						
 					end
 				// union
 				else if (opcode[4:0] == 5'b00100)
 					begin
 						ALUOpS = 3'b111;
-						aritmetric_count_temp = aritmetric_count_temp + 1;
-						aritmetric_count = aritmetric_count_temp;
+						
 					end
 				// Stall estandar
 				else if (opcode[4:0] == 5'b00101)
@@ -143,8 +127,7 @@
 						ALUOpS = 0;
 						ALUOpV = 0;
 						operand_flag = 0;
-						stall_count_temp = stall_count_temp + 1;
-						stall_count = stall_count_temp;
+						
 
 
 					end
@@ -172,8 +155,7 @@
 						ALUOpS = 0;
 						ALUOpV = 0;
 						operand_flag = 0;
-						stall_count_temp = stall_count_temp + 1;
-						stall_count = stall_count_temp;
+						
 
 					end
 				// Stall write
@@ -200,8 +182,7 @@
 						ALUOpS = 0;
 						ALUOpV = 0;
 						operand_flag = 0;
-						stall_count_temp = stall_count_temp + 1;
-						stall_count = stall_count_temp;
+						
 
 					end
 			end
@@ -209,8 +190,7 @@
 		// Instrucciones de Datos con inmediato:
 		if (instruction_type == 2'b01 && opcode[4] == 1'b1)
 			begin
-				instruction_count_temp = instruction_count_temp + 1;
-				instruction_count = instruction_count_temp;
+				
 
 				Brinco = 0;
 				Equal = 0;
@@ -237,8 +217,6 @@
 				RegSrc1 = 2'b10;
 				RegDest = 2'b10;
 				RegSrc2 = 1'bx;
-				aritmetric_count_temp = aritmetric_count_temp + 1;
-				aritmetric_count = aritmetric_count_temp;
 				
 				// sumita
 				if (opcode[4:1] == 4'b1000)
@@ -285,8 +263,7 @@
 		// Instrucciones de Control:
 		if (instruction_type == 2'b10)
 			begin
-				instruction_count_temp = instruction_count_temp + 1;
-				instruction_count = instruction_count_temp;
+				
 
 				AluData = 0;
 				MemRead = 0;
@@ -353,8 +330,7 @@
 		// Instrucciones de Memoria:
 		if (instruction_type == 2'b00)
 			begin
-				instruction_count_temp = instruction_count_temp + 1;
-				instruction_count = instruction_count_temp;
+				
 
 				Brinco = 0;
 				Equal = 0;
@@ -370,8 +346,7 @@
 				RegSrc1 = 2'b00;
 				RegDest = 2'b00;
 				RegSrc2 = 1'bx;
-				memory_count_temp = memory_count_temp + 1;
-				memory_count = memory_count_temp;
+				
 				
 				// cargar instruction	
 				if (opcode[4:3] == 2'b00)
@@ -451,8 +426,7 @@
 	    // Instrucciones de Vectores:
 		if (instruction_type == 2'b11 && opcode[4] == 1'b0 && opcode[3] == 1'b0)
 			begin
-				instruction_count_temp = instruction_count_temp + 1;
-				instruction_count = instruction_count_temp;
+				
 
 				Brinco = 0;
 				Equal = 0;
@@ -480,8 +454,6 @@
 				RegSrc2 = 1;
 				RegDest = 2'b01;
 
-				aritmetric_count_temp = aritmetric_count_temp + 1;
-				aritmetric_count = aritmetric_count_temp;
 				// sumita
 				if (opcode[2:0] == 3'b000)
 					begin
@@ -497,8 +469,7 @@
         // Instrucciones de Vectores con registros escalares:
 		if (instruction_type == 2'b11 && opcode[4] == 1'b0 && opcode[3] == 1'b1)
 			begin
-				instruction_count_temp = instruction_count_temp + 1;
-				instruction_count = instruction_count_temp;
+				
 
 				Brinco = 0;
 				Equal = 0;
@@ -526,8 +497,6 @@
 				RegSrc2 = 1;
 				RegDest = 2'b01;
 
-				aritmetric_count_temp = aritmetric_count_temp + 1;
-				aritmetric_count = aritmetric_count_temp;
 				
 				// sumita
 				if (opcode[2:0] == 3'b010)
@@ -544,8 +513,6 @@
         // Instrucciones de Vectores con inmediato:
 		if (instruction_type == 2'b11 && opcode[4] == 1'b1)
 			begin
-				instruction_count_temp = instruction_count_temp + 1;
-				instruction_count = instruction_count_temp;
 
 				Brinco = 0;
 				Equal = 0;
@@ -572,9 +539,6 @@
 				RegSrc1 = 2'b10;
 				RegSrc2 = 1'bx;
 				RegDest = 2'b10;
-
-				aritmetric_count_temp = aritmetric_count_temp + 1;
-				aritmetric_count = aritmetric_count_temp;
 				
 				// cad
 				if (opcode[4:1] == 4'b1000)

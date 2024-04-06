@@ -136,7 +136,15 @@ module datapath (
     .ImmSrc(InmSrc_id),
     .RegSrc1(RegSrc1_id),
     .RegDest(RegDest_id),
-    .RegSrc2(RegSrc2_id),
+    .RegSrc2(RegSrc2_id)
+  );
+
+  special_register_manager special_register_manager_inst (
+    .clk(clk),
+    .rst(rst),
+    .instruction_type(instr_type_id),
+    .opcode(instr_opcode_id),
+    .finish(finish),
     .stall_count(stall_count_id),
     .aritmetric_count(aritmetric_count_id),
     .memory_count(memory_count_id),

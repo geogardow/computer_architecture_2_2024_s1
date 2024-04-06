@@ -166,7 +166,7 @@ module scalar_rf #(int WIDTH=16) (
 			R30 = {(WIDTH){1'b0}};
 			R31 = {(WIDTH){1'b0}};
 			end
-		else if (WES) begin
+		else if (WES && !finish) begin
 			R27 = R27 + 1;
 			if (instruction_count) begin
 				R31 = R27 / instruction_count;
@@ -206,7 +206,7 @@ module scalar_rf #(int WIDTH=16) (
 				5'd31: R31 = WD;
 			endcase
 		end
-		else begin
+		else if (!finish) begin
 			R27 = R27 + 1;
 			if (instruction_count) begin
 				R31 = R27 / instruction_count;

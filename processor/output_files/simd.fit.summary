@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Apr  4 23:32:19 2024
+Fitter Status : Successful - Fri Apr  5 21:55:56 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : simd
 Top-level Entity Name : top
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 11,952 / 32,070 ( 37 % )
-Total registers : 12431
+Logic utilization (in ALMs) : 11,695 / 32,070 ( 36 % )
+Total registers : 12513
 Total pins : 3 / 457 ( < 1 % )
 Total virtual pins : 0
 Total block memory bits : 3,208,688 / 4,065,280 ( 79 % )

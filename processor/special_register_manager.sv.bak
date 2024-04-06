@@ -1,0 +1,137 @@
+module special_register_manager(
+							input logic clk, 
+							input logic rst,
+							output logic [18:0] stall_count, aritmetric_count, memory_count, instruction_count);
+
+	
+	logic [18:0] stall_count_temp, aritmetric_count_temp, memory_count_temp, instruction_count_temp;
+	
+	always_ff @(negedge clk or posedge rst) begin	
+
+		if (rst) begin
+			stall_count_temp = 0;
+			aritmetric_count_temp = 0; 
+			memory_count_temp = 0; 
+			instruction_count_temp = 0;
+			stall_count = 0;
+			aritmetric_count = 0; 
+			memory_count = 0; 
+			instruction_count = 0;
+		end 
+		
+		// Instrucciones de Datos sin inmediato:
+		if (instruction_type == 2'b01 && opcode[4] == 1'b0)
+			begin
+				instruction_count_temp = instruction_count_temp + 1;
+				instruction_count = instruction_count_temp;
+				
+				// suma
+				if (opcode[4:0] == 5'b00000)
+					begin
+						ALUOpS = 3'b000;
+						aritmetric_count_temp = aritmetric_count_temp + 1;
+						aritmetric_count = aritmetric_count_temp;
+					end
+				// resta
+				else if (opcode[4:0] == 5'b00001)
+					begin
+						ALUOpS = 3'b001;
+						aritmetric_count_temp = aritmetric_count_temp + 1;
+						aritmetric_count = aritmetric_count_temp;
+
+					end
+				// mult
+				else if (opcode[4:0] == 5'b00010)
+					begin
+						ALUOpS = 3'b010;
+						aritmetric_count_temp = aritmetric_count_temp + 1;
+						aritmetric_count = aritmetric_count_temp;
+					end
+				// div
+				else if (opcode[4:0] == 5'b00011)
+					begin
+						ALUOpS = 3'b011;
+						aritmetric_count_temp = aritmetric_count_temp + 1;
+						aritmetric_count = aritmetric_count_temp;
+					end
+				// union
+				else if (opcode[4:0] == 5'b00100)
+					begin
+						ALUOpS = 3'b111;
+						aritmetric_count_temp = aritmetric_count_temp + 1;
+						aritmetric_count = aritmetric_count_temp;
+					end
+				// Stall estandar
+				else if (opcode[4:0] == 5'b00101)
+					begin
+						
+						stall_count_temp = stall_count_temp + 1;
+						stall_count = stall_count_temp;
+
+
+					end
+				// Stall read
+				else if (opcode[4:0] == 5'b00110)
+					begin
+						stall_count_temp = stall_count_temp + 1;
+						stall_count = stall_count_temp;
+
+					end
+				// Stall write
+				else if (opcode[4:0] == 5'b00111)
+					begin
+						stall_count_temp = stall_count_temp + 1;
+						stall_count = stall_count_temp;
+
+					end
+			end
+			// Instrucciones de Datos con inmediato:
+			if (instruction_type == 2'b01 && opcode[4] == 1'b1) begin
+					instruction_count_temp = instruction_count_temp + 1;
+					instruction_count = instruction_count_temp;
+					aritmetric_count_temp = aritmetric_count_temp + 1;
+					aritmetric_count = aritmetric_count_temp;     
+			end
+			
+			// Instrucciones de Memoria:
+			if (instruction_type == 2'b00)
+				begin
+					instruction_count_temp = instruction_count_temp + 1;
+					instruction_count = instruction_count_temp;
+					memory_count_temp = memory_count_temp + 1;
+					memory_count = memory_count_temp;
+				end
+
+			// Instrucciones de Vectores:
+			if (instruction_type == 2'b11 && opcode[4] == 1'b0 && opcode[3] == 1'b0)
+				begin
+					instruction_count_temp = instruction_count_temp + 1;
+					instruction_count = instruction_count_temp;
+					aritmetric_count_temp = aritmetric_count_temp + 1;
+					aritmetric_count = aritmetric_count_temp;   
+				end
+			// Instrucciones de Vectores con registros escalares:
+			if (instruction_type == 2'b11 && opcode[4] == 1'b0 && opcode[3] == 1'b1)
+				begin
+					instruction_count_temp = instruction_count_temp + 1;
+					instruction_count = instruction_count_temp;
+					aritmetric_count_temp = aritmetric_count_temp + 1;
+					aritmetric_count = aritmetric_count_temp;
+				end
+			
+			// Instrucciones de Vectores con inmediato:
+			if (instruction_type == 2'b11 && opcode[4] == 1'b1)
+				begin
+					instruction_count_temp = instruction_count_temp + 1;
+					instruction_count = instruction_count_temp;
+					aritmetric_count_temp = aritmetric_count_temp + 1;
+					aritmetric_count = aritmetric_count_temp; 
+				end
+	end
+
+	assign instruction_count = instruction_count_temp;
+	assign stall_count = stall_count_temp;
+	assign aritmetric_count = aritmetric_count_temp;
+	assign memory_count = memory_count_temp;
+
+endmodule

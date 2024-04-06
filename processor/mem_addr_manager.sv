@@ -8,30 +8,32 @@ module mem_addr_manager(
 	
 	logic [18:0] temp_addr_vec;
 	logic [18:0] temp_addr_sca;
-	logic [4:0] count;
+	logic [4:0] count_read;
+	logic [4:0] count_write;
 	
 	
 	always_ff @(negedge clk or posedge rst) begin	
 
 		if (rst) begin
-			count <= 5'd0; // Initialize count on reset
+			count_read <= 5'd0; // Initialize count on reset
+			count_write <= 5'd0; // Initialize count on reset
 			temp_addr_vec <= 19'h0000; // Reset to initial value
 			temp_addr_sca <= 19'h0000; // Reset to initial value
 		end 
 		
 		else if (write_enable) begin 
 		
-			if (count == 5'd17) begin
-				count <= 5'd0;
+			if (count_write == 5'd16) begin	
+				count_write <= 5'd0;
 			end
 
-			else if (count == 5'd0) begin
-				count <= count + 5'b1; // Decrease count
+			else if (count_write == 5'd0) begin 
+				count_write <= count_write + 5'b1; // Decrease count
 				temp_addr_vec <= input_address;
 			end
 			
 			else begin
-				count <= count + 5'b1; // Decrease count
+				count_write <= count_write + 5'b1; // Decrease count
 				temp_addr_vec <= temp_addr_vec + 1'b1; // Increment address				
 			end
 			
@@ -39,17 +41,17 @@ module mem_addr_manager(
 
 		else if (read_enable) begin 
 		
-			if (count == 5'd17) begin
-				count <= 5'd0;
+			if (count_read == 5'd16) begin
+				count_read <= 5'd0;
 			end
 
-			else if (count == 5'd0) begin
-				count <= count + 5'b1; // Decrease count
+			else if (count_read == 5'd0) begin
+				count_read <= count_read + 5'b1; // Decrease count
 				temp_addr_vec <= temp_addr_vec + 1'b1; // Increment address		
 			end
 			
 			else begin
-				count <= count + 5'b1; // Decrease count
+				count_read <= count_read + 5'b1; // Decrease count
 				temp_addr_vec <= temp_addr_vec + 1'b1; // Increment address				
 			end
 			

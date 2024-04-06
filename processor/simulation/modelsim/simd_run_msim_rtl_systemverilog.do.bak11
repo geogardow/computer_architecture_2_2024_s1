@@ -49,8 +49,12 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/ram.v}
 vlog -vlog01compat -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/rom.v}
+vlog -vlog01compat -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/ram7.v}
+vlib flags
+vmap flags flags
+vlog -vlog01compat -work flags +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/flags.v}
+vlog -vlog01compat -work flags +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/flags/synthesis/submodules/altsource_probe_top.v}
 vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/adder.sv}
 vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_element_vec.sv}
 vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_scalar.sv}
@@ -75,11 +79,13 @@ vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Se
 vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_if_id.sv}
 vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_mem_wb.sv}
 vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/vectorial_rf.sv}
+vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/top.sv}
 vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_pc.sv}
+vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/special_register_manager.sv}
 
 vlog -sv -work work +incdir+C:/Users/dmeji/OneDrive\ -\ Estudiantes\ ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2 {C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath_tb.sv}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  datapath_tb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -L flags -voptargs="+acc"  datapath_tb
 
 add wave *
 view structure
