@@ -9,8 +9,8 @@ _start:
     brinco cicloFiltro
 cicloFiltro:
     cargar R5,0(R0) 
-    suma R4,R1,R4 
-    cargar R6,0(R4) 
+    suma R20,R1,R4 
+    cargar R6,0(R20) 
     cad R7,R5,8
     unioncita R8,R5,255
     cad R9,R6,8
@@ -26,7 +26,7 @@ cicloFiltro:
     suma R5,R5,R12
     suma R17,R17,R5 
     sumita R4,R4,1
-    sumita R18,R15,1
+    sumita R18,R18,1
     sumita R19,R15,16 
     igual R18,R19,almacenarResultado
     brinco cicloFiltro
@@ -36,6 +36,7 @@ almacenarResultado:
     sumita R3,R3,1
     suma R4,R15,R15 
     suma R18,R15,R15 
+    suma R17,R15,R15
     igual R3,R10,_end
     brinco cicloFiltro
 _end:

@@ -26,15 +26,15 @@ cicloFiltro:
     sumita R0,R0,1
     sumita R6,R6,1
     sumita R11,R11,1
-    sumita R8,R15,7 
+    sumita R8,R15,8 
     igual R6,R8,reset 
-    sumita R8,R15,15
+    sumita R8,R15,16
     igual R11,R8,almacenarResultado
     igual R10,R0,_end
     brinco cicloFiltro
 reset:
     suma R6,R15,R15
-    sumita R8,R15,15
+    sumita R8,R15,16
     igual R11,R8,almacenarResultado
     igual R10,R0,_end
     brinco cicloFiltro

@@ -119,7 +119,7 @@ def stallInsertionReadVector(instructionElementsList, typeDictionary):
 
             # vector memory instruction
             if(currentInstructionType == "00" and currentInstruction == "guardarv"):
-                for j in range(1,18):
+                for j in range(1,17):
                     result.insert(i + j, stallWrite)        
 
         i += 1
