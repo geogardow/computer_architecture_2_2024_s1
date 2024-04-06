@@ -57,7 +57,7 @@ def filter_audio(x, b, sample_rate, audio_length, Nx=16, Nb=16):
         R[17] = multvecesc(R[14], R[5])                 # MULTVECESC RV6, RV3, R5                       # low = b × d
         R[17] = cadvec(R[17], 8)                        # CADVEC RV6, RV6, #8                           # low >> 8
         R[17] = addvec(R[17], R[16])                    # ADDVEC RV0, RV6, RV5                          # result = low + mid
-        R[17] = addvec(R[0], R[15])                    # ADDVEC RV0, RV0, RV4                          # result = result + high
+        R[17] = addvec(R[00], R[15])                    # ADDVEC RV0, RV0, RV4                          # result = result + high
 
 
 

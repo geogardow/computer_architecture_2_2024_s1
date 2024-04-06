@@ -26,7 +26,7 @@ def mif_recover(path):
     return values
 
 
-values_list = mif_recover("./Audio Scripts/Semi ARM Prototype/simd8.mif")
+values_list = mif_recover("./Audio Scripts/Semi ARM Prototype/sisd.mif")
 
 SAMPLE_RATE = 40000
 AUDIO_LENGTH = 5
@@ -36,5 +36,5 @@ NX = 16
 
 built_array = fixed_array_to_float(values_list, 7, 8)
 built_array = normalize_array(built_array)
-array_to_audio(built_array, "./Audio Scripts/Semi ARM Prototype/simd8.wav",SAMPLE_RATE)
+array_to_audio(built_array, "./Audio Scripts/Semi ARM Prototype/sisd.wav",SAMPLE_RATE)
 

@@ -1,6 +1,6 @@
-from mif_recover import *
+from mif_recover import mif_recover
 
-live = mif_recover("./Audio Scripts/Semi ARM Prototype/simd8.mif")[:-15]
+live = mif_recover("./Audio Scripts/Semi ARM Prototype/sisd.mif")[:-15]
 memory = mif_recover("./Audio Scripts/Semi ARM Prototype/memory.mif")
 
 coincidences = 0
