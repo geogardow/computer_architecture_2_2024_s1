@@ -11,7 +11,7 @@ cModel Technology
 Z0 dC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/simulation/modelsim
 vadder
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1712374691
+Z2 !s110 1712473504
 !i10b 1
 !s100 NBH24M_U>?NGlJeCzEiDa1
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1712374691.000000
+Z7 !s108 1712473504.000000
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/adder.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/adder.sv|
 !i113 1
@@ -37,7 +37,7 @@ Z9 !s92 -sv -work work {+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/S
 Z10 tCvgOpt 0
 valu_element_vec
 R1
-Z11 !s110 1712374692
+R2
 !i10b 1
 !s100 bD]@GbQoVk@Y8Ml0::geT0
 R3
@@ -63,7 +63,7 @@ R9
 R10
 valu_scalar
 R1
-R11
+R2
 !i10b 1
 !s100 :ZZd;Y`9Z??:KQ8;I84eD1
 R3
@@ -80,7 +80,7 @@ R6
 r1
 !s85 0
 31
-Z12 !s108 1712374692.000000
+R7
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_scalar.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_scalar.sv|
 !i113 1
@@ -89,7 +89,7 @@ R9
 R10
 valu_vec
 R1
-R11
+R2
 !i10b 1
 !s100 HEYME=SL9CMj6KLR^eaMB0
 R3
@@ -106,7 +106,7 @@ R6
 r1
 !s85 0
 31
-R12
+R7
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_vec.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/alu_vec.sv|
 !i113 1
@@ -115,7 +115,7 @@ R9
 R10
 vcompare
 R1
-R11
+R2
 !i10b 1
 !s100 bhbXU@N4KT58f39?1cKXM1
 R3
@@ -132,7 +132,7 @@ R6
 r1
 !s85 0
 31
-R12
+R7
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/compare.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/compare.sv|
 !i113 1
@@ -141,7 +141,7 @@ R9
 R10
 vcontrol_unit
 R1
-R11
+Z11 !s110 1712473505
 !i10b 1
 !s100 7JZHNY>8:Umj4VecoEW>;0
 R3
@@ -158,7 +158,7 @@ R6
 r1
 !s85 0
 31
-R12
+R7
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/control_unit.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/control_unit.sv|
 !i113 1
@@ -169,13 +169,13 @@ vdatapath
 R1
 R11
 !i10b 1
-!s100 o^h:9d4iWlO0G9IGcb0hT3
+!s100 =`4ci<PGD3@Nc=?UdbBEW0
 R3
-IzDPOAdPDFldE`?FAKo5[<1
+Ii8PkFfdOYQ7C7O3`9e3nL2
 R4
 S1
 R0
-w1712374152
+w1712473445
 8C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv
 FC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv
 !i122 9
@@ -184,7 +184,7 @@ R6
 r1
 !s85 0
 31
-R12
+Z12 !s108 1712473505.000000
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath.sv|
 !i113 1
@@ -193,24 +193,24 @@ R9
 R10
 vdatapath_tb
 R1
-!s110 1712374695
+Z13 !s110 1712473507
 !i10b 1
-!s100 :9g2`n=Xokf9<8N;S4Je40
+!s100 B<XP0YS[VD^]QZ1ZzgK^H2
 R3
-I5[:NmKKKm2YQ5]=gh=5XE2
+IdM[zQj]Bn?4P445^20ZdP2
 R4
 S1
 R0
-w1712189007
+w1712473436
 8C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath_tb.sv
 FC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath_tb.sv
-!i122 29
-L0 2 40
+!i122 28
+L0 2 47
 R6
 r1
 !s85 0
 31
-Z13 !s108 1712374694.000000
+Z14 !s108 1712473507.000000
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath_tb.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/datapath_tb.sv|
 !i113 1
@@ -271,7 +271,7 @@ R9
 R10
 vextend_pc
 R1
-Z14 !s110 1712374694
+R13
 !i10b 1
 !s100 zD9n1;35ahjj15?Kk@2IG1
 R3
@@ -288,7 +288,7 @@ R6
 r1
 !s85 0
 31
-R13
+R14
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_pc.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_pc.sv|
 !i113 1
@@ -297,7 +297,7 @@ R9
 R10
 vextend_vector_size
 R1
-Z15 !s110 1712374693
+R11
 !i10b 1
 !s100 Vz;5ZiEk>7I0Y^HBh[Dz=0
 R3
@@ -314,7 +314,7 @@ R6
 r1
 !s85 0
 31
-Z16 !s108 1712374693.000000
+R12
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_vector_size.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/extend_vector_size.sv|
 !i113 1
@@ -323,7 +323,7 @@ R9
 R10
 vjump_unit
 R1
-R11
+R2
 !i10b 1
 !s100 JET4A[<JdfcW0MiK61;AQ0
 R3
@@ -340,7 +340,7 @@ R6
 r1
 !s85 0
 31
-R12
+R7
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/branch_unit.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/branch_unit.sv|
 !i113 1
@@ -349,7 +349,7 @@ R9
 R10
 vmem_addr_manager
 R1
-R15
+R11
 !i10b 1
 !s100 QfQ5Pc4EK003@C5P^a]Pn2
 R3
@@ -366,7 +366,7 @@ R6
 r1
 !s85 0
 31
-R16
+R12
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_addr_manager.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_addr_manager.sv|
 !i113 1
@@ -375,7 +375,7 @@ R9
 R10
 vmem_input_manager
 R1
-R15
+R11
 !i10b 1
 !s100 09cLI2Wai:a`RH:U8Zg>G3
 R3
@@ -392,7 +392,7 @@ R6
 r1
 !s85 0
 31
-R16
+R12
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_input_manager.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_input_manager.sv|
 !i113 1
@@ -401,7 +401,7 @@ R9
 R10
 vmem_output_manager
 R1
-R15
+R11
 !i10b 1
 !s100 U^ffL^odh^4d83>N^[5Oc2
 R3
@@ -413,12 +413,12 @@ w1712284878
 8C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_output_manager.sv
 FC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_output_manager.sv
 !i122 15
-Z17 L0 1 43
+Z15 L0 1 43
 R6
 r1
 !s85 0
 31
-R16
+R12
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_output_manager.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mem_output_manager.sv|
 !i113 1
@@ -427,7 +427,7 @@ R9
 R10
 vmux_2to1
 R1
-R15
+Z16 !s110 1712473506
 !i10b 1
 !s100 Bdlmi4m_9UmMJ1C^MU`mc0
 R3
@@ -444,7 +444,7 @@ R6
 r1
 !s85 0
 31
-R16
+R12
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_2to1.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_2to1.sv|
 !i113 1
@@ -453,7 +453,7 @@ R9
 R10
 vmux_4to1
 R1
-R15
+R16
 !i10b 1
 !s100 TU?hDiSIaLk4S5gdlXSf]3
 R3
@@ -470,7 +470,7 @@ R6
 r1
 !s85 0
 31
-R16
+Z17 !s108 1712473506.000000
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_4to1.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/mux_4to1.sv|
 !i113 1
@@ -479,7 +479,7 @@ R9
 R10
 vnew_clk
 R1
-R15
+R16
 !i10b 1
 !s100 [QhW3fPTc7ai1zlGN4]j^3
 R3
@@ -496,7 +496,7 @@ R6
 r1
 !s85 0
 31
-R16
+R17
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/new_clk.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/new_clk.sv|
 !i113 1
@@ -505,7 +505,7 @@ R9
 R10
 vpc
 R1
-R15
+R16
 !i10b 1
 !s100 X3nKgB>6_;S@nPdg7[@Ed1
 R3
@@ -522,7 +522,7 @@ R6
 r1
 !s85 0
 31
-R16
+R17
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/pc.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/pc.sv|
 !i113 1
@@ -570,7 +570,7 @@ R6
 r1
 !s85 0
 31
-R7
+!s108 1712473503.000000
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/rom.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/rom.v|
 !i113 1
@@ -579,24 +579,24 @@ R19
 R10
 vscalar_rf
 R1
-R15
+R16
 !i10b 1
-!s100 U`jSjd0GTMX@oV[OW@CRR0
+!s100 UDhi_i_cj5A?BazX44I<U1
 R3
-I_PA]NG0lLR=TXNEFGh<IR2
+I5fNL_l^k?hdk8SEc=;^zk3
 R4
 S1
 R0
-w1712349214
+w1712382994
 8C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/scalar_rf.sv
 FC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/scalar_rf.sv
 !i122 20
-L0 1 227
+L0 1 211
 R6
 r1
 !s85 0
 31
-R16
+R17
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/scalar_rf.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/scalar_rf.sv|
 !i113 1
@@ -605,7 +605,7 @@ R9
 R10
 vsegment_ex_mem
 R1
-R14
+R16
 !i10b 1
 !s100 ai><:=VIM@6Mg_:4zF1zn1
 R3
@@ -622,7 +622,7 @@ R6
 r1
 !s85 0
 31
-R13
+R17
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_ex_mem.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_ex_mem.sv|
 !i113 1
@@ -631,7 +631,7 @@ R9
 R10
 vsegment_id_ex
 R1
-R14
+R16
 !i10b 1
 !s100 Ln5Xe?HAD]O9fD[I[jffH0
 R3
@@ -648,7 +648,7 @@ R6
 r1
 !s85 0
 31
-R13
+R17
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_id_ex.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_id_ex.sv|
 !i113 1
@@ -657,7 +657,7 @@ R9
 R10
 vsegment_if_id
 R1
-R14
+R16
 !i10b 1
 !s100 5JEW^h49Y`X]PlH;MnXaV0
 R3
@@ -669,12 +669,12 @@ w1710981033
 8C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_if_id.sv
 FC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_if_id.sv
 !i122 23
-R17
+R15
 R6
 r1
 !s85 0
 31
-R13
+R17
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_if_id.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_if_id.sv|
 !i113 1
@@ -683,7 +683,7 @@ R9
 R10
 vsegment_mem_wb
 R1
-R14
+R13
 !i10b 1
 !s100 8?:VY:70d32=l@b=7IgRo0
 R3
@@ -700,7 +700,7 @@ R6
 r1
 !s85 0
 31
-R13
+R17
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_mem_wb.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/segment_mem_wb.sv|
 !i113 1
@@ -709,59 +709,33 @@ R9
 R10
 vspecial_register_manager
 R1
-R14
+R13
 !i10b 1
-!s100 [kOCVlL9_9:=jmYlXN69g3
+!s100 z8FHPhdk[OYhaR8:[W[fO1
 R3
-I50bTeb=VDTNYgloYl<G@[1
+IbBa?Wl<RiGelfTXo=lZ?X1
 R4
 S1
 R0
-w1712353061
+w1712384682
 8C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/special_register_manager.sv
 FC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/special_register_manager.sv
-!i122 28
-L0 1 115
+!i122 26
+L0 1 118
 R6
 r1
 !s85 0
 31
-R13
+R14
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/special_register_manager.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/special_register_manager.sv|
 !i113 1
 R8
 R9
 R10
-vtop
-R1
-R14
-!i10b 1
-!s100 :S6XKB4R5XRISE3S>_VX:0
-R3
-IS;igAPFN_hC1iUA2aSlY71
-R4
-S1
-R0
-w1712367912
-8C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/top.sv
-FC:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/top.sv
-!i122 26
-L0 1 26
-R6
-r1
-!s85 0
-31
-R13
-!s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/top.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/top.sv|
-!i113 1
-R8
-R9
-R10
 vvectorial_rf
 R1
-R14
+R13
 !i10b 1
 !s100 7zY^YD7CmM5gazB_`n<Pj2
 R3
@@ -778,7 +752,7 @@ R6
 r1
 !s85 0
 31
-R13
+R14
 !s107 C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/vectorial_rf.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2|C:/Users/dmeji/OneDrive - Estudiantes ITCR/TEC/Semestres/IS2024/Arqui_II/Proyecto2/vectorial_rf.sv|
 !i113 1

@@ -1,11 +1,11 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="8a86497e1fe3e97beaac"/>
+    <hash md5_digest_80b="2c39184e1fb303052c0f"/>
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="simd.sof" usercode="0xFFFFFFFF"/>
   </file_info>
-  <hub_info hub_ir_width="8" ir_width="8" node_addr_width="3" node_count="5"/>
+  <hub_info hub_ir_width="8" ir_width="8" node_addr_width="3" node_count="6"/>
   <node_info>
     <node hpath="datapath:cpu|ram7:mem|altsyncram:altsyncram_component|altsyncram_3up1:auto_generated|sld_mod_ram_rom:mgl_prim2" instance_id="0" mfg_id="110" node_id="3" sld_node_info="0x10186E00" version="2">
       <parameters>
@@ -110,7 +110,7 @@
         <port name="jtag.bp.cpu_mem_altsyncram_component_auto_generated_mgl_prim2_tdo"/>
       </outputs>
     </node>
-    <node hpath="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" instance_id="0" mfg_id="110" node_id="9" sld_node_info="0x486E00" version="0">
+    <node hpath="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" instance_id="0" mfg_id="110" node_id="9" sld_node_info="0x486E00" version="0">
       <parameters>
         <parameter name="lpm_type" type="string" value="altsource_probe"/>
         <parameter name="lpm_hint" type="string" value="UNUSED"/>
@@ -118,34 +118,47 @@
         <parameter name="sld_instance_index" type="dec" value="0"/>
         <parameter name="SLD_NODE_INFO" type="dec" value="4746752"/>
         <parameter name="sld_ir_width" type="dec" value="4"/>
-        <parameter name="instance_id" type="string" value="flag"/>
-        <parameter name="probe_width" type="dec" value="19"/>
-        <parameter name="source_width" type="dec" value="19"/>
+        <parameter name="instance_id" type="string" value="NONE"/>
+        <parameter name="probe_width" type="dec" value="32"/>
+        <parameter name="source_width" type="dec" value="32"/>
         <parameter name="source_initial_value" type="string" value="0"/>
         <parameter name="enable_metastability" type="string" value="NO"/>
       </parameters>
       <inputs>
-        <port name="probe[0]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[0]"/>
-        <port name="probe[1]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[1]"/>
-        <port name="probe[2]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[2]"/>
-        <port name="probe[3]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[3]"/>
-        <port name="probe[4]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[4]"/>
-        <port name="probe[5]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[5]"/>
-        <port name="probe[6]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[6]"/>
-        <port name="probe[7]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[7]"/>
-        <port name="probe[8]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[8]"/>
-        <port name="probe[9]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[9]"/>
-        <port name="probe[10]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[10]"/>
-        <port name="probe[11]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[11]"/>
-        <port name="probe[12]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[12]"/>
-        <port name="probe[13]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[13]"/>
-        <port name="probe[14]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[14]"/>
-        <port name="probe[15]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[15]"/>
-        <port name="probe[16]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[16]"/>
-        <port name="probe[17]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[17]"/>
-        <port name="probe[18]" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[18]"/>
-        <port name="source_clk" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|source_clk"/>
-        <port name="source_ena" source="flags:flagsStalls|altsource_probe_top:in_system_sources_probes_0|source_ena"/>
+        <port name="probe[0]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[0]"/>
+        <port name="probe[1]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[1]"/>
+        <port name="probe[2]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[2]"/>
+        <port name="probe[3]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[3]"/>
+        <port name="probe[4]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[4]"/>
+        <port name="probe[5]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[5]"/>
+        <port name="probe[6]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[6]"/>
+        <port name="probe[7]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[7]"/>
+        <port name="probe[8]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[8]"/>
+        <port name="probe[9]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[9]"/>
+        <port name="probe[10]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[10]"/>
+        <port name="probe[11]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[11]"/>
+        <port name="probe[12]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[12]"/>
+        <port name="probe[13]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[13]"/>
+        <port name="probe[14]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[14]"/>
+        <port name="probe[15]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[15]"/>
+        <port name="probe[16]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[16]"/>
+        <port name="probe[17]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[17]"/>
+        <port name="probe[18]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[18]"/>
+        <port name="probe[19]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[19]"/>
+        <port name="probe[20]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[20]"/>
+        <port name="probe[21]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[21]"/>
+        <port name="probe[22]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[22]"/>
+        <port name="probe[23]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[23]"/>
+        <port name="probe[24]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[24]"/>
+        <port name="probe[25]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[25]"/>
+        <port name="probe[26]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[26]"/>
+        <port name="probe[27]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[27]"/>
+        <port name="probe[28]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[28]"/>
+        <port name="probe[29]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[29]"/>
+        <port name="probe[30]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[30]"/>
+        <port name="probe[31]" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|probe[31]"/>
+        <port name="source_clk" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|source_clk"/>
+        <port name="source_ena" source="counters:flagsStalls|altsource_probe_top:in_system_sources_probes_0|source_ena"/>
         <port name="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_raw_tck" source="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_raw_tck"/>
         <port name="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_tdi" source="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_tdi"/>
         <port name="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_usr1" source="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_usr1"/>
@@ -183,6 +196,19 @@
         <port name="source[16]"/>
         <port name="source[17]"/>
         <port name="source[18]"/>
+        <port name="source[19]"/>
+        <port name="source[20]"/>
+        <port name="source[21]"/>
+        <port name="source[22]"/>
+        <port name="source[23]"/>
+        <port name="source[24]"/>
+        <port name="source[25]"/>
+        <port name="source[26]"/>
+        <port name="source[27]"/>
+        <port name="source[28]"/>
+        <port name="source[29]"/>
+        <port name="source[30]"/>
+        <port name="source[31]"/>
         <port name="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_ir_out_0_"/>
         <port name="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_ir_out_1_"/>
         <port name="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_ir_out_2_"/>
@@ -190,7 +216,7 @@
         <port name="jtag.bp.flagsStalls_in_system_sources_probes_0_issp_impl_tdo"/>
       </outputs>
     </node>
-    <node hpath="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" instance_id="1" mfg_id="110" node_id="9" sld_node_info="0x486E01" version="0">
+    <node hpath="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" instance_id="1" mfg_id="110" node_id="9" sld_node_info="0x486E01" version="0">
       <parameters>
         <parameter name="lpm_type" type="string" value="altsource_probe"/>
         <parameter name="lpm_hint" type="string" value="UNUSED"/>
@@ -198,34 +224,47 @@
         <parameter name="sld_instance_index" type="dec" value="0"/>
         <parameter name="SLD_NODE_INFO" type="dec" value="4746752"/>
         <parameter name="sld_ir_width" type="dec" value="4"/>
-        <parameter name="instance_id" type="string" value="flag"/>
-        <parameter name="probe_width" type="dec" value="19"/>
-        <parameter name="source_width" type="dec" value="19"/>
+        <parameter name="instance_id" type="string" value="NONE"/>
+        <parameter name="probe_width" type="dec" value="32"/>
+        <parameter name="source_width" type="dec" value="32"/>
         <parameter name="source_initial_value" type="string" value="0"/>
         <parameter name="enable_metastability" type="string" value="NO"/>
       </parameters>
       <inputs>
-        <port name="probe[0]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[0]"/>
-        <port name="probe[1]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[1]"/>
-        <port name="probe[2]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[2]"/>
-        <port name="probe[3]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[3]"/>
-        <port name="probe[4]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[4]"/>
-        <port name="probe[5]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[5]"/>
-        <port name="probe[6]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[6]"/>
-        <port name="probe[7]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[7]"/>
-        <port name="probe[8]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[8]"/>
-        <port name="probe[9]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[9]"/>
-        <port name="probe[10]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[10]"/>
-        <port name="probe[11]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[11]"/>
-        <port name="probe[12]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[12]"/>
-        <port name="probe[13]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[13]"/>
-        <port name="probe[14]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[14]"/>
-        <port name="probe[15]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[15]"/>
-        <port name="probe[16]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[16]"/>
-        <port name="probe[17]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[17]"/>
-        <port name="probe[18]" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[18]"/>
-        <port name="source_clk" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|source_clk"/>
-        <port name="source_ena" source="flags:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|source_ena"/>
+        <port name="probe[0]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[0]"/>
+        <port name="probe[1]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[1]"/>
+        <port name="probe[2]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[2]"/>
+        <port name="probe[3]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[3]"/>
+        <port name="probe[4]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[4]"/>
+        <port name="probe[5]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[5]"/>
+        <port name="probe[6]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[6]"/>
+        <port name="probe[7]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[7]"/>
+        <port name="probe[8]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[8]"/>
+        <port name="probe[9]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[9]"/>
+        <port name="probe[10]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[10]"/>
+        <port name="probe[11]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[11]"/>
+        <port name="probe[12]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[12]"/>
+        <port name="probe[13]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[13]"/>
+        <port name="probe[14]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[14]"/>
+        <port name="probe[15]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[15]"/>
+        <port name="probe[16]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[16]"/>
+        <port name="probe[17]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[17]"/>
+        <port name="probe[18]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[18]"/>
+        <port name="probe[19]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[19]"/>
+        <port name="probe[20]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[20]"/>
+        <port name="probe[21]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[21]"/>
+        <port name="probe[22]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[22]"/>
+        <port name="probe[23]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[23]"/>
+        <port name="probe[24]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[24]"/>
+        <port name="probe[25]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[25]"/>
+        <port name="probe[26]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[26]"/>
+        <port name="probe[27]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[27]"/>
+        <port name="probe[28]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[28]"/>
+        <port name="probe[29]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[29]"/>
+        <port name="probe[30]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[30]"/>
+        <port name="probe[31]" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|probe[31]"/>
+        <port name="source_clk" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|source_clk"/>
+        <port name="source_ena" source="counters:flagsAritmetric|altsource_probe_top:in_system_sources_probes_0|source_ena"/>
         <port name="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_raw_tck" source="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_raw_tck"/>
         <port name="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_tdi" source="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_tdi"/>
         <port name="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_usr1" source="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_usr1"/>
@@ -263,6 +302,19 @@
         <port name="source[16]"/>
         <port name="source[17]"/>
         <port name="source[18]"/>
+        <port name="source[19]"/>
+        <port name="source[20]"/>
+        <port name="source[21]"/>
+        <port name="source[22]"/>
+        <port name="source[23]"/>
+        <port name="source[24]"/>
+        <port name="source[25]"/>
+        <port name="source[26]"/>
+        <port name="source[27]"/>
+        <port name="source[28]"/>
+        <port name="source[29]"/>
+        <port name="source[30]"/>
+        <port name="source[31]"/>
         <port name="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_ir_out_0_"/>
         <port name="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_ir_out_1_"/>
         <port name="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_ir_out_2_"/>
@@ -270,7 +322,7 @@
         <port name="jtag.bp.flagsAritmetric_in_system_sources_probes_0_issp_impl_tdo"/>
       </outputs>
     </node>
-    <node hpath="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" instance_id="2" mfg_id="110" node_id="9" sld_node_info="0x486E02" version="0">
+    <node hpath="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" instance_id="2" mfg_id="110" node_id="9" sld_node_info="0x486E02" version="0">
       <parameters>
         <parameter name="lpm_type" type="string" value="altsource_probe"/>
         <parameter name="lpm_hint" type="string" value="UNUSED"/>
@@ -278,34 +330,47 @@
         <parameter name="sld_instance_index" type="dec" value="0"/>
         <parameter name="SLD_NODE_INFO" type="dec" value="4746752"/>
         <parameter name="sld_ir_width" type="dec" value="4"/>
-        <parameter name="instance_id" type="string" value="flag"/>
-        <parameter name="probe_width" type="dec" value="19"/>
-        <parameter name="source_width" type="dec" value="19"/>
+        <parameter name="instance_id" type="string" value="NONE"/>
+        <parameter name="probe_width" type="dec" value="32"/>
+        <parameter name="source_width" type="dec" value="32"/>
         <parameter name="source_initial_value" type="string" value="0"/>
         <parameter name="enable_metastability" type="string" value="NO"/>
       </parameters>
       <inputs>
-        <port name="probe[0]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[0]"/>
-        <port name="probe[1]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[1]"/>
-        <port name="probe[2]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[2]"/>
-        <port name="probe[3]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[3]"/>
-        <port name="probe[4]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[4]"/>
-        <port name="probe[5]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[5]"/>
-        <port name="probe[6]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[6]"/>
-        <port name="probe[7]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[7]"/>
-        <port name="probe[8]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[8]"/>
-        <port name="probe[9]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[9]"/>
-        <port name="probe[10]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[10]"/>
-        <port name="probe[11]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[11]"/>
-        <port name="probe[12]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[12]"/>
-        <port name="probe[13]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[13]"/>
-        <port name="probe[14]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[14]"/>
-        <port name="probe[15]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[15]"/>
-        <port name="probe[16]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[16]"/>
-        <port name="probe[17]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[17]"/>
-        <port name="probe[18]" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[18]"/>
-        <port name="source_clk" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|source_clk"/>
-        <port name="source_ena" source="flags:flagsMemory|altsource_probe_top:in_system_sources_probes_0|source_ena"/>
+        <port name="probe[0]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[0]"/>
+        <port name="probe[1]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[1]"/>
+        <port name="probe[2]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[2]"/>
+        <port name="probe[3]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[3]"/>
+        <port name="probe[4]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[4]"/>
+        <port name="probe[5]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[5]"/>
+        <port name="probe[6]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[6]"/>
+        <port name="probe[7]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[7]"/>
+        <port name="probe[8]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[8]"/>
+        <port name="probe[9]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[9]"/>
+        <port name="probe[10]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[10]"/>
+        <port name="probe[11]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[11]"/>
+        <port name="probe[12]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[12]"/>
+        <port name="probe[13]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[13]"/>
+        <port name="probe[14]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[14]"/>
+        <port name="probe[15]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[15]"/>
+        <port name="probe[16]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[16]"/>
+        <port name="probe[17]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[17]"/>
+        <port name="probe[18]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[18]"/>
+        <port name="probe[19]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[19]"/>
+        <port name="probe[20]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[20]"/>
+        <port name="probe[21]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[21]"/>
+        <port name="probe[22]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[22]"/>
+        <port name="probe[23]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[23]"/>
+        <port name="probe[24]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[24]"/>
+        <port name="probe[25]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[25]"/>
+        <port name="probe[26]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[26]"/>
+        <port name="probe[27]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[27]"/>
+        <port name="probe[28]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[28]"/>
+        <port name="probe[29]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[29]"/>
+        <port name="probe[30]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[30]"/>
+        <port name="probe[31]" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|probe[31]"/>
+        <port name="source_clk" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|source_clk"/>
+        <port name="source_ena" source="counters:flagsMemory|altsource_probe_top:in_system_sources_probes_0|source_ena"/>
         <port name="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_raw_tck" source="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_raw_tck"/>
         <port name="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_tdi" source="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_tdi"/>
         <port name="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_usr1" source="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_usr1"/>
@@ -343,6 +408,19 @@
         <port name="source[16]"/>
         <port name="source[17]"/>
         <port name="source[18]"/>
+        <port name="source[19]"/>
+        <port name="source[20]"/>
+        <port name="source[21]"/>
+        <port name="source[22]"/>
+        <port name="source[23]"/>
+        <port name="source[24]"/>
+        <port name="source[25]"/>
+        <port name="source[26]"/>
+        <port name="source[27]"/>
+        <port name="source[28]"/>
+        <port name="source[29]"/>
+        <port name="source[30]"/>
+        <port name="source[31]"/>
         <port name="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_ir_out_0_"/>
         <port name="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_ir_out_1_"/>
         <port name="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_ir_out_2_"/>
@@ -350,7 +428,7 @@
         <port name="jtag.bp.flagsMemory_in_system_sources_probes_0_issp_impl_tdo"/>
       </outputs>
     </node>
-    <node hpath="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" instance_id="3" mfg_id="110" node_id="9" sld_node_info="0x486E03" version="0">
+    <node hpath="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" instance_id="3" mfg_id="110" node_id="9" sld_node_info="0x486E03" version="0">
       <parameters>
         <parameter name="lpm_type" type="string" value="altsource_probe"/>
         <parameter name="lpm_hint" type="string" value="UNUSED"/>
@@ -358,34 +436,47 @@
         <parameter name="sld_instance_index" type="dec" value="0"/>
         <parameter name="SLD_NODE_INFO" type="dec" value="4746752"/>
         <parameter name="sld_ir_width" type="dec" value="4"/>
-        <parameter name="instance_id" type="string" value="flag"/>
-        <parameter name="probe_width" type="dec" value="19"/>
-        <parameter name="source_width" type="dec" value="19"/>
+        <parameter name="instance_id" type="string" value="NONE"/>
+        <parameter name="probe_width" type="dec" value="32"/>
+        <parameter name="source_width" type="dec" value="32"/>
         <parameter name="source_initial_value" type="string" value="0"/>
         <parameter name="enable_metastability" type="string" value="NO"/>
       </parameters>
       <inputs>
-        <port name="probe[0]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[0]"/>
-        <port name="probe[1]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[1]"/>
-        <port name="probe[2]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[2]"/>
-        <port name="probe[3]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[3]"/>
-        <port name="probe[4]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[4]"/>
-        <port name="probe[5]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[5]"/>
-        <port name="probe[6]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[6]"/>
-        <port name="probe[7]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[7]"/>
-        <port name="probe[8]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[8]"/>
-        <port name="probe[9]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[9]"/>
-        <port name="probe[10]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[10]"/>
-        <port name="probe[11]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[11]"/>
-        <port name="probe[12]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[12]"/>
-        <port name="probe[13]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[13]"/>
-        <port name="probe[14]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[14]"/>
-        <port name="probe[15]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[15]"/>
-        <port name="probe[16]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[16]"/>
-        <port name="probe[17]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[17]"/>
-        <port name="probe[18]" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[18]"/>
-        <port name="source_clk" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|source_clk"/>
-        <port name="source_ena" source="flags:flagsCycle|altsource_probe_top:in_system_sources_probes_0|source_ena"/>
+        <port name="probe[0]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[0]"/>
+        <port name="probe[1]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[1]"/>
+        <port name="probe[2]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[2]"/>
+        <port name="probe[3]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[3]"/>
+        <port name="probe[4]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[4]"/>
+        <port name="probe[5]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[5]"/>
+        <port name="probe[6]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[6]"/>
+        <port name="probe[7]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[7]"/>
+        <port name="probe[8]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[8]"/>
+        <port name="probe[9]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[9]"/>
+        <port name="probe[10]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[10]"/>
+        <port name="probe[11]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[11]"/>
+        <port name="probe[12]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[12]"/>
+        <port name="probe[13]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[13]"/>
+        <port name="probe[14]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[14]"/>
+        <port name="probe[15]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[15]"/>
+        <port name="probe[16]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[16]"/>
+        <port name="probe[17]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[17]"/>
+        <port name="probe[18]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[18]"/>
+        <port name="probe[19]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[19]"/>
+        <port name="probe[20]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[20]"/>
+        <port name="probe[21]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[21]"/>
+        <port name="probe[22]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[22]"/>
+        <port name="probe[23]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[23]"/>
+        <port name="probe[24]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[24]"/>
+        <port name="probe[25]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[25]"/>
+        <port name="probe[26]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[26]"/>
+        <port name="probe[27]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[27]"/>
+        <port name="probe[28]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[28]"/>
+        <port name="probe[29]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[29]"/>
+        <port name="probe[30]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[30]"/>
+        <port name="probe[31]" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|probe[31]"/>
+        <port name="source_clk" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|source_clk"/>
+        <port name="source_ena" source="counters:flagsCycle|altsource_probe_top:in_system_sources_probes_0|source_ena"/>
         <port name="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_raw_tck" source="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_raw_tck"/>
         <port name="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_tdi" source="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_tdi"/>
         <port name="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_usr1" source="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_usr1"/>
@@ -423,6 +514,19 @@
         <port name="source[16]"/>
         <port name="source[17]"/>
         <port name="source[18]"/>
+        <port name="source[19]"/>
+        <port name="source[20]"/>
+        <port name="source[21]"/>
+        <port name="source[22]"/>
+        <port name="source[23]"/>
+        <port name="source[24]"/>
+        <port name="source[25]"/>
+        <port name="source[26]"/>
+        <port name="source[27]"/>
+        <port name="source[28]"/>
+        <port name="source[29]"/>
+        <port name="source[30]"/>
+        <port name="source[31]"/>
         <port name="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_ir_out_0_"/>
         <port name="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_ir_out_1_"/>
         <port name="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_ir_out_2_"/>
@@ -430,29 +534,141 @@
         <port name="jtag.bp.flagsCycle_in_system_sources_probes_0_issp_impl_tdo"/>
       </outputs>
     </node>
+    <node hpath="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" instance_id="4" mfg_id="110" node_id="9" sld_node_info="0x486E04" version="0">
+      <parameters>
+        <parameter name="lpm_type" type="string" value="altsource_probe"/>
+        <parameter name="lpm_hint" type="string" value="UNUSED"/>
+        <parameter name="sld_auto_instance_index" type="string" value="YES"/>
+        <parameter name="sld_instance_index" type="dec" value="0"/>
+        <parameter name="SLD_NODE_INFO" type="dec" value="4746752"/>
+        <parameter name="sld_ir_width" type="dec" value="4"/>
+        <parameter name="instance_id" type="string" value="NONE"/>
+        <parameter name="probe_width" type="dec" value="32"/>
+        <parameter name="source_width" type="dec" value="32"/>
+        <parameter name="source_initial_value" type="string" value="0"/>
+        <parameter name="enable_metastability" type="string" value="NO"/>
+      </parameters>
+      <inputs>
+        <port name="probe[0]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[0]"/>
+        <port name="probe[1]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[1]"/>
+        <port name="probe[2]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[2]"/>
+        <port name="probe[3]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[3]"/>
+        <port name="probe[4]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[4]"/>
+        <port name="probe[5]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[5]"/>
+        <port name="probe[6]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[6]"/>
+        <port name="probe[7]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[7]"/>
+        <port name="probe[8]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[8]"/>
+        <port name="probe[9]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[9]"/>
+        <port name="probe[10]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[10]"/>
+        <port name="probe[11]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[11]"/>
+        <port name="probe[12]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[12]"/>
+        <port name="probe[13]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[13]"/>
+        <port name="probe[14]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[14]"/>
+        <port name="probe[15]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[15]"/>
+        <port name="probe[16]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[16]"/>
+        <port name="probe[17]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[17]"/>
+        <port name="probe[18]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[18]"/>
+        <port name="probe[19]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[19]"/>
+        <port name="probe[20]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[20]"/>
+        <port name="probe[21]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[21]"/>
+        <port name="probe[22]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[22]"/>
+        <port name="probe[23]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[23]"/>
+        <port name="probe[24]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[24]"/>
+        <port name="probe[25]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[25]"/>
+        <port name="probe[26]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[26]"/>
+        <port name="probe[27]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[27]"/>
+        <port name="probe[28]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[28]"/>
+        <port name="probe[29]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[29]"/>
+        <port name="probe[30]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[30]"/>
+        <port name="probe[31]" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|probe[31]"/>
+        <port name="source_clk" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|source_clk"/>
+        <port name="source_ena" source="counters:flagsInstr|altsource_probe_top:in_system_sources_probes_0|source_ena"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_raw_tck" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_raw_tck"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_tdi" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_tdi"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_usr1" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_usr1"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_cdr" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_cdr"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_sdr" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_sdr"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_e1dr" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_e1dr"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_udr" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_udr"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_cir" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_cir"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_uir" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_uir"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_tlr" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_jtag_state_tlr"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_clr" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_clr"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ena" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ena"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_in_0_" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_in_0_"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_in_1_" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_in_1_"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_in_2_" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_in_2_"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_in_3_" source="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_in_3_"/>
+      </inputs>
+      <outputs>
+        <port name="source[0]"/>
+        <port name="source[1]"/>
+        <port name="source[2]"/>
+        <port name="source[3]"/>
+        <port name="source[4]"/>
+        <port name="source[5]"/>
+        <port name="source[6]"/>
+        <port name="source[7]"/>
+        <port name="source[8]"/>
+        <port name="source[9]"/>
+        <port name="source[10]"/>
+        <port name="source[11]"/>
+        <port name="source[12]"/>
+        <port name="source[13]"/>
+        <port name="source[14]"/>
+        <port name="source[15]"/>
+        <port name="source[16]"/>
+        <port name="source[17]"/>
+        <port name="source[18]"/>
+        <port name="source[19]"/>
+        <port name="source[20]"/>
+        <port name="source[21]"/>
+        <port name="source[22]"/>
+        <port name="source[23]"/>
+        <port name="source[24]"/>
+        <port name="source[25]"/>
+        <port name="source[26]"/>
+        <port name="source[27]"/>
+        <port name="source[28]"/>
+        <port name="source[29]"/>
+        <port name="source[30]"/>
+        <port name="source[31]"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_out_0_"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_out_1_"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_out_2_"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_ir_out_3_"/>
+        <port name="jtag.bp.flagsInstr_in_system_sources_probes_0_issp_impl_tdo"/>
+      </outputs>
+    </node>
   </node_info>
   <sld_infos>
-    <sld_info hpath="flags:flagsAritmetric" name="flagsAritmetric">
+    <sld_info hpath="counters:flagsAritmetric" name="flagsAritmetric">
       <assignment_values>
-        <assignment_value text="QSYS_NAME flags HAS_SOPCINFO 1 GENERATION_ID 1712032859"/>
+        <assignment_value text="QSYS_NAME counters HAS_SOPCINFO 1 GENERATION_ID 1712480003"/>
       </assignment_values>
       <parameters/>
     </sld_info>
-    <sld_info hpath="flags:flagsCycle" name="flagsCycle">
+    <sld_info hpath="counters:flagsCycle" name="flagsCycle">
       <assignment_values>
-        <assignment_value text="QSYS_NAME flags HAS_SOPCINFO 1 GENERATION_ID 1712032859"/>
+        <assignment_value text="QSYS_NAME counters HAS_SOPCINFO 1 GENERATION_ID 1712480003"/>
       </assignment_values>
       <parameters/>
     </sld_info>
-    <sld_info hpath="flags:flagsMemory" name="flagsMemory">
+    <sld_info hpath="counters:flagsInstr" name="flagsInstr">
       <assignment_values>
-        <assignment_value text="QSYS_NAME flags HAS_SOPCINFO 1 GENERATION_ID 1712032859"/>
+        <assignment_value text="QSYS_NAME counters HAS_SOPCINFO 1 GENERATION_ID 1712480003"/>
       </assignment_values>
       <parameters/>
     </sld_info>
-    <sld_info hpath="flags:flagsStalls" name="flagsStalls">
+    <sld_info hpath="counters:flagsMemory" name="flagsMemory">
       <assignment_values>
-        <assignment_value text="QSYS_NAME flags HAS_SOPCINFO 1 GENERATION_ID 1712032859"/>
+        <assignment_value text="QSYS_NAME counters HAS_SOPCINFO 1 GENERATION_ID 1712480003"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+    <sld_info hpath="counters:flagsStalls" name="flagsStalls">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME counters HAS_SOPCINFO 1 GENERATION_ID 1712480003"/>
       </assignment_values>
       <parameters/>
     </sld_info>

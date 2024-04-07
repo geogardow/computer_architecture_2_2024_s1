@@ -121,7 +121,7 @@ if __name__ == '__main__':
     borrar_archivos_directorio(FOLDER_PATH + 'data')
 
 
-    if args.file != "NONE":  
+    if args.file == "NONE":  
         listFiles = ["simd_8","simd_16","simd_31","sisd"]
     else:
         listFiles = ["full_code"]

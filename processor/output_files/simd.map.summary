@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Fri Apr  5 21:42:04 2024
+Analysis & Synthesis Status : Successful - Sun Apr  7 02:58:13 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : simd
 Top-level Entity Name : top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 11969
-Total pins : 3
+Total registers : 12234
+Total pins : 5
 Total virtual pins : 0
 Total block memory bits : 3,208,688
 Total DSP Blocks : 17

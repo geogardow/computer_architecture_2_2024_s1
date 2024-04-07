@@ -1,11 +1,13 @@
 module datapath (
-                input clkFPGA, rst,
+                input clkFPGA, rst, stepping_flag, next_instr,
                 output logic finish,
-                output [18:0] R28_stall_count, R29_aritmetric_count, R30_memory_count, R31_cicles_per_inst);
+                output [31:0] R28_stall_count, R29_aritmetric_count, R30_memory_count, cycles, instr_count);
 
 
     /////////////////////////////////////////////////////////////////
 
+    // clks
+  logic clk_temp;
     // IF
   logic [31:0] pc_in_if, pc_out_if, pc_plus1_if, pc_plus_imm_extended_ex, instruction_if;
 
@@ -13,7 +15,6 @@ module datapath (
 	logic [31:0] pc_id;
 	logic [27:0] instr_27_0_id;
   logic [18:0] extend_id, RD1S_id, RD2S_id, RD3S_id;
-  logic [18:0] stall_count_id, aritmetric_count_id, memory_count_id, instruction_count_id;
   logic [15:0][15:0] RD1V_id, RD2V_id, RD3V_id;
 	logic [4:0] instr_opcode_id, instr_21_17_id, instr_19_15_id, instr_20_16_id, instr_27_23_id, instr_22_18_id, instr_14_10_id, 
               instr_26_22_id, instr_24_20_id, instr_25_21_id, RS1_id, RS2_id, RS3_id;
@@ -57,7 +58,13 @@ module datapath (
 
     // CLKS
 	new_clk #(.frec(8)) frec_mem (clk_mem, clkFPGA);
-	new_clk #(.frec(113)) frec_clk (clk, clkFPGA);
+	new_clk #(.frec(113)) frec_clk (clk_temp, clkFPGA);
+
+  mux_2to1 #(.N(1)) clk_mux (
+    .A(clk_temp),
+    .B(next_instr),
+    .sel(stepping_flag),
+    .C(clk));
 
     // IF
 	 extend_pc extend_pc_inst (
@@ -145,10 +152,11 @@ module datapath (
     .instruction_type(instr_type_id),
     .opcode(instr_opcode_id),
     .finish(finish),
-    .stall_count(stall_count_id),
-    .aritmetric_count(aritmetric_count_id),
-    .memory_count(memory_count_id),
-    .instruction_count(instruction_count_id)
+    .stall_count(R28_stall_count),
+    .aritmetric_count(R29_aritmetric_count),
+    .memory_count(R30_memory_count),
+    .cycles(cycles),
+    .instr_count(instr_count)
   );
 
   mux_4to1 #(.N(5)) mux_RS1_id (
@@ -187,22 +195,14 @@ module datapath (
     .RS2(RS2_id),
     .RS3(RS3_id),
     .RD(RD_result_wb),
-    .WD(WD_scalar_wb), 
-    .stall_count(stall_count_id),
-    .aritmetric_count(aritmetric_count_id),
-    .memory_count(memory_count_id),
-    .instruction_count(instruction_count_id),
+    .WD(WD_scalar_wb),
     .WES(RegWriteS_wb),
     .clk(clk),
     .rst(rst),
     .RD1(RD1S_id),
     .RD2(RD2S_id),
     .RD3(RD3S_id),
-    .finish(finish),
-    .R28_stall_count(R28_stall_count),
-    .R29_aritmetric_count(R29_aritmetric_count),
-    .R30_memory_count(R30_memory_count),
-    .R31_cicles_per_inst(R31_cicles_per_inst)
+    .finish(finish)
   );
 
   vectorial_rf #(.WIDTH(16)) vectorial_rf_id (

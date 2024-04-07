@@ -3,7 +3,7 @@ module scalar_rf #(int WIDTH=16) (
 	input [4:0] RS2, 
 	input [4:0] RS3,
 	input [4:0] RD,
-	input [18:0] WD, stall_count, aritmetric_count, memory_count, instruction_count,
+	input [18:0] WD,
 	input WES,
 	input clk,
 	input rst,
@@ -11,10 +11,8 @@ module scalar_rf #(int WIDTH=16) (
 	output [WIDTH-1:0] RD1,
 	output [WIDTH-1:0] RD2,
 	output [WIDTH-1:0] RD3,
-    output logic finish,
-   output [WIDTH-1:0] R28_stall_count, R29_aritmetric_count, R30_memory_count, R31_cicles_per_inst);
+    output logic finish);
 
-	logic [18:0] stall_count_temp, aritmetric_count_temp, memory_count_temp, instruction_count_temp;
 	logic [WIDTH-1:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31;
 	logic [WIDTH-1:0] RD1_temp, RD2_temp, RD3_temp;
 	
@@ -166,11 +164,7 @@ module scalar_rf #(int WIDTH=16) (
 			R30 = {(WIDTH){1'b0}};
 			R31 = {(WIDTH){1'b0}};
 			end
-		else if (WES && !finish) begin
-			R27 = R27 + 1;
-			if (instruction_count) begin
-				R31 = R27 / instruction_count;
-			end
+		else if (WES) begin
 			case (RD)
 				5'd0: R0  = WD;
 				5'd1: R1  = WD;
@@ -206,22 +200,12 @@ module scalar_rf #(int WIDTH=16) (
 				5'd31: R31 = WD;
 			endcase
 		end
-		else if (!finish) begin
-			R27 = R27 + 1;
-			if (instruction_count) begin
-				R31 = R27 / instruction_count;
-			end
-		end
 	end
 	
 	// assign outputs
 	assign RD1 = RD1_temp;
 	assign RD2 = RD2_temp;
 	assign RD3 = RD3_temp;	
-    assign R28_stall_count = stall_count; 
-    assign R29_aritmetric_count = aritmetric_count; 
-    assign R30_memory_count = memory_count; 
-    assign R31_cicles_per_inst = R31;	
     assign finish = (R28 == 19'd333);			
 
 endmodule

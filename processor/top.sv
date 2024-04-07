@@ -1,25 +1,29 @@
-module top (input clkFPGA, rst, output logic finish);
+module top (input clkFPGA, rst, stepping_flag, next_instr, output logic finish);
 
-logic [18:0] R28_stall_count, R29_aritmetric_count, R30_memory_count, R31_cicles_per_inst;
+logic [31:0] R28_stall_count, R29_aritmetric_count, R30_memory_count, cycles,instr_count;
 
-datapath cpu(clkFPGA, rst, finish, R28_stall_count, R29_aritmetric_count, R30_memory_count, R31_cicles_per_inst);
+datapath cpu(clkFPGA, rst, stepping_flag, next_instr, finish, R28_stall_count, R29_aritmetric_count, R30_memory_count, cycles, instr_count);
 
 
-flags flagsStalls (
+counters flagsStalls (
 		R28_stall_count,  //  probes.probe
 		R28_stall_count_probes  // sources.source
 	);
 	
-flags flagsAritmetric (
+counters flagsAritmetric (
 		R29_aritmetric_count,  //  probes.probe
 		R29_aritmetric_count_probes  // sources.source
 	);
-flags flagsMemory (
+counters flagsMemory (
 		R30_memory_count,  //  probes.probe
 		R30_memory_count_probes  // sources.source
 	);
-flags flagsCycle (
-		R31_cicles_per_inst,  //  probes.probe
+counters flagsCycle (
+		cycles,  //  probes.probe
+		R31_cicles_per_inst_probes  // sources.source
+	);
+counters flagsInstr (
+		instr_count,  //  probes.probe
 		R31_cicles_per_inst_probes  // sources.source
 	);
 	

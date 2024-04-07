@@ -4,10 +4,10 @@ module special_register_manager(
 							input logic [1:0] instruction_type, 
 							input logic [4:0] opcode,
 							input logic finish,
-							output logic [18:0] stall_count, aritmetric_count, memory_count, instruction_count);
+							output logic [31:0] stall_count, aritmetric_count, memory_count, cycles, instr_count);
 
 	
-	logic [18:0] stall_count_temp, aritmetric_count_temp, memory_count_temp, instruction_count_temp;
+	logic [31:0] stall_count_temp, aritmetric_count_temp, memory_count_temp, instruction_count_temp, cycles_temp;
 	logic [1:0] instruction_type_temp;
 	logic [4:0] opcode_temp;
 	
@@ -19,16 +19,19 @@ module special_register_manager(
             instruction_count_temp <= 0;
             instruction_type_temp <= 0;
             opcode_temp <= 0;
+			cycles_temp <= 0;
+
 		 end else if (!finish) begin
             instruction_type_temp <= instruction_type;
             opcode_temp <= opcode;
-		
-		
+
+			cycles_temp = cycles_temp + 1;
+			
 		// Instrucciones de Datos sin inmediato:
 		if (instruction_type_temp == 2'b01 && opcode_temp[4] == 1'b0)
 			begin
-				instruction_count_temp <=instruction_count_temp + 1;
 				
+				instruction_count_temp <=instruction_count_temp + 1;
 				// suma
 				if (opcode_temp[4:0] == 5'b00000)
 					begin
@@ -106,10 +109,10 @@ module special_register_manager(
 	end
 			
 		
-
-	assign instruction_count = instruction_count_temp;
 	assign stall_count = stall_count_temp;
 	assign aritmetric_count = aritmetric_count_temp;
 	assign memory_count = memory_count_temp;
+	assign cycles = cycles_temp;
+	assign instr_count = instruction_count_temp;
 
 endmodule

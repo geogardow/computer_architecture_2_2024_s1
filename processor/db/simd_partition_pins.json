@@ -12,6 +12,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "next_instr",
+					"strict" : false
+				},
+				{
+					"name" : "stepping_flag",
+					"strict" : false
+				},
+				{
 					"name" : "clkFPGA",
 					"strict" : false
 				}
