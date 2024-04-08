@@ -39,6 +39,7 @@ module mem_output_manager_tb;
 
     // Stimulus
 	initial begin
+		RD_in = 5'b00010;
 		#20
 		RD_in = 5'b00010;
 		enable_read = 1;

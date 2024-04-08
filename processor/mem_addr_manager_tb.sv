@@ -12,7 +12,7 @@ module mem_addr_manager_tb;
     logic [15:0] output_address;
 
     // Instantiate the module under test
-    mem_addr_mananger dut (
+    mem_addr_manager dut (
         .clk(clk),
 		  .rst(rst),
         .read_enable(read_enable),

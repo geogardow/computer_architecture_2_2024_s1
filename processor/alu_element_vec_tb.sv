@@ -12,7 +12,6 @@ module alu_element_vec_tb;
   
   // Outputs
   logic [ELEMENT_SIZE-1:0] result;
-  logic [ELEMENT_SIZE-1:0] expected_result;
 
   // Instantiate the VectorALU module
   alu_element_vec #(ELEMENT_SIZE) uut (
@@ -24,6 +23,7 @@ module alu_element_vec_tb;
   
 // Stimulus generation
   initial begin
+      result = 1'b0;
     // Test case 1: Addition
         elementA = 16'd8;
         elementB = 16'd5;

@@ -22,56 +22,66 @@ module alu_scalar_tb;
         .flagN(flagN)
     );
 
-     // Test vectors
+    // Test vectors
     initial begin
-        // Test vector 1: Addition
+        // Test 1: Addition
         A = 8;
         B = 5;
         sel = 3'b000;
         #10;
+        assert(C == 13) else $fatal("Test failed for addition");
 
-        // Test vector 2: Subtraction
+        // Test 2: Subtraction
         A = 10;
         B = 3;
         sel = 3'b001;
         #10;
+        assert(C == 7) else $fatal("Test failed for subtraction");
 
-        // Test vector 3: Multiplication
+        // Test 3: Multiplication
         A = 5;
         B = 6;
         sel = 3'b010;
         #10;
+        assert(C == 30) else $fatal("Test failed for multiplication");
 
-        // Test vector 4: Division
+        // Test 4: Division
         A = 20;
         B = 4;
         sel = 3'b011;
         #10;
+        assert(C == 5) else $fatal("Test failed for division");
 
-        // Test vector 5: Arithmetic right shift
+        // Test 5: Arithmetic right shift
         A = 32;
         B = 2;
         sel = 3'b100;
         #10;
+        assert(C == 8) else $fatal("Test failed for arithmetic right shift");
 
-        // Test vector 6: Logical right shift
+        // Test 6: Logical right shift
         A = 32;
         B = 2;
         sel = 3'b101;
         #10;
+        assert(C == 8) else $fatal("Test failed for logical right shift");
 
-        // Test vector 7: Logical left shift
+        // Test 7: Logical left shift
         A = 4;
         B = 2;
         sel = 3'b110;
         #10;
+        assert(C == 16) else $fatal("Test failed for logical left shift");
 
-        // Test vector 8: Bitwise AND
+        // Test 8: Bitwise AND
         A = 15;
         B = 10;
         sel = 3'b111;
         #10;
+        assert(C == 10) else $fatal("Test failed for bitwise AND");
 
+        #10;
+        $finish;
     end
 
 endmodule

@@ -1,0 +1,36 @@
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+Flow Summary
+
+Flow Status,Successful - Mon Apr  8 17:07:29 2024
+Quartus Prime Version,22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Revision Name,simd
+Top-level Entity Name,top
+Family,Cyclone V
+Device,5CSEMA5F31C6
+Timing Models,Final
+Logic utilization (in ALMs),"11,624 / 32,070 ( 36 % )"
+Total registers,12861
+Total pins,5 / 457 ( 1 % )
+Total virtual pins,0
+Total block memory bits,"3,208,688 / 4,065,280 ( 79 % )"
+Total DSP Blocks,17 / 87 ( 20 % )
+Total HSSI RX PCSs,0
+Total HSSI PMA RX Deserializers,0
+Total HSSI TX PCSs,0
+Total HSSI PMA TX Serializers,0
+Total PLLs,0 / 6 ( 0 % )
+Total DLLs,0 / 4 ( 0 % )

@@ -32,9 +32,18 @@ module alu_vec_tb;
         vectorB = 'h1122_3344_5566_7788_9900_AABB_CCDD_EEFF_0000_0000_0000_0000_0000_0000_0000_0000;
         scalar = 16'd100;
         sel = 3'b000; 
-        operand_flag = 1'b0; // vector B
+        operand_flag = 1'b0; // vector 
         #10;
         assert(result == 'hBCEF_EDDC_CBBA_A998_9900_AABB_CCDD_EEFF_0000_0000_0000_0000_0000_0000_0000_0000) else $fatal("Test failed for addition");
+        
+        //multiplication
+        vectorA = 'hABCD_BA98_7654_3210_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000;
+        vectorB = 'h1122_3344_5566_7788_9900_AABB_CCDD_EEFF_0000_0000_0000_0000_0000_0000_0000_0000;
+        scalar = 16'd2;
+        sel = 3'b010; 
+        operand_flag = 1'b1; // scalar
+        #10;
+        assert(result == 'h529A_7530_ECA8_6420_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000_0000) else $fatal("Test failed for multiplication");
 
     end
 
